@@ -1,0 +1,61 @@
+@keyframes avatar-animation {
+  from { transform: translateY(0); }
+  to { transform: translateY(-91.666666667%); }
+}
+
+.c-avatar {
+  border-radius: 3px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+
+  &--lrg {
+    height: 18.4rem;
+    width: 18.4rem;
+  }
+
+  &--med {
+    height: 12rem;
+    width: 12rem;
+  }
+
+  &--sml {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  &--x-sml {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+
+  &__background { z-index: 1; }
+  &__character { z-index: 2; }
+
+  &__media {
+    animation: .8s steps(11) avatar-animation;
+    animation-play-state: paused;
+    background-position: 0 0;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    display: block;
+    height: 1200%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .c-avatar-trigger:hover &__media,
+  &:hover &__media,
+  &--animate-loop &__media {
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+  }
+
+  &--animate-once &__media {
+    animation-iteration-count: 3;
+    animation-play-state: running;
+  }
+}

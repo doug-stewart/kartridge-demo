@@ -1,0 +1,44 @@
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+
+  100% { transform: rotate(359deg); }
+}
+
+.c-spinner {
+  &__group { margin: 1rem auto; }
+
+  &__label {
+    margin-left: .5rem;
+    position: relative;
+    top: -2px;
+  }
+
+  &--lrg {
+    border: .1em solid $grey-darkest;
+    font-size: 10rem;
+  }
+
+  &--med {
+    border: .14em solid;
+    font-size: 5rem;
+  }
+
+  &--sml {
+    border: .2em solid;
+    margin-right: .3em;
+    vertical-align: top;
+  }
+
+  &--lrg,
+  &--med,
+  &--sml {
+    animation: rotate 600ms linear infinite;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    border-right-color: transparent;
+    display: inline-block;
+    flex: 0 0 auto;
+    height: 1em;
+    width: 1em;
+  }
+}

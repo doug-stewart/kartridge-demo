@@ -1,0 +1,29 @@
+.c-notice {
+  &__item {
+    list-style: none;
+    margin-bottom: .4rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &--error,
+  &--success {
+    border: 1px solid;
+    font-size: 1.4rem;
+    line-height: 1.43;
+    padding: 1rem 1.2rem;
+    text-align: center;
+  }
+
+  &--error {
+    background-color: $red-med;
+    border-color: $red-dark;
+    color: $white;
+  }
+
+  &--success {
+    background-color: $green-lighter;
+    border-color: $green-dark;
+    color: $grey-darkest;
+  }
+}

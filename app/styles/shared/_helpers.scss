@@ -1,0 +1,65 @@
+:disabled,
+.disabled,
+a.disabled,
+button.disabled,
+input[type='submit'].disabled,
+li.disabled {
+  cursor: default;
+  opacity: .42;
+  pointer-events: none;
+}
+
+.hyphens {
+  &,
+  & * {
+    hyphens: auto;
+    word-wrap: break-word;
+  }
+}
+
+.is-selectable,
+input,
+textarea,
+[contenteditable] {
+  cursor: text;
+  pointer-events: all;
+  user-select: text;
+
+  * {
+    cursor: inherit;
+    pointer-events: all;
+    user-select: text;
+  }
+}
+
+a,
+button {
+  &.is-selectable,
+  .is-selectable & {
+    &,
+    & * {
+      cursor: pointer;
+    }
+  }
+}
+
+input[type="button"],
+input[type="checkbox"],
+input[type="file"],
+input[type="radio"],
+input[type="reset"],
+input[type="submit"],
+select {
+  &,
+  &.is-selectable,
+  .is-selectable & {
+    cursor: pointer;
+  }
+}
+
+.truncate {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

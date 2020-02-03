@@ -1,0 +1,47 @@
+.c-system-reqs {
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &__label { font-weight: 700; }
+
+  &__list,
+  &__radio {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: auto 1fr;
+  }
+
+  &__option {
+    background-color: rgba($grey-light, .3);
+    border: 1px solid $grey-light;
+    padding: 3rem 2rem;
+    position: relative;
+  }
+
+  &__radio {
+    align-items: flex-end;
+    line-height: 2.2rem;
+    margin-bottom: 2rem;
+
+    &::before {
+      bottom: 0;
+      content: '';
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .has-app-sidebar {
+    .c-system-reqs {
+      grid-template: auto / auto;
+
+      &__list { margin-left: 3rem; }
+    }
+  }
+}

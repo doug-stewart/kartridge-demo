@@ -1,0 +1,75 @@
+.c-tags {
+  display: block;
+  overflow: hidden;
+}
+
+.c-tag {
+  &,
+  &__add,
+  &--feat,
+  &--linked {
+    background-color: $grey-light;
+    color: rgba($black, .6);
+    display: block;
+    fill: rgba($black, .6);
+    float: left;
+    font: 1.3rem/1.31 $roboto-cond-family;
+    margin: 0 .15em .15em 0;
+    padding: 0 .38em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &__add {
+    cursor: pointer;
+    text-transform: none;
+
+    &::before {
+      content: '+ ';
+      font-family: $gordita-family;
+      font-weight: bold;
+    }
+  }
+
+  &__ico {
+    fill: inherit;
+    height: .8em;
+    margin-left: .1em;
+    width: auto;
+  }
+
+  &__link {
+    color: inherit;
+    padding: 0 .38em;
+    text-decoration: none;
+  }
+
+  &--feat {
+    background-color: $grey-darker;
+    color: $white;
+    fill: $white;
+  }
+
+  &--linked { padding: 0; }
+}
+
+.c-tags--inline {
+  .c-tag {
+    background-color: transparent;
+    color: inherit;
+    display: inline;
+    float: none;
+    font-size: 1.08em;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+
+    &:not(:last-child)::after {
+      content: ',';
+      margin-left: -.33ch;
+    }
+
+    &__link { padding: 0; }
+  }
+}

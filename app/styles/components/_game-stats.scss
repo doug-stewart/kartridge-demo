@@ -1,0 +1,44 @@
+.c-stats {
+  border-bottom: 1px solid rgba($grey-darkest, .24);
+  border-bottom-color: swatch(swatch-e, .24);
+  color: $grey-darkest;
+  color: swatch(swatch-e);
+  display: flex;
+  font-size: 1.8rem;
+  list-style: none;
+  text-align: center;
+
+  &__ico {
+    display: inline-block;
+    fill: rgba($grey-darkest, .42);
+    fill: swatch(swatch-e, .42);
+    height: 1.5rem;
+    margin-left: .2rem;
+    width: 1.5rem;
+  }
+
+  &__item {
+    flex: 1;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  &__main,
+  &__sec {
+    display: block;
+    line-height: 1.6;
+  }
+
+  &__main { font-weight: 400; }
+
+  &__sec {
+    color: $purple-med;
+    color: swatch(swatch-f);
+    display: block;
+    font-family: $roboto-family;
+    font-size: .66em;
+    letter-spacing: .02em;
+    margin-top: .42em;
+    text-transform: uppercase;
+  }
+}

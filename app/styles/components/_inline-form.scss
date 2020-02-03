@@ -1,0 +1,125 @@
+.c-inline-form {
+  background-color: $grey-lightest;
+  border-radius: 3px;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: max-content 1fr;
+  margin-top: 1.5rem;
+  padding: 2rem;
+
+  &__calendar-label { margin-top: -.8rem; }
+
+  &__ctrls {
+    grid-column: 2;
+    margin-top: .5rem;
+  }
+
+  &__input-grp {
+    align-items: center;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(4, auto);
+    justify-content: start;
+
+    .c-validation__list { grid-column: 1/5; }
+  }
+
+  &__label {
+    font-weight: 700;
+    line-height: 2.4rem;
+    padding: 1.2rem 0;
+    white-space: nowrap;
+
+    &-note {
+      color: $grey-dark;
+      display: block;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  &__msg {
+    min-width: 0;
+
+    strong { display: block; }
+
+    + .c-inline-form__ctrls { justify-self: end; }
+  }
+
+  &__note {
+    color: $grey-dark;
+    display: grid;
+    font-size: 1.3rem;
+    font-style: normal;
+    grid-column-gap: 1ch;
+    grid-template-columns: max-content 1fr;
+    margin-top: 1rem;
+    max-width: 40rem;
+
+    &-label { font-weight: 700; }
+  }
+
+  &__num {
+    padding-right: 3.33em;
+    width: 10em;
+
+    &-grp {
+      justify-self: start;
+      position: relative;
+    }
+
+    &-type {
+      color: $grey-dark;
+      font-size: .8em;
+      font-style: normal;
+      line-height: 4.8rem;
+      pointer-events: none;
+      position: absolute;
+      right: 1rem;
+      top: 0;
+    }
+    &:disabled + &-type { opacity: .5; }
+  }
+
+  &__radio { grid-column: 2; }
+
+  &__single-note { grid-column: span 2; }
+
+  &__time-grp {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: auto;
+
+    &__input,
+    &__note {
+      display: none;
+      grid-column: 2;
+      margin-top: .5rem;
+    }
+
+    &__label { line-height: 2rem; }
+
+    &__opt {
+      display: grid;
+      grid-gap: 0 1rem;
+      grid-template-columns: auto 1fr;
+    }
+
+    &__radio { grid-column: 1; }
+
+    &__radio:checked ~ &__input,
+    &__radio:checked ~ &__note { display: block; }
+  }
+
+  &__time-label { line-height: 2rem; }
+
+  .c-validation {
+    &__item { font-weight: 400; }
+
+    &__list {
+      display: none;
+
+      &.has-errors { display: block; }
+    }
+  }
+}
