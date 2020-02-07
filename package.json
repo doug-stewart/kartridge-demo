@@ -53,13 +53,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doug-stewart/dou.gg.git"
+    "url": "git+https://github.com/doug-stewart/kartridge-demo.git"
   },
   "keywords": [],
   "author": "Doug Stewart",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/doug-stewart/dou.gg/issues"
+    "url": "https://github.com/doug-stewart/kartridge-demo/issues"
   },
   "homepage": "https://dou.gg/",
   "browserslist": [
