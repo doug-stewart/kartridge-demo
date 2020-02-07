@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react';
-import storefront from '../../public/storefront.json';
+import storefront from '../../public/game/storefront.json';
 
 const initialState = storefront;
 

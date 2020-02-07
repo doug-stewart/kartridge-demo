@@ -1,8 +1,8 @@
 {/* eslint-disable jsx-a11y/anchor-is-valid*/ }
 
 import React from 'react';
-import AvatarBack from '../../assets/images/avatar-back.png';
-import AvatarFront from '../../assets/images/avatar-front.png';
+import AvatarBack from '../../../public/assets/images/avatar-back.png';
+import AvatarFront from '../../../public/assets/images/avatar-front.png';
 
 export default class AppHeader extends React.Component {
   render() {
