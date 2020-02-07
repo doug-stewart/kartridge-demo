@@ -11,7 +11,10 @@ const Header = ({ preview, toggleAction }) => {
   const { themeUpdater } = themeState;
 
   const gameIcon = 'http://www.placekitten.com/500/400';
-  const allScreenshots = podsState.state.items.filter(item => item.images && item.images.length > 0).map(item => item.images).flat();
+  const allScreenshots = podsState.state.items
+    .filter(item => item.images && item.images.length > 0)
+    .map(item => item.images)
+    .flat();
 
   const updateColor = (label, hex) => {
     themeUpdater({ type: 'update', color: label, value: hex });
@@ -35,32 +38,21 @@ const Header = ({ preview, toggleAction }) => {
   return (
     <header className="u-custom__header">
       <div className="u-custom__header-title">
-        <h1 className="u-custom__title">
-          Customize storefront
-        </h1>
+        <h1 className="u-custom__title">Customize storefront</h1>
         <button className="btn--light btn--s u-custom__save-btn" onClick={toggleAction}>
           {preview ? 'Leave Preview' : 'Preview Page'}
         </button>
       </div>
       <div className="u-custom__header-palette">
-        <h2 className="u-custom__header-subtitle">
-          Set your color palette
-        </h2>
+        <h2 className="u-custom__header-subtitle">Set your color palette</h2>
         <ul className="u-custom__palette">
           {Object.keys(themeState.state).map(color => (
-            <ColorPicker
-              key={color}
-              label={color}
-              color={themeState.state[color]}
-              onChange={({ hex }) => updateColor(color, hex)}
-            />
+            <ColorPicker key={color} label={color} color={themeState.state[color]} onChange={({ hex }) => updateColor(color, hex)} />
           ))}
         </ul>
       </div>
       <div className="u-custom__header-screenshots c-filmstrip">
-        <h2 className="c-filmstrip__title u-custom__header-subtitle">
-          Grab color palette from screenshots
-        </h2>
+        <h2 className="c-filmstrip__title u-custom__header-subtitle">Grab color palette from screenshots</h2>
         <div className="c-filmstrip__spacer">
           <ul className="c-filmstrip__list">
             <li className="c-filmstrip__item">
@@ -79,20 +71,14 @@ const Header = ({ preview, toggleAction }) => {
         </div>
       </div>
       <nav className="u-custom__header-btns">
-        <button
-          disabled=""
-          className="btn--purple btn--m u-custom__header-btns__btn"
-          type="submit">
+        <button disabled="" className="btn--purple btn--m u-custom__header-btns__btn" type="submit">
           Save Changes
         </button>
-        <a
-          href="/"
-          role="button"
-          className="btn--light btn--m u-custom__header-btns__btn active">
+        <a href="/" role="button" className="btn--light btn--m u-custom__header-btns__btn active">
           Back / Cancel
         </a>
       </nav>
-    </header >
+    </header>
   );
 };
 

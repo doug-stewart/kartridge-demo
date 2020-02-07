@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 export const SaturationPointer = () => {
-  return (
-    <div className="c-palette__saturation-pointer" />
-  )
-}
+  return <div className="c-palette__saturation-pointer" />;
+};
 
 export default SaturationPointer;

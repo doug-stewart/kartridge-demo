@@ -19,8 +19,9 @@ const Modal = ({ children }) => {
     <div className="c-modal__inner">
       {children}
       <div className="c-modal__overlay" />
-    </div>
-    , content.current);
+    </div>,
+    content.current
+  );
 };
 
 export default Modal;

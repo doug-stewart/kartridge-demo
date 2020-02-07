@@ -8,24 +8,24 @@ const Gallery = ({ layout, images }) => {
   const [image, setImage] = useState('');
   const modal = modalState.state;
 
-  const toggleModal = (image) => {
+  const toggleModal = image => {
     modalUpdater({ type: 'toggle', id: image });
     setImage(image);
-  }
+  };
 
   return (
     <>
       <ul className={`c-media__artwork c-media__artwork--x${layout}`}>
-        {images.map((image, id) =>
+        {images.map((image, id) => (
           <li key={id} className="c-media__art">
             <button className="c-media__art-box" title="View screenshot" onClick={() => toggleModal(image)}>
               <img alt="Pine screenshot" src={image} className="c-media__art-img" />
             </button>
           </li>
-        )}
+        ))}
       </ul>
       {modal.showModal && modal.id === image ? (
-        <ModalContainer >
+        <ModalContainer>
           <div className="m-media__outer">
             <div className="m-media__art">
               <button className="m-media__close" onClick={toggleModal}>
@@ -36,8 +36,8 @@ const Gallery = ({ layout, images }) => {
           </div>
         </ModalContainer>
       ) : null}
-    </ >
+    </>
   );
-}
+};
 
 export default Gallery;

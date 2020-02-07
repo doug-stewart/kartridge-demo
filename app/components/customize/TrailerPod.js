@@ -18,34 +18,18 @@ const TrailerPod = ({ podId }) => {
       <div className="c-trailer__form">
         <label htmlFor={`youtube-input-${podId}`} className="c-trailer__label">
           Add a video, such as a trailer or interview
-          <em className="c-trailer__note">
-            Youtube URL — Make sure you disable ads on your video
-          </em>
+          <em className="c-trailer__note">Youtube URL — Make sure you disable ads on your video</em>
         </label>
-        <input
-          className="c-trailer__url"
-          id={`youtube-input-${podId}`}
-          onChange={(event) => updateTrailer(podId, event.target.value)}
-          type="text"
-          value={youTubePod.url}
-        />
-        {videoId === null &&
+        <input className="c-trailer__url" id={`youtube-input-${podId}`} onChange={event => updateTrailer(podId, event.target.value)} type="text" value={youTubePod.url} />
+        {videoId === null && (
           <ul className="c-validation__list c-trailer__form-errors has-errors">
-            <li className="c-validation__item">
-              Must be a valid YouTube URL
-          </li>
+            <li className="c-validation__item">Must be a valid YouTube URL</li>
           </ul>
-        }
+        )}
       </div>
-      {videoId &&
-        <YouTube
-          containerClassName="c-trailer__preview"
-          className="c-trailer__preview-media"
-          videoId={videoId}
-        />
-      }
+      {videoId && <YouTube containerClassName="c-trailer__preview" className="c-trailer__preview-media" videoId={videoId} />}
     </li>
-  )
-}
+  );
+};
 
 export default TrailerPod;

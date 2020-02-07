@@ -11,16 +11,28 @@ const PodHeader = ({ id }) => {
 
   return (
     <header className="c-media__header">
-      <button className="c-media__move-up" onClick={() => { movePodUp(id) }} />
-      <button className="c-media__move-down" onClick={() => { movePodDown(id) }} />
-      <span className="c-media__drag-label">
-        Drag to re-order
-      </span>
-      <button className="c-media__remove" onClick={() => { removePod(id) }}>
+      <button
+        className="c-media__move-up"
+        onClick={() => {
+          movePodUp(id);
+        }}
+      />
+      <button
+        className="c-media__move-down"
+        onClick={() => {
+          movePodDown(id);
+        }}
+      />
+      <span className="c-media__drag-label">Drag to re-order</span>
+      <button
+        className="c-media__remove"
+        onClick={() => {
+          removePod(id);
+        }}>
         ×
       </button>
     </header>
   );
-}
+};
 
 export default PodHeader;

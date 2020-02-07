@@ -20,38 +20,24 @@ const TextPod = ({ podId }) => {
     <li className="c-media__container c-media__text">
       <PodHeader id={podId} />
       <label htmlFor={`text-${podId}`} className="c-media__text-group">
-        <textarea
-          className="c-media__text-input"
-          id={`text-${podId}`}
-          style={{ height: '94px', overflow: 'hidden' }}
-          onChange={(event) => updateText(podId, event.target.value)}
-          value={textPod.text}
-        />
+        <textarea className="c-media__text-input" id={`text-${podId}`} style={{ height: '94px', overflow: 'hidden' }} onChange={event => updateText(podId, event.target.value)} value={textPod.text} />
         <span className="c-media__text-help">
-          <span className="c-media__text-bold">
-            **bold**
-          </span>
-          <span className="c-media__text-italic">
-            _italic_
-          </span>
-          <span className="c-media__text-list">
-            - list
-          </span>
-          <span className="c-media__text-link">
-            [text](https://www.kartridge.com/)
-          </span>
+          <span className="c-media__text-bold">**bold**</span>
+          <span className="c-media__text-italic">_italic_</span>
+          <span className="c-media__text-list">- list</span>
+          <span className="c-media__text-link">[text](https://www.kartridge.com/)</span>
           <button className="c-media__text-guide" onClick={toggleModal}>
             Markdown Help
           </button>
         </span>
       </label>
       {modal.showModal && modal.id === 'markdown-guide' ? (
-        <ModalContainer >
+        <ModalContainer>
           <MarkdownModal closeModal={toggleModal} />
         </ModalContainer>
       ) : null}
     </li>
-  )
-}
+  );
+};
 
 export default TextPod;
