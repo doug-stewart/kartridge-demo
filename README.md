@@ -16,7 +16,7 @@ For initial project setup, run:
 
 To run the project locally, run:
 
-`npm run build`
+`npm run start`
 
 To build the project for production, run:
 
