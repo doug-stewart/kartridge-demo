@@ -45,10 +45,11 @@
     "stylelint-order": "^3.0.1"
   },
   "scripts": {
-    "build": "parcel build public/index.html -d build/output",
-    "start": "parcel public/index.html",
+    "build": "prettier \"app/**/*.{js,html}\" --write && parcel build public/index.html -d build/output",
+    "clean": "rm -r dist && rm -r .cache",
     "format": "prettier \"app/**/*.{js,html}\" --write",
     "lint": "eslint \"app/**/*.{js,jsx}\" --quiet",
+    "start": "parcel public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
