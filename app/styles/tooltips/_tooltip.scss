@@ -1,5 +1,4 @@
-.c-tooltip,
-.ember-tooltip {
+.c-tooltip {
   background-color: $white;
   border: 1px solid $grey-med;
   border-radius: 3px;
@@ -165,56 +164,4 @@
 
   &-trigger:hover &,
   &.is-persistant { opacity: 1; }
-}
-
-.ember-tooltip {
-  display: block;
-  z-index: 11;
-
-  &::after,
-  &::before { display: none; }
-
-  .ember-tooltip-arrow {
-    background-color: $white;
-    border: 1px solid $white;
-    height: 1.2rem;
-    transform: translate(calc(-50% + .6rem), -50%) rotate(45deg);
-    width: 1.2rem;
-  }
-
-  &[x-placement^="top"] {
-    .ember-tooltip-arrow {
-      border-bottom-right-radius: .3rem;
-      border-color: $white $grey-med $grey-med $white;
-      border-width: 1px;
-      bottom: -1px;
-    }
-  }
-
-  &[x-placement^="right"] {
-    .ember-tooltip-arrow {
-      border-color: $grey-med $grey-med $white $white;
-      border-top-right-radius: .3rem;
-      border-width: 1px;
-      left: -1px;
-    }
-  }
-
-  &[x-placement^="bottom"] {
-    .ember-tooltip-arrow {
-      border-color: $grey-med $white  $white $grey-med;
-      border-top-left-radius: .3rem;
-      border-width: 1px;
-      top: -1px;
-    }
-  }
-
-  &[x-placement^="left"] {
-    .ember-tooltip-arrow {
-      border-bottom-left-radius: .3rem;
-      border-color: $white $white $grey-med $grey-med;
-      border-width: 1px;
-      right: -1px;
-    }
-  }
 }

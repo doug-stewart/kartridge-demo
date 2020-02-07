@@ -49,7 +49,7 @@ const Customize = ({ background, setBackground }) => {
             </ul>
           </div>
           <div className="gp-actions">
-            <span id="ember1030" className="gp-buy ember-view">
+            <span className="gp-buy">
               <button className="gp-buy-btn btn--red btn--xl has-subtag">
                 <strong>Install</strong>
               </button>
