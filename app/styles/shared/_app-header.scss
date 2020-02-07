@@ -247,7 +247,7 @@
       background-color: $mac-red;
 
       &::before {
-        mask: url('/app/assets/icons/mac-close.svg') no-repeat 50% 50%;
+        mask: url('/assets/icons/mac-close.svg') no-repeat 50% 50%;
         mask-size: 4px 4px;
       }
     }
@@ -260,13 +260,13 @@
       background-color: $mac-green;
 
       &::before {
-        mask: url('/app/assets/icons/mac-maximize.svg') no-repeat 50% 50%;
+        mask: url('/assets/icons/mac-maximize.svg') no-repeat 50% 50%;
         mask-size: 6px 6px;
       }
 
       &.maximized {
         &::before {
-          mask: url('/app/assets/icons/mac-demaximize.svg') no-repeat 50% 50%;
+          mask: url('/assets/icons/mac-demaximize.svg') no-repeat 50% 50%;
           mask-size: 10px 10px;
         }
       }
@@ -278,7 +278,7 @@
       background-color: $mac-yellow;
 
       &::before {
-        mask: url('/app/assets/icons/mac-minimize.svg') no-repeat 50% 50%;
+        mask: url('/assets/icons/mac-minimize.svg') no-repeat 50% 50%;
         mask-size: 8px 2px;
       }
     }
@@ -437,7 +437,7 @@
     background-color: $black;
     display: block;
     height: 100%;
-    mask: url('/app/assets/icons/win-menu.svg') no-repeat 50% 50%;
+    mask: url('/assets/icons/win-menu.svg') no-repeat 50% 50%;
     mask-size: 1.2rem .9rem;
     opacity: .66;
     width: 100%;
@@ -494,18 +494,18 @@
 
   &__close {
     &-link {
-      mask: url('/app/assets/icons/win-close.svg') no-repeat 50% 50%;
+      mask: url('/assets/icons/win-close.svg') no-repeat 50% 50%;
       mask-size: 10px 10px;
     }
   }
 
   &__max {
     &-link {
-      mask: url('/app/assets/icons/win-maximize.svg') no-repeat 50% 50%;
+      mask: url('/assets/icons/win-maximize.svg') no-repeat 50% 50%;
       mask-size: 10px 10px;
 
       &.maximized {
-        mask: url('/app/assets/icons/win-demaximize.svg') no-repeat 50% 50%;
+        mask: url('/assets/icons/win-demaximize.svg') no-repeat 50% 50%;
         mask-size: 10px 10px;
       }
     }
@@ -513,7 +513,7 @@
 
   &__min {
     &-link {
-      mask: url('/app/assets/icons/win-minimize.svg') no-repeat 50% 50%;
+      mask: url('/assets/icons/win-minimize.svg') no-repeat 50% 50%;
       mask-size: 10px 2px;
     }
   }
