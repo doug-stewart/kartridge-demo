@@ -11,9 +11,9 @@ const GalleryPod = ({ podId }) => {
   const { podUpdater } = podsState;
   const gallery = podsState.state.items[podId];
 
-  const setImages = list => updater({ type: 'setImages', pod: podId, images: list.items });
-  const addImage = (pod, data) => updater({ type: 'addImage', pod: pod, image: data });
-  const removeImage = (pod, id) => updater({ type: 'removeImage', pod: pod, image: id });
+  const setImages = list => podUpdater({ type: 'setImages', pod: podId, images: list.items });
+  const addImage = (pod, data) => podUpdater({ type: 'addImage', pod: pod, image: data });
+  const removeImage = (pod, id) => podUpdater({ type: 'removeImage', pod: pod, image: id });
 
 
   const processUpload = data => {
