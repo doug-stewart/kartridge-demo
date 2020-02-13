@@ -5,6 +5,7 @@
   "main": ".eslintrc.js",
   "dependencies": {
     "assets": "^3.0.1",
+    "classnames": "^2.2.6",
     "get-image-colors": "^2.0.0",
     "markdown-to-jsx": "^6.10.3",
     "node-vibrant": "^3.1.5",

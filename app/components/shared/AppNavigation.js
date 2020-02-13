@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import classNames from 'classnames';
 import tinycolor from 'tinycolor2';
 import { Theme } from '../../contexts/ThemeContext';
 import NavButton from './NavButton';
@@ -6,9 +7,10 @@ import NavButton from './NavButton';
 const AppNavigation = () => {
   const themeState = useContext(Theme);
   const isLight = tinycolor(themeState.state.a).isLight();
+  const navClasses = classNames('ap-nav', 'ap-nav--desktop', { 'is-light': isLight });
 
   return (
-    <nav className={`ap-nav ap-nav--desktop ${isLight ? 'is-light' : null}`}>
+    <nav className={navClasses}>
       <ul className="ap-nav__list">
         <li className="ap-nav__item">
           <NavButton label="Home" />

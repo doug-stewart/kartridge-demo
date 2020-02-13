@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
 import { ReactSortable } from 'react-sortablejs-typescript';
 import { Pods } from '../../contexts/StorefrontContext';
 import GalleryPod from './GalleryPod';
@@ -33,11 +34,13 @@ const GamePods = () => {
 
   const getGalleryId = () => {
     return galleryId++;
-  }
+  };
+
+  const innerSectionsClasses = classNames('c-feat-pg__sections-inner', 'gp-body', { 'u-custom--dragging': dragging });
 
   return (
     <div className="c-feat-pg__sections" ref={podArea}>
-      <div className={`c-feat-pg__sections-inner gp-body ${dragging ? 'u-custom--dragging' : null}`}>
+      <div className={innerSectionsClasses}>
         <span className="c-key__group u-custom__sections-keys">
           <span className="c-key c-key--d">
             <span className="c-key__color"> </span>
@@ -89,29 +92,29 @@ const GamePods = () => {
             })}
           </ReactSortable>
         ) : (
-            <div className="u-custom__gallery c-media">
-              <div className="u-custom__empty-gallery">
-                <div className="gp-media__trailer" />
-                <div className="gp-media__text c-local-reset">
-                  <p />
-                  <p />
-                  <p />
-                  <p />
-                  <p />
-                </div>
-                <div>
-                  <div className="c-media__artwork c-media__artwork--x2">
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                  </div>
+          <div className="u-custom__gallery c-media">
+            <div className="u-custom__empty-gallery">
+              <div className="gp-media__trailer" />
+              <div className="gp-media__text c-local-reset">
+                <p />
+                <p />
+                <p />
+                <p />
+                <p />
+              </div>
+              <div>
+                <div className="c-media__artwork c-media__artwork--x2">
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
                 </div>
               </div>
             </div>
-          )}
+          </div>
+        )}
       </div>
     </div>
   );
