@@ -150,7 +150,7 @@ const Preview = ({ background }) => {
                 </span>
               </li>
             </ul>
-            {allPods.map((pod) => {
+            {allPods.map(pod => {
               if (pod.type === 'gallery') {
                 return <Gallery key={getPodKey()} layout={pod.layout} images={pod.images} />;
               }
