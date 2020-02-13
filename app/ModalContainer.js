@@ -10,7 +10,7 @@ const Modal = ({ children }) => {
       </div>
     </div>,
     document.getElementById('modal')
-  )
+  );
 };
 
 export default Modal;
