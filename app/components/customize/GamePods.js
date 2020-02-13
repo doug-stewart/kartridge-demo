@@ -30,10 +30,10 @@ const GamePods = () => {
     }
   }, [adding]);
 
-  let galleryId = 1;
+  let podKey = 1;
 
-  const getGalleryId = () => {
-    return galleryId++;
+  const getPodKey = () => {
+    return podKey++;
   };
 
   const innerSectionsClasses = classNames('c-feat-pg__sections-inner', 'gp-body', { 'u-custom--dragging': dragging });
@@ -81,40 +81,40 @@ const GamePods = () => {
           <ReactSortable className="u-custom__gallery c-media" handle=".c-media__drag-label" list={allPods} onEnd={() => setDragging(false)} onStart={() => setDragging(true)} setList={items => reorderPods({ items })} tag="ul">
             {allPods.map((pod, id) => {
               if (pod.type === 'gallery') {
-                return <GalleryPod key={getGalleryId()} podId={id} />;
+                return <GalleryPod key={getPodKey()} podId={id} />;
               }
               if (pod.type === 'trailer') {
-                return <TrailerPod key={getGalleryId()} podId={id} />;
+                return <TrailerPod key={getPodKey()} podId={id} />;
               }
               if (pod.type === 'text') {
-                return <TextPod key={getGalleryId()} podId={id} />;
+                return <TextPod key={getPodKey()} podId={id} />;
               }
             })}
           </ReactSortable>
         ) : (
-          <div className="u-custom__gallery c-media">
-            <div className="u-custom__empty-gallery">
-              <div className="gp-media__trailer" />
-              <div className="gp-media__text c-local-reset">
-                <p />
-                <p />
-                <p />
-                <p />
-                <p />
-              </div>
-              <div>
-                <div className="c-media__artwork c-media__artwork--x2">
-                  <div className="c-media__art" />
-                  <div className="c-media__art" />
-                  <div className="c-media__art" />
-                  <div className="c-media__art" />
-                  <div className="c-media__art" />
-                  <div className="c-media__art" />
+            <div className="u-custom__gallery c-media">
+              <div className="u-custom__empty-gallery">
+                <div className="gp-media__trailer" />
+                <div className="gp-media__text c-local-reset">
+                  <p />
+                  <p />
+                  <p />
+                  <p />
+                  <p />
+                </div>
+                <div>
+                  <div className="c-media__artwork c-media__artwork--x2">
+                    <div className="c-media__art" />
+                    <div className="c-media__art" />
+                    <div className="c-media__art" />
+                    <div className="c-media__art" />
+                    <div className="c-media__art" />
+                    <div className="c-media__art" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
     </div>
   );

@@ -12,6 +12,12 @@ const Preview = ({ background }) => {
   const [viewBg, setViewBg] = useState(false);
   const mainClasses = classNames('c-feat-pg__main', 'gp-main', 'u-custom__preview', { 'is-viewing-bg': viewBg });
 
+  let podKey = 1;
+
+  const getPodKey = () => {
+    return podKey++;
+  };
+
   return (
     <section className={mainClasses}>
       <span
@@ -144,15 +150,15 @@ const Preview = ({ background }) => {
                 </span>
               </li>
             </ul>
-            {allPods.map((pod, id) => {
+            {allPods.map((pod) => {
               if (pod.type === 'gallery') {
-                return <Gallery key={id} layout={pod.layout} images={pod.images} />;
+                return <Gallery key={getPodKey()} layout={pod.layout} images={pod.images} />;
               }
               if (pod.type === 'trailer') {
-                return <Trailer key={id} url={pod.url} />;
+                return <Trailer key={getPodKey()} url={pod.url} />;
               }
               if (pod.type === 'text') {
-                return <Text key={id} text={pod.text} />;
+                return <Text key={getPodKey()} text={pod.text} />;
               }
               return;
             })}
