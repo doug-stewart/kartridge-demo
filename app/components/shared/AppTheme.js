@@ -17,7 +17,7 @@ const AppTheme = () => {
   };
 
   const offset = () => {
-    const lum = tinycolor(themeState.state['d']).getLuminance();
+    const lum = tinycolor(themeState.state['c']).getLuminance();
     return lum > 0.1 ? '0,0,0' : '255,255,255';
   };
 

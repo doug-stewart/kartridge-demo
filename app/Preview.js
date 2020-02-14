@@ -34,7 +34,7 @@ const Preview = ({ background }) => {
         onFocus={() => {
           setViewBg(true);
         }}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30" alt="" height="30px" width="40px">
+        <svg className="c-feat-pg__view-bg__ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 30" alt="" height="30px" width="40px">
           <circle cx="20" cy="14.9" r="5.6" />
           <path d="M0 0v30h40V0H0zm34.9 15.3s-6.4 9.6-14.9 9.6-14.9-9.6-14.9-9.6c-.1-.3-.1-.5 0-.7 0 0 6.4-9.6 14.9-9.6s14.8 9.6 14.8 9.6l.1.1c.1.1.1.4 0 .6z" />
         </svg>
