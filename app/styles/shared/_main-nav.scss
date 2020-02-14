@@ -146,20 +146,6 @@
     text-align: center;
   }
 
-  &__notification {
-    display: none;
-    fill: $red-med;
-    height: .8em;
-    left: .8em;
-    position: absolute;
-    top: .8em;
-    width: .8em;
-
-    &.is-active {
-      display: block;
-    }
-  }
-
   // Unique Buttons
   &__home {
     .ap-nav__ico--dark { background-image: url('/assets/navigation/home-inv-sprite.png'); }
@@ -333,20 +319,6 @@
     &__list {
       flex-direction: column;
       padding-top: 1.71em;
-    }
-
-    &__notification {
-      display: none;
-      fill: $red-med;
-      height: .8em;
-      left: .5em;
-      position: absolute;
-      top: calc(1rem - 4px);
-      width: .8em;
-
-      &.is-active {
-        display: block;
-      }
     }
 
     // Unique Buttons

@@ -247,7 +247,7 @@
       background-color: $mac-red;
 
       &::before {
-        mask: url('/assets/icons/mac-close.svg') no-repeat 50% 50%;
+        mask: url("/assets/icons/mac-close.svg") no-repeat 50% 50%;
         mask-size: 4px 4px;
       }
     }

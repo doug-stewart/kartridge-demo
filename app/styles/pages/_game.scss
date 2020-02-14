@@ -809,13 +809,6 @@
     text-transform: none;
   }
 
-  .c-rating-ctrl {
-    --starColorDefault: transparent;
-    --starColorActive: #{swatch(swatch-f)};
-    --starStrokeColor: #{swatch(swatch-f)};
-    --starStrokeWidth: .4rem;
-  }
-
   &--editable {
     background-color: rgba($grey-darkest, .08);
     background-color: swatch(swatch-e, .08);
@@ -831,20 +824,6 @@
       grid-area: label;
       opacity: .54;
     }
-
-    .c-rating-ctrl {
-      --starColorDefault: transparent;
-      --starColorActive: #{swatch(swatch-e)};
-      --starStrokeColor: #{swatch(swatch-e)};
-      --starStrokeWidth: .6rem;
-
-      grid-area: rating;
-      margin-top: 1rem;
-      max-width: 12rem;
-      pointer-events: none;
-    }
-
-    .c-rating-ctrl__btn { padding: 0 .2rem; }
   }
 }
 
@@ -1192,11 +1171,6 @@
         inset 0 -.4rem 0 $red-dark;
     }
 
-    .c-spinner--sml {
-      border-width: 2px;
-      margin: .2rem;
-    }
-
     .is-viewing-bg & { opacity: 0; }
   }
 
@@ -1309,11 +1283,7 @@
     grid-template-columns: 50% 50%;
   }
 
-  .gp-rating-pickle--editable {
-    grid-template: 'label rating button' auto / max-content 1fr min-content;
-
-    .c-rating-ctrl { margin: 0 2rem; }
-  }
+  .gp-rating-pickle--editable { grid-template: 'label rating button' auto / max-content 1fr min-content; }
 
   .gp-title {
     .btn-ico-action { font-size: 2rem; }
