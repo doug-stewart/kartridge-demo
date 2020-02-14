@@ -44,6 +44,18 @@ const Preview = ({ background }) => {
           <span className="gp-name-txt">Test Game</span>
         </h1>
         <div className="gp-meta">
+          <ul className="gp-platforms c-platforms">
+            <li className="c-platform">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.5 100" alt="Windows" className="c-platform-ico c-platform-ico--win" height="100px" width="100px">
+                <path d="M.1 48V14.2l40.8-5.5v39zM45.7 47.8V8.2L99.4 0v47.3zM.1 52v33.8L41 91.3V51.8zM45.7 52.1v40.2l53.8 7.7V52.4z"></path>
+              </svg>
+            </li>
+            <li className="c-platform">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 100" alt="Mac OS" className="c-platform-ico c-platform-ico--mac" height="100px" width="100px">
+                <path d="M82.5 77.9c-1.5 3.5-3.3 6.7-5.4 9.7-2.8 4-5.1 6.8-6.9 8.4-2.8 2.5-5.7 3.8-8.9 3.9-2.3 0-5-.6-8.2-2-3.2-1.3-6.2-2-8.9-2-2.8 0-5.9.6-9.1 2-3.2 1.3-5.9 2-7.9 2.1-3 .1-6.1-1.2-9.1-4-1.9-1.7-4.3-4.6-7.2-8.7-3.1-4.4-5.7-9.4-7.7-15.2C1.1 65.8 0 59.8 0 54c0-6.7 1.4-12.5 4.3-17.3 2.3-3.9 5.3-7 9.1-9.2s7.9-3.4 12.3-3.5c2.4 0 5.6.7 9.5 2.2 3.9 1.5 6.4 2.2 7.6 2.2.8 0 3.6-.9 8.4-2.6 4.5-1.6 8.3-2.3 11.4-2 8.4.7 14.7 4 18.9 10-7.5 4.5-11.2 10.9-11.1 19 .1 6.4 2.4 11.7 6.9 15.9 2.1 2 4.4 3.5 6.9 4.5-.5 1.7-1.1 3.2-1.7 4.7zM63.2 2c0 5-1.8 9.7-5.5 14-4.4 5.1-9.7 8.1-15.5 7.6-.1-.6-.1-1.2-.1-1.9 0-4.8 2.1-9.9 5.8-14.1 1.9-2.1 4.2-3.9 7.1-5.3C57.9.9 60.5.1 63.1 0c0 .7.1 1.3.1 2z"></path>
+              </svg>
+            </li>
+          </ul>
           <ul className="c-tags gp-tags">
             <li className="c-tag c-tooltip__trigger">
               DRM Free
