@@ -12,12 +12,24 @@
       "type": "gallery",
       "layout": 3,
       "images": [
-        "screenshot-01.jpg",
-        "screenshot-02.jpg",
-        "screenshot-03.jpg",
-        "screenshot-04.jpg",
-        "screenshot-05.jpg",
-        "screenshot-06.jpg"
+        {
+          "image": "screenshot-01.jpg"
+        },
+        {
+          "image": "screenshot-02.jpg"
+        },
+        {
+          "image": "screenshot-03.jpg"
+        },
+        {
+          "image": "screenshot-04.jpg"
+        },
+        {
+          "image": "screenshot-05.jpg"
+        },
+        {
+          "image": "screenshot-06.jpg"
+        }
       ]
     },
     {
@@ -28,10 +40,18 @@
       "type": "gallery",
       "layout": 2,
       "images": [
-        "screenshot-07.jpg",
-        "screenshot-08.jpg",
-        "screenshot-09.jpg",
-        "screenshot-10.jpg"
+        {
+          "image": "screenshot-07.jpg"
+        },
+        {
+          "image": "screenshot-08.jpg"
+        },
+        {
+          "image": "screenshot-09.jpg"
+        },
+        {
+          "image": "screenshot-10.jpg"
+        }
       ]
     }
   ]

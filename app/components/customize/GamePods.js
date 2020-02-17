@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
-import { ReactSortable } from 'react-sortablejs-typescript';
+import { ReactSortable } from 'react-sortablejs';
 import { Pods } from '../../contexts/StorefrontContext';
 import GalleryPod from './GalleryPod';
 import TextPod from './TextPod';

@@ -60,10 +60,10 @@ const Header = ({ preview, toggleAction }) => {
                 <img alt="" src={gameIcon} className="c-filmstrip__img" />
               </button>
             </li>
-            {allScreenshots.map((image, id) => (
-              <li key={id} className="c-filmstrip__item">
-                <button className="c-filmstrip__btn" onClick={() => generatePalette(image)}>
-                  <img alt="" src={image} className="c-filmstrip__img" />
+            {allScreenshots.map(item => (
+              <li key={item.image} className="c-filmstrip__item">
+                <button className="c-filmstrip__btn" onClick={() => generatePalette(item.image)}>
+                  <img alt="" src={item.image} className="c-filmstrip__img" />
                 </button>
               </li>
             ))}
