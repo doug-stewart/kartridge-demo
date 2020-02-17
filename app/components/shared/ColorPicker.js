@@ -9,8 +9,8 @@ const ColorPicker = ({ hsl, hsv, hex, label, onChange }) => {
   const [shows, toggleShow] = useState(false);
 
   return (
-    <OutsideClickHandler onOutsideClick={() => toggleShow(false)}>
-      <li className="u-custom__swatch">
+    <li className="u-custom__swatch">
+      <OutsideClickHandler onOutsideClick={() => toggleShow(false)}>
         <button className="c-palette" onClick={() => toggleShow(!shows)}>
           <span className="c-palette__color" style={{ backgroundColor: hex }} />
           <span className="c-palette__title">{label.toLocaleUpperCase()}</span>
@@ -29,8 +29,8 @@ const ColorPicker = ({ hsl, hsv, hex, label, onChange }) => {
             </div>
           </div>
         )}
-      </li>
-    </OutsideClickHandler>
+      </OutsideClickHandler>
+    </li>
   );
 };
 

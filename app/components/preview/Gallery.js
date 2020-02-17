@@ -9,6 +9,7 @@ const Gallery = ({ layout, images }) => {
   const modal = modalState.state;
 
   const toggleModal = image => {
+    console.log('close modal');
     modalUpdater({ type: 'toggle', id: image });
     setImage(image);
   };
@@ -25,7 +26,7 @@ const Gallery = ({ layout, images }) => {
         ))}
       </ul>
       {modal.showModal && modal.id === image ? (
-        <ModalContainer>
+        <ModalContainer close={toggleModal}>
           <div className="m-media__outer">
             <div className="m-media__art">
               <button className="m-media__close" onClick={toggleModal}>
