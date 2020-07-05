@@ -3,8 +3,8 @@ import { useDropzone } from 'react-dropzone';
 
 const Dropzone = ({ returner, children, classes }) => {
   const onDrop = useCallback(
-    files => {
-      files.forEach(file => {
+    (files) => {
+      files.forEach((file) => {
         const reader = new FileReader();
 
         reader.onabort = () => console.error('file reading was aborted');

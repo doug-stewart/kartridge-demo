@@ -8,16 +8,16 @@ const Gallery = ({ layout, images }) => {
   const [image, setImage] = useState('');
   const modal = modalState.state;
 
-  const toggleModal = image => {
+  const toggleModal = (image) => {
     console.log('close modal');
-    modalUpdater({ type: 'toggle', id: image });
+    modalUpdater({ type: 'TOGGLE', id: image });
     setImage(image);
   };
 
   return (
     <>
       <ul className={`c-media__artwork c-media__artwork--x${layout}`}>
-        {images.map(item => (
+        {images.map((item) => (
           <li key={item.image} className="c-media__art">
             <button className="c-media__art-box" title="View screenshot" onClick={() => toggleModal(item.image)}>
               <img alt="Pine screenshot" src={item.image} className="c-media__art-img" />

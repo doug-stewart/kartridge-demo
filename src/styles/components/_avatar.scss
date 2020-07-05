@@ -1,6 +1,11 @@
 @keyframes avatar-animation {
-  from { transform: translateY(0); }
-  to { transform: translateY(-91.666666667%); }
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-91.666666667%);
+  }
 }
 
 .c-avatar {
@@ -30,11 +35,16 @@
     width: 2.2rem;
   }
 
-  &__background { z-index: 1; }
-  &__character { z-index: 2; }
+  &__background {
+    z-index: 1;
+  }
+
+  &__character {
+    z-index: 2;
+  }
 
   &__media {
-    animation: .8s steps(11) avatar-animation;
+    animation: 0.8s steps(11) avatar-animation;
     animation-play-state: paused;
     background-position: 0 0;
     background-repeat: repeat-y;

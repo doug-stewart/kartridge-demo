@@ -16,10 +16,10 @@ const GamePods = () => {
   const [adding, setAdding] = useState(false);
   const [dragging, setDragging] = useState(false);
 
-  const reorderPods = (pods) => podUpdater({ type: 'reorderPods', pods: pods });
+  const reorderPods = (pods) => podUpdater({ type: 'REORDER_PODS', pods: pods });
 
   const addPod = () => {
-    podUpdater({ type: 'addPod', kind: kind });
+    podUpdater({ type: 'ADD_POD', kind: kind });
     setAdding(true);
   };
 

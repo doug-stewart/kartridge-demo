@@ -17,7 +17,7 @@ const Header = ({ preview, toggleAction }) => {
     .flat();
 
   const updateColor = (label, hex) => {
-    themeUpdater({ type: 'update', color: label, value: hex });
+    themeUpdater({ type: 'UPDATE', color: label, value: hex });
   };
 
   async function generatePalette(src) {
@@ -27,12 +27,12 @@ const Header = ({ preview, toggleAction }) => {
 
     const palette = await Vibrant.from(image).getPalette();
 
-    themeUpdater({ type: 'update', color: 'a', value: tinycolor(palette.Vibrant).toHex() });
-    themeUpdater({ type: 'update', color: 'b', value: tinycolor(palette.DarkMuted).toHex() });
-    themeUpdater({ type: 'update', color: 'c', value: tinycolor(palette.Muted).toHex() });
-    themeUpdater({ type: 'update', color: 'd', value: tinycolor(palette.DarkVibrant).toHex() });
-    themeUpdater({ type: 'update', color: 'e', value: tinycolor(palette.Muted).toHex() });
-    themeUpdater({ type: 'update', color: 'f', value: tinycolor(palette.LightMuted).toHex() });
+    themeUpdater({ type: 'UPDATE', color: 'a', value: tinycolor(palette.Vibrant).toHex() });
+    themeUpdater({ type: 'UPDATE', color: 'b', value: tinycolor(palette.DarkMuted).toHex() });
+    themeUpdater({ type: 'UPDATE', color: 'c', value: tinycolor(palette.Muted).toHex() });
+    themeUpdater({ type: 'UPDATE', color: 'd', value: tinycolor(palette.DarkVibrant).toHex() });
+    themeUpdater({ type: 'UPDATE', color: 'e', value: tinycolor(palette.Muted).toHex() });
+    themeUpdater({ type: 'UPDATE', color: 'f', value: tinycolor(palette.LightMuted).toHex() });
   }
 
   return (

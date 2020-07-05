@@ -8,7 +8,9 @@
   flex: 0 0 auto;
   justify-content: center;
 
-  &:not(:first-child) { margin-left: .5ch; }
+  &:not(:first-child) {
+    margin-left: 0.5ch;
+  }
 }
 
 .c-platform-ico {
@@ -22,8 +24,10 @@
 
   &--mac {
     height: 1.2em;
-    transform: translateY(-.1em);
+    transform: translateY(-0.1em);
   }
 
-  &--web { width: .85em; }
+  &--web {
+    width: 0.85em;
+  }
 }

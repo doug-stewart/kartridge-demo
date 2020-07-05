@@ -3,31 +3,43 @@
   position: relative;
 
   &--a {
-    .c-key__color { background-color: swatch(swatch-a); }
+    .c-key__color {
+      background-color: swatch(swatch-a);
+    }
   }
 
   &--b {
-    .c-key__color { background-color: swatch(swatch-b); }
+    .c-key__color {
+      background-color: swatch(swatch-b);
+    }
   }
 
   &--c {
-    .c-key__color { color: swatch(swatch-c); }
+    .c-key__color {
+      color: swatch(swatch-c);
+    }
   }
 
   &--d {
-    .c-key__color { background-color: swatch(swatch-d); }
+    .c-key__color {
+      background-color: swatch(swatch-d);
+    }
   }
 
   &--e {
-    .c-key__color { color: swatch(swatch-e); }
+    .c-key__color {
+      color: swatch(swatch-e);
+    }
   }
 
   &--f {
-    .c-key__color { color: swatch(swatch-f); }
+    .c-key__color {
+      color: swatch(swatch-f);
+    }
   }
 
   &__color {
-    border: .2rem solid $red-dark;
+    border: 0.2rem solid $red-dark;
     border-radius: 1.2rem;
     display: block;
     font-size: 1.1rem;
@@ -44,7 +56,7 @@
     bottom: 0;
     color: $white;
     display: block;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 700;
     line-height: 1.2rem;
     position: absolute;

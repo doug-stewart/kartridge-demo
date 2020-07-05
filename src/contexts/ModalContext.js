@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react';
 
 const initialState = {
   showModal: false,
-  id: ''
+  id: '',
 };
 
 const Modal = createContext(initialState);
@@ -10,7 +10,7 @@ const { Provider } = Modal;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'toggle':
+    case 'TOGGLE':
       return { showModal: !state.showModal, id: action.id };
     default:
       throw new Error();

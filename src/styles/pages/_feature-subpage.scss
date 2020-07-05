@@ -8,7 +8,7 @@
     pointer-events: none;
     position: absolute;
     top: 0;
-    transition: transform .24s $curve;
+    transition: transform 0.24s $curve;
     width: 100%;
     will-change: transform;
     z-index: 0;
@@ -33,7 +33,7 @@
       top: 50%;
       transform: translate(-50%, -50%);
       transform-origin: 0 0;
-      transition: transform .24s $curve;
+      transition: transform 0.24s $curve;
       width: 0;
       z-index: 0;
     }
@@ -50,21 +50,25 @@
     padding: 1rem 2rem;
     z-index: 2;
 
-    .c-ctrls__ctrl { margin-bottom: 0; }
+    .c-ctrls__ctrl {
+      margin-bottom: 0;
+    }
   }
 
   &__footer {
     border-top: 1px solid $purple-lighter;
-    box-shadow: 0 -.4rem 0 rgba($grey-darker, .1);
+    box-shadow: 0 -0.4rem 0 rgba($grey-darker, 0.1);
     grid-area: footer;
   }
 
   &__header {
     border-bottom: 1px solid $purple-lighter;
-    box-shadow: 0 .4rem 0 rgba($grey-darker, .1);
+    box-shadow: 0 0.4rem 0 rgba($grey-darker, 0.1);
     grid-area: header;
 
-    &-title { font-size: 1.8rem; }
+    &-title {
+      font-size: 1.8rem;
+    }
   }
 
   &__main {
@@ -77,7 +81,9 @@
     width: 100%;
     z-index: 0;
 
-    .is-viewing-bg & { overflow: hidden; }
+    .is-viewing-bg & {
+      overflow: hidden;
+    }
 
     @supports (display: grid) {
       display: grid;
@@ -97,41 +103,21 @@
   }
 
   &__overlay {
-    background-image:
-      radial-gradient(
-        70vw 44rem at calc(50% - 20rem) top,
-        rgba($purple-med, .5) 0,
-        rgba($purple-med, 0) 100%
-      ),
-      linear-gradient(
-        to bottom,
-        rgba($grey-darkest, 0) 32rem,
-        $grey-darkest calc(100% - 10px)
-      );
-    background-image:
-      radial-gradient(
-        70vw 44rem at calc(50% - 20rem) top,
-        swatch(swatch-b, .5) 0,
-        swatch(swatch-b, 0) 100%
-      ),
-      linear-gradient(
-        to bottom,
-        swatch(swatch-d, 0) 32rem,
-        swatch(swatch-d) calc(100% - 10px)
-      );
+    background-image: radial-gradient(70vw 44rem at calc(50% - 20rem) top, rgba($purple-med, 0.5) 0, rgba($purple-med, 0) 100%), linear-gradient(to bottom, rgba($grey-darkest, 0) 32rem, $grey-darkest calc(100% - 10px));
+    background-image: radial-gradient(70vw 44rem at calc(50% - 20rem) top, swatch(swatch-b, 0.5) 0, swatch(swatch-b, 0) 100%), linear-gradient(to bottom, swatch(swatch-d, 0) 32rem, swatch(swatch-d) calc(100% - 10px));
     background-position: 0 0;
     background-size: 100% 100%;
     height: calc(100% + 20px);
     left: -10px;
     position: absolute;
     top: -10px;
-    transition: opacity .12s $curve;
+    transition: opacity 0.12s $curve;
     width: calc(100% + 20px);
     z-index: 1;
 
     .is-viewing-bg & {
       opacity: 0;
-      transition-delay: .24s;
+      transition-delay: 0.24s;
     }
   }
 
@@ -148,16 +134,16 @@
     min-height: 100%;
     position: relative;
     transform-origin: 0 0;
-    transition: transform .24s $curve;
+    transition: transform 0.24s $curve;
     will-change: transform;
     z-index: 1;
 
-    @media (min-width: $mobile-flip) { max-width: 712px; }
+    @media (min-width: $mobile-flip) {
+      max-width: 712px;
+    }
 
     &-inner {
-      box-shadow:
-        0 0 1px rgba($black, .2),
-        0 0 0 2px rgba($black, .3);
+      box-shadow: 0 0 1px rgba($black, 0.2), 0 0 0 2px rgba($black, 0.3);
       height: auto;
       min-height: 100%;
     }
@@ -167,7 +153,9 @@
       top: 0;
     }
 
-    .is-viewing-bg & { transform: translateY(8rem); }
+    .is-viewing-bg & {
+      transform: translateY(8rem);
+    }
   }
 
   &__tab {
@@ -186,7 +174,7 @@
       font-size: 3em;
       font-weight: 400;
       justify-content: center;
-      padding: .3em 0 .8em;
+      padding: 0.3em 0 0.8em;
     }
   }
 
@@ -208,16 +196,20 @@
     form,
     input,
     label,
-    [role="button"] { pointer-events: all; }
+    [role='button'] {
+      pointer-events: all;
+    }
 
     a,
     button,
-    [role="button"] { position: relative; }
+    [role='button'] {
+      position: relative;
+    }
   }
 
   &__view-bg {
     border-radius: 3px;
-    box-shadow: 0 0 0 1px swatch(header-offset, .14);
+    box-shadow: 0 0 0 1px swatch(header-offset, 0.14);
     cursor: pointer;
     overflow: hidden;
     position: absolute;
@@ -226,7 +218,7 @@
     z-index: 4;
 
     &__ico {
-      background-color: swatch(header-offset, .12);
+      background-color: swatch(header-offset, 0.12);
       display: block;
       fill: $white;
       fill: swatch(swatch-c);
@@ -240,7 +232,9 @@
       width: 24rem;
     }
 
-    &:hover { opacity: 1; }
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -277,28 +271,8 @@
     }
 
     &__overlay {
-      background-image:
-        radial-gradient(
-          70vw 44rem at calc(50% - 20rem) top,
-          rgba($purple-med, .5) 0,
-          rgba($purple-med, 0) 100%
-        ),
-        linear-gradient(
-          to right,
-          rgba($grey-darkest, 0) calc(100% - 35rem),
-          $grey-darkest calc(100% - 10px)
-        );
-      background-image:
-        radial-gradient(
-          70vw 44rem at calc(50% - 20rem) top,
-          swatch(swatch-b, .5) 0,
-          swatch(swatch-b, 0) 100%
-        ),
-        linear-gradient(
-          to right,
-          swatch(swatch-d, 0) calc(100% - 35rem),
-          swatch(swatch-d) calc(100% - 10px)
-        );
+      background-image: radial-gradient(70vw 44rem at calc(50% - 20rem) top, rgba($purple-med, 0.5) 0, rgba($purple-med, 0) 100%), linear-gradient(to right, rgba($grey-darkest, 0) calc(100% - 35rem), $grey-darkest calc(100% - 10px));
+      background-image: radial-gradient(70vw 44rem at calc(50% - 20rem) top, swatch(swatch-b, 0.5) 0, swatch(swatch-b, 0) 100%), linear-gradient(to right, swatch(swatch-d, 0) calc(100% - 35rem), swatch(swatch-d) calc(100% - 10px));
     }
 
     &__sections {
@@ -332,30 +306,49 @@
 
   .is-viewing-bg {
     .c-feat-pg {
-      &__bg { transform: translateX(0); }
-      &__sections { transform: translateX(46.2rem); }
+      &__bg {
+        transform: translateX(0);
+      }
+
+      &__sections {
+        transform: translateX(46.2rem);
+      }
     }
   }
 }
 
 @include media-query('min-width', 1260px) {
   .c-feat-pg {
-    &__bg { transform: translateX(-30rem); }
-    &__main { --sections-width: 60rem; }
+    &__bg {
+      transform: translateX(-30rem);
+    }
+
+    &__main {
+      --sections-width: 60rem;
+    }
   }
 
   .is-viewing-bg {
-    .c-feat-pg__sections { transform: translateX(51.2rem); }
+    .c-feat-pg__sections {
+      transform: translateX(51.2rem);
+    }
   }
 }
 
 @include media-query('min-width', 1360px) {
   .c-feat-pg {
-    &__bg { transform: translateX(-35rem); }
-    &__main { --sections-width: 70rem; }
+    &__bg {
+      transform: translateX(-35rem);
+    }
+
+    &__main {
+      --sections-width: 70rem;
+    }
   }
 
   .is-viewing-bg {
-    .c-feat-pg__sections { transform: translateX(61.2rem); }
+    .c-feat-pg__sections {
+      transform: translateX(61.2rem);
+    }
   }
 }

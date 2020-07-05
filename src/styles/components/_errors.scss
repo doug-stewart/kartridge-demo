@@ -2,19 +2,27 @@
   &__item {
     color: $red-med;
     font-weight: 500;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 
-    &.is-valid { color: $green-med; }
+    &.is-valid {
+      color: $green-med;
+    }
 
-    p { margin-top: 1rem; }
+    p {
+      margin-top: 1rem;
+    }
 
     &:first-child,
-    p:first-child { margin-top: 0; }
+    p:first-child {
+      margin-top: 0;
+    }
   }
 
   &__list {
     display: none;
 
-    &.has-errors { display: block; }
+    &.has-errors {
+      display: block;
+    }
   }
 }

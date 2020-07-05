@@ -7,77 +7,77 @@ const Pods = createContext(initialState);
 const { Provider } = Pods;
 
 const reducer = (state, action) => {
-  console.log('reducer');
-
+  let temp = { ...state };
   switch (true) {
     // Pod Management
-    case action.type === 'movePodDown': {
-      const downer = state.items[action.pod];
-      state.items.splice(action.pod, 1);
-      state.items.splice(action.pod + 1, 0, downer);
-      return { ...state };
-    }
-
-    case action.type === 'movePodUp': {
-      const upper = state.items[action.pod];
-      state.items.splice(action.pod, 1);
-      state.items.splice(action.pod - 1, 0, upper);
-      return { ...state };
-    }
-
-    case action.type === 'removePod':
-      state.items.splice(action.pod, 1);
-      return { ...state };
-
-    case action.type === 'reorderPods':
+    case action.type === 'REORDER_PODS':
       return action.pods;
 
+    case action.type === 'REMOVE_POD':
+      temp.items.splice(action.pod, 1);
+      return { ...temp };
+
+    case action.type === 'MOVE_POD_DOWN': {
+      const downer = temp.items[action.pod];
+      temp.items.splice(action.pod, 1);
+      temp.items.splice(action.pod + 1, 0, downer);
+      return { ...temp };
+    }
+
+    case action.type === 'MOVE_POD_UP': {
+      const upper = temp.items[action.pod];
+      temp.items.splice(action.pod, 1);
+      temp.items.splice(action.pod - 1, 0, upper);
+      return { ...temp };
+    }
+
     // Gallery Pod
-    case action.type === 'addPod' && action.kind === 'gallery':
-      state.items.push({ type: 'gallery', layout: 2, images: [] });
-      return { ...state };
+    case action.type === 'ADD_POD' && action.kind === 'gallery':
+      temp.items.push({ type: 'gallery', layout: 2, images: [] });
+      return { ...temp };
 
-    case action.type === 'setLayout':
-      state.items[action.pod].layout = action.layout;
-      return { ...state };
+    case action.type === 'SET_LAYOUT':
+      temp.items[action.pod].layout = action.layout;
+      return { ...temp };
 
-    case action.type === 'setImages':
-      state.items[action.pod].images = action.images;
-      return { ...state };
+    case action.type === 'SET_IMAGE':
+      temp.items[action.pod].images = action.images;
+      return { ...temp };
 
-    case action.type === 'addImage':
-      state.items[action.pod].images.push({ image: action.image.data });
-      return { ...state };
+    case action.type === 'ADD_IMAGE':
+      temp.items[action.pod].images.push({ image: action.image.data });
+      return { ...temp };
 
-    case action.type === 'removeImage': {
-      const gallery = state.items[action.pod].images;
+    case action.type === 'REMOVE_IMAGE': {
+      const gallery = temp.items[action.pod].images;
       const index = gallery.findIndex((item) => item.image === action.image);
 
       gallery.splice(index, 1);
-      return { ...state };
+      return { ...temp };
     }
 
     // Text Pod
-    case action.type === 'addPod' && action.kind === 'text':
-      state.items.push({ type: 'text', value: '' });
-      return { ...state };
+    case action.type === 'ADD_POD' && action.kind === 'text':
+      temp.items.push({ type: 'text', value: '' });
+      return { ...temp };
 
-    case action.type === 'updateText':
-      state.items[action.pod].text = action.text;
-      return { ...state };
+    case action.type === 'UPDATE_TEXT':
+      temp.items[action.pod].text = action.text;
+      return { ...temp };
 
     // Trailer Pod
-    case action.type === 'addPod' && action.kind === 'trailer':
-      state.items.push({ type: 'trailer', url: '' });
-      return { ...state };
+    case action.type === 'ADD_POD' && action.kind === 'trailer':
+      temp.items.push({ type: 'trailer', url: '' });
+      return { ...temp };
 
-    case action.type === 'updateTrailer':
-      state.items[action.pod].url = action.url;
-      return { ...state };
+    case action.type === 'UPDATE_TRAILER':
+      temp.items[action.pod].url = action.url;
+      return { ...temp };
 
     // Bork
     default:
-      return { ...state };
+      console.error('StorefrontContext: Reducer was called without an `action` argument.');
+      return { ...temp };
   }
 };
 

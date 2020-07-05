@@ -2,14 +2,12 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  transition:
-    background-color .16s $curve,
-    box-shadow .16s $curve,
-    color .16s $curve,
-    opacity .16s $curve;
+  transition: background-color 0.16s $curve, box-shadow 0.16s $curve, color 0.16s $curve, opacity 0.16s $curve;
 
   &:disabled,
-  &.disabled { opacity: 1; }
+  &.disabled {
+    opacity: 1;
+  }
 
   &__art {
     display: block;
@@ -31,12 +29,16 @@
   &--add {
     display: block;
 
-    .is-added:hover > & { display: none; }
+    .is-added:hover > & {
+      display: none;
+    }
   }
 
   &--remove {
     display: none;
 
-    .is-added:hover > & { display: block; }
+    .is-added:hover > & {
+      display: block;
+    }
   }
 }

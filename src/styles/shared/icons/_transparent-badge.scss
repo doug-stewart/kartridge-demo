@@ -1,5 +1,13 @@
 .ico-more-games-badges {
-  &__shadow { fill: $yellow-darker; }
-  &__base { fill: rgba($black, .4); }
-  &__border { fill: $yellow-med; }
+  &__shadow {
+    fill: $yellow-darker;
+  }
+
+  &__base {
+    fill: rgba($black, 0.4);
+  }
+
+  &__border {
+    fill: $yellow-med;
+  }
 }

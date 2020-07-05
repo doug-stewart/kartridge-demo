@@ -9,13 +9,13 @@
   &--feat,
   &--linked {
     background-color: $grey-light;
-    color: rgba($black, .6);
+    color: rgba($black, 0.6);
     display: block;
-    fill: rgba($black, .6);
+    fill: rgba($black, 0.6);
     float: left;
     font: 1.3rem/1.31 $roboto-cond-family;
-    margin: 0 .15em .15em 0;
-    padding: 0 .38em;
+    margin: 0 0.15em 0.15em 0;
+    padding: 0 0.38em;
     text-transform: uppercase;
     white-space: nowrap;
   }
@@ -33,14 +33,14 @@
 
   &__ico {
     fill: inherit;
-    height: .8em;
-    margin-left: .1em;
+    height: 0.8em;
+    margin-left: 0.1em;
     width: auto;
   }
 
   &__link {
     color: inherit;
-    padding: 0 .38em;
+    padding: 0 0.38em;
     text-decoration: none;
   }
 
@@ -50,7 +50,9 @@
     fill: $white;
   }
 
-  &--linked { padding: 0; }
+  &--linked {
+    padding: 0;
+  }
 }
 
 .c-tags--inline {
@@ -67,9 +69,11 @@
 
     &:not(:last-child)::after {
       content: ',';
-      margin-left: -.33ch;
+      margin-left: -0.33ch;
     }
 
-    &__link { padding: 0; }
+    &__link {
+      padding: 0;
+    }
   }
 }

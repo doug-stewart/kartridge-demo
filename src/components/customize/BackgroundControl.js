@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Dropzone from './Dropzone';
 
 const BackgroundControl = ({ background, setBackground }) => {
-  const updateBackground = data => {
+  const updateBackground = (data) => {
     if (data.type.includes('video/') || data.type.includes('image/')) {
       setBackground(data);
     } else {
@@ -23,7 +23,7 @@ const BackgroundControl = ({ background, setBackground }) => {
       <div className="c-bgctrl__option-image">
         <div className={bgCtrlClasses}>
           <span className="c-bgctrl__txt">Upload a video or image</span>
-          <em className="c-bgctrl__note">Minimum 720p. JPG, GIF, PNG, or MP4 recomended.</em>
+          <em className="c-bgctrl__note">Minimum 720p. JPG, GIF, PNG, or MP4 recommended.</em>
           <Dropzone classes="c-upload has-preview" returner={updateBackground}>
             {background.name === '' ? (
               <span className="c-upload__info">

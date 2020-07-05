@@ -8,13 +8,18 @@
   overflow: auto;
   position: fixed;
   right: 0;
-  scrollbar-color: rgba($white, .24) transparent;
+  scrollbar-color: rgba($white, 0.24) transparent;
   top: 0;
   z-index: 11;
 
   &::-webkit-scrollbar {
-    &-thumb { background-color: rgba($white, .24); }
-    &-track { background-color: transparent; }
+    &-thumb {
+      background-color: rgba($white, 0.24);
+    }
+
+    &-track {
+      background-color: transparent;
+    }
   }
 
   &__btn-close {
@@ -31,10 +36,12 @@
     text-align: center;
     top: 0;
     transform: translate(33.333%, -33.333%);
-    transition: background-color .2s ease;
+    transition: background-color 0.2s ease;
     width: 3.5rem;
 
-    &:hover { background-color: $grey-darker; }
+    &:hover {
+      background-color: $grey-darker;
+    }
   }
 
   &__content {
@@ -57,7 +64,7 @@
   }
 
   &__overlay {
-    background-color: rgba($black, .7);
+    background-color: rgba($black, 0.7);
     bottom: 0;
     left: 0;
     position: fixed;

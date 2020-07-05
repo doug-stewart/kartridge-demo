@@ -12,7 +12,9 @@
     height: 100%;
     min-width: 58px;
 
-    &:last-child { margin-right: 0; }
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__link {
@@ -24,14 +26,7 @@
     z-index: 0;
 
     &::after {
-      background-image:
-        repeating-linear-gradient(
-          to bottom,
-          $grey-lighter 0,
-          $grey-lighter 1px,
-          $grey-light 1px,
-          $grey-light 2px
-        );
+      background-image: repeating-linear-gradient(to bottom, $grey-lighter 0, $grey-lighter 1px, $grey-light 1px, $grey-light 2px);
       bottom: 0;
       content: '';
       left: 0;
@@ -39,13 +34,15 @@
       position: absolute;
       right: 0;
       top: 0;
-      transition: opacity .2s ease;
+      transition: opacity 0.2s ease;
       z-index: 0;
     }
 
     &:hover,
     &.is-active {
-      &::after { opacity: 1; }
+      &::after {
+        opacity: 1;
+      }
     }
   }
 
@@ -57,9 +54,9 @@
   }
 
   &__status {
-    font-size: .9rem;
+    font-size: 0.9rem;
     left: 50%;
-    opacity: .8;
+    opacity: 0.8;
     position: absolute;
     text-align: center;
     text-decoration: none;
@@ -67,10 +64,14 @@
     transform: translate(-1.2em, -50%);
     z-index: 2;
 
-    @at-root .has-notifications & { color: $red-med; }
+    @at-root .has-notifications & {
+      color: $red-med;
+    }
   }
 
-  .is-hidden { display: none; }
+  .is-hidden {
+    display: none;
+  }
 }
 
 .ap-meta-ico {
@@ -79,35 +80,61 @@
   z-index: 2;
 
   &,
-  & * { transition: fill .16s $curve; }
+  & * {
+    transition: fill 0.16s $curve;
+  }
 
   &__star,
   &__square {
     opacity: 0;
-    transition: opacity .16s $curve;
+    transition: opacity 0.16s $curve;
   }
 
   &__star {
-    .is-high-priority & { opacity: 1; }
+    .is-high-priority & {
+      opacity: 1;
+    }
   }
 
   &__square {
-    .is-low-priority & { opacity: 1; }
+    .is-low-priority & {
+      opacity: 1;
+    }
   }
 }
 
 .ap-meta-link {
-  padding: 0 .2em;
+  padding: 0 0.2em;
 
   &:not(.is-active) {
     .ap-meta-ico {
-      &__base { fill: $grey-med; }
-      &__border { fill: $grey-darkest; }
-      &__fill { fill: $grey-darker; }
-      &__inset { fill: $grey-lightest; }
-      &__left { fill: $grey-lighter; }
-      &__right { fill: $grey-dark; }
-      &__shine { fill: $grey-med; }
+      &__base {
+        fill: $grey-med;
+      }
+
+      &__border {
+        fill: $grey-darkest;
+      }
+
+      &__fill {
+        fill: $grey-darker;
+      }
+
+      &__inset {
+        fill: $grey-lightest;
+      }
+
+      &__left {
+        fill: $grey-lighter;
+      }
+
+      &__right {
+        fill: $grey-dark;
+      }
+
+      &__shine {
+        fill: $grey-med;
+      }
     }
   }
 }
@@ -119,8 +146,8 @@
   color: $white;
   display: block;
   font-weight: 500;
-  margin: 0 .87em 0 -1.72em;
-  padding: 1px .54em 1px 1.62em;
+  margin: 0 0.87em 0 -1.72em;
+  padding: 1px 0.54em 1px 1.62em;
   position: relative;
   z-index: 1;
 }

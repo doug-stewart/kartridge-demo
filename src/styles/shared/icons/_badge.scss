@@ -3,38 +3,71 @@
   &__front {
     &-fill,
     &-line {
-      transition: fill .2s ease;
+      transition: fill 0.2s ease;
     }
   }
 
   &__back {
-    &-fill { fill: rgba($grey-med, .6); }
-    &-line { fill: $grey-darkest; }
+    &-fill {
+      fill: rgba($grey-med, 0.6);
+    }
+
+    &-line {
+      fill: $grey-darkest;
+    }
 
     @at-root .is-active & {
-      &-fill { fill: $blue-light; }
-      &-line { fill: $blue-darker; }
+      &-fill {
+        fill: $blue-light;
+      }
+
+      &-line {
+        fill: $blue-darker;
+      }
     }
   }
 
   &__front {
-    &-fill { fill: $grey-lightest; }
-    &-line { fill: $grey-darkest; }
+    &-fill {
+      fill: $grey-lightest;
+    }
+
+    &-line {
+      fill: $grey-darkest;
+    }
 
     @at-root .is-active & {
-      &-fill { fill: $white; }
-      &-line { fill: $blue-darker; }
+      &-fill {
+        fill: $white;
+      }
+
+      &-line {
+        fill: $blue-darker;
+      }
     }
 
     @at-root .has-notifications & {
-      &-fill { fill: $white; }
-      &-line { fill: $red-med; }
+      &-fill {
+        fill: $white;
+      }
+
+      &-line {
+        fill: $red-med;
+      }
     }
   }
 }
 
 .ico-badge-check {
-  &__base { fill: $green-med; }
-  &__border-in { fill: $grey-darkest; }
-  &__border-out { fill: $yellow-med; }
+  &__base {
+    fill: $green-med;
+  }
+
+  &__border-in {
+    fill: $grey-darkest;
+  }
+
+  &__border-out {
+    fill: $yellow-med;
+  }
 }

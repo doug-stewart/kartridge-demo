@@ -3,20 +3,10 @@
     align-items: center;
     background-color: $white;
     background-color: swatch(swatch-d);
-    background-image:
-      linear-gradient(
-        to right,
-        rgba($black, .21),
-        rgba($black, .21)
-      );
-    background-image:
-      linear-gradient(
-        to right,
-        swatch(tabs-bg, .21),
-        swatch(tabs-bg, .21)
-      );
-    border-bottom: .3rem solid rgba($black, .42);
-    border-bottom-color: swatch(tabs-bg, .42);
+    background-image: linear-gradient(to right, rgba($black, 0.21), rgba($black, 0.21));
+    background-image: linear-gradient(to right, swatch(tabs-bg, 0.21), swatch(tabs-bg, 0.21));
+    border-bottom: 0.3rem solid rgba($black, 0.42);
+    border-bottom-color: swatch(tabs-bg, 0.42);
     display: flex;
     flex: 0 0 auto;
     margin: -5.8rem -3rem 0;
@@ -57,14 +47,16 @@
     width: 100%;
     z-index: 0;
 
-    &:hover { z-index: 1; }
+    &:hover {
+      z-index: 1;
+    }
 
     &-add {
       align-items: center;
-      background-color: rgba($black, .4);
-      border: 1px dashed rgba($white, .6);
+      background-color: rgba($black, 0.4);
+      border: 1px dashed rgba($white, 0.6);
       border-radius: 3px;
-      box-shadow: 0 0 0 .3rem rgba($black, .4);
+      box-shadow: 0 0 0 0.3rem rgba($black, 0.4);
       color: $white;
       cursor: pointer;
       display: flex;
@@ -75,16 +67,20 @@
       width: 100%;
 
       &__label,
-      &__note { pointer-events: none; }
+      &__note {
+        pointer-events: none;
+      }
 
       &__note {
-        font-size: .8em;
+        font-size: 0.8em;
         font-style: normal;
-        opacity: .64;
+        opacity: 0.64;
         text-transform: none;
       }
 
-      &:hover &__label { text-decoration: underline; }
+      &:hover &__label {
+        text-decoration: underline;
+      }
     }
 
     &-box {
@@ -103,18 +99,20 @@
         position: absolute;
         right: 0;
         top: 0;
-        transition: opacity .3s ease;
+        transition: opacity 0.3s ease;
         z-index: 2;
       }
 
-      &:hover::before { opacity: .4; }
+      &:hover::before {
+        opacity: 0.4;
+      }
     }
 
     &-img {
       cursor: pointer;
       display: block;
       height: auto;
-      transition: transform .3s ease;
+      transition: transform 0.3s ease;
       width: 100%;
 
       &:hover {
@@ -133,14 +131,14 @@
 
     &-processing {
       filter: blur(3px);
-      opacity: .24;
+      opacity: 0.24;
       transform: scale(1.1);
     }
 
     &-remove {
       background-color: $black;
       border-radius: 3px;
-      box-shadow: 0 0 0 1px rgba($white, .1);
+      box-shadow: 0 0 0 1px rgba($white, 0.1);
       color: $white;
       display: block;
       font-family: sans-serif;
@@ -148,10 +146,10 @@
       line-height: 1.8rem;
       opacity: 1;
       position: absolute;
-      right: .5rem;
+      right: 0.5rem;
       text-align: center;
       text-decoration: none;
-      top: .5rem;
+      top: 0.5rem;
       width: 1.8rem;
       z-index: 3;
 
@@ -162,9 +160,9 @@
     }
 
     &-temp {
-      background-color: rgba($black, .4);
+      background-color: rgba($black, 0.4);
       border-radius: 3px;
-      box-shadow: 0 0 0 .3rem rgba($black, .4);
+      box-shadow: 0 0 0 0.3rem rgba($black, 0.4);
       grid-column: 1 / -1;
       min-height: 12rem;
 
@@ -192,19 +190,23 @@
       margin: 0 1rem 1rem 0;
       width: calc(50% - #{1rem / 2});
 
-      &:nth-child(even) { margin-right: 0; }
+      &:nth-child(even) {
+        margin-right: 0;
+      }
     }
 
     .c-media__artwork--x3 & {
-      margin: 0 .5rem .5rem 0;
-      width: calc(33% - #{.5rem / 3});
+      margin: 0 0.5rem 0.5rem 0;
+      width: calc(33% - #{0.5rem / 3});
 
-      &:nth-child(3n + 3) { margin-right: 0; }
+      &:nth-child(3n + 3) {
+        margin-right: 0;
+      }
     }
 
     .u-custom__empty-gallery & {
-      background-color: rgba($grey-darkest, .12);
-      background-color: swatch(swatch-e, .12);
+      background-color: rgba($grey-darkest, 0.12);
+      background-color: swatch(swatch-e, 0.12);
       padding-bottom: 56.25%;
     }
   }
@@ -229,14 +231,18 @@
         grid-template-columns: 1fr;
       }
 
-      &--x2 { grid-template-columns: repeat(2, 1fr); }
+      &--x2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       &--x3 {
-        grid-gap: .5rem;
+        grid-gap: 0.5rem;
         grid-template-columns: repeat(3, 1fr);
       }
 
-      &::after { display: none; }
+      &::after {
+        display: none;
+      }
 
       .c-media__art {
         float: none;
@@ -254,7 +260,7 @@
       }
 
       .c-media__artwork {
-        background-color: rgba($black, .8);
+        background-color: rgba($black, 0.8);
         margin-bottom: 0;
         padding: 2rem 2rem 0;
       }
@@ -263,8 +269,8 @@
 
   &__col-ctrl {
     align-items: center;
-    background-color: rgba($black, .8);
-    box-shadow: 0 0 0 1px rgba($white, .16);
+    background-color: rgba($black, 0.8);
+    box-shadow: 0 0 0 1px rgba($white, 0.16);
     display: flex;
     justify-content: center;
     padding: 1rem 2rem;
@@ -279,16 +285,18 @@
       padding: 0 1rem;
     }
 
-    &__title { color: $white; }
+    &__title {
+      color: $white;
+    }
 
-    + .c-media__artwork { margin-bottom: 0; }
+    + .c-media__artwork {
+      margin-bottom: 0;
+    }
   }
 
   &__container {
     border-radius: 3px;
-    box-shadow:
-      0 0 0 1px $black,
-      0 0 0 2px rgba($white, .16);
+    box-shadow: 0 0 0 1px $black, 0 0 0 2px rgba($white, 0.16);
     margin-bottom: 2rem;
     position: relative;
 
@@ -297,34 +305,32 @@
       border: 1px solid $red-dark;
       border-radius: 3px;
       color: $white;
-      padding: .4rem .8rem;
+      padding: 0.4rem 0.8rem;
     }
   }
 
   &__drag-label {
-    color: rgba($white, .6);
+    color: rgba($white, 0.6);
     cursor: move;
     flex: 1;
     font-size: 1.2rem;
     line-height: 3rem;
     text-transform: uppercase;
-    transition:
-      background-color .15s $curve,
-      color .15s $curve;
+    transition: background-color 0.15s $curve, color 0.15s $curve;
 
     &:hover {
-      background-color: rgba($purple-lighter, .16);
+      background-color: rgba($purple-lighter, 0.16);
       color: $white;
     }
   }
 
   &__drop {
     align-items: center;
-    background-color: rgba($black, .4);
-    border: 1px dashed rgba($white, .6);
+    background-color: rgba($black, 0.4);
+    border: 1px dashed rgba($white, 0.6);
     border-radius: 3px;
     bottom: 1rem;
-    box-shadow: 0 0 0 .3rem rgba($black, .4);
+    box-shadow: 0 0 0 0.3rem rgba($black, 0.4);
     color: $white;
     display: flex;
     justify-content: center;
@@ -336,30 +342,39 @@
     top: 1rem;
     z-index: 2;
 
-    .c-media__col-ctrl + & { top: 7rem; }
-    ~ *:not(.c-media__col-ctrl) { opacity: .1; }
+    .c-media__col-ctrl + & {
+      top: 7rem;
+    }
+
+    ~ *:not(.c-media__col-ctrl) {
+      opacity: 0.1;
+    }
   }
 
-  &__errors:not(:empty) { margin: 2rem 2rem 0; }
+  &__errors:not(:empty) {
+    margin: 2rem 2rem 0;
+  }
 
   &__gallery,
-  &__video { padding-top: 3rem; }
+  &__video {
+    padding-top: 3rem;
+  }
 
   &__item {
     position: relative;
 
     &-add {
-      background-color: rgba(#000, .8);
+      background-color: rgba(#000, 0.8);
       display: block;
       padding: 2.3rem;
     }
   }
 
   &__header {
-    background-color: rgba($black, .8);
-    border-top-left-radius: .3rem;
-    border-top-right-radius: .3rem;
-    box-shadow: 0 1px 0 rgba($white, .16);
+    background-color: rgba($black, 0.8);
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    box-shadow: 0 1px 0 rgba($white, 0.16);
     display: flex;
     font-family: sans-serif;
     height: 3rem;
@@ -376,33 +391,38 @@
     &-down,
     &-up {
       background-color: transparent;
-      box-shadow: 1px 0 0 rgba($purple-lighter, .16);
+      box-shadow: 1px 0 0 rgba($purple-lighter, 0.16);
       flex: 0 0 auto;
-      transition:
-        background-color .15s $curve,
-        color .15s $curve;
+      transition: background-color 0.15s $curve, color 0.15s $curve;
       width: 3rem;
 
       &::before {
-        border-color: rgba($white, .6) transparent rgba($white, .6);
+        border-color: rgba($white, 0.6) transparent rgba($white, 0.6);
         border-style: solid;
         content: '';
         display: block;
         height: 0;
         margin: 0 auto;
-        transition: border-color .15s $curve;
+        transition: border-color 0.15s $curve;
         width: 0;
       }
 
       &:hover {
-        background-color: rgba($white, .15);
+        background-color: rgba($white, 0.15);
 
-        &::before { border-color: $white transparent $white; }
+        &::before {
+          border-color: $white transparent $white;
+        }
       }
     }
 
-    &-down::before { border-width: 5px 5px 0; }
-    &-up::before { border-width: 0 5px 5px; }
+    &-down::before {
+      border-width: 5px 5px 0;
+    }
+
+    &-up::before {
+      border-width: 0 5px 5px;
+    }
   }
 
   &__progress {
@@ -419,27 +439,29 @@
     &-bar,
     &-circle {
       fill: transparent;
-      stroke-width: .8rem;
+      stroke-width: 0.8rem;
     }
 
-    &-circle { stroke: rgba($white, .2); }
+    &-circle {
+      stroke: rgba($white, 0.2);
+    }
 
-    &-bar { stroke: rgba($white, .6); }
+    &-bar {
+      stroke: rgba($white, 0.6);
+    }
   }
 
   &__remove {
     background-color: transparent;
-    border-top-right-radius: .3rem;
-    box-shadow: -1px 0 0 rgba($white, .16);
-    color: rgba($grey-lightest, .4);
+    border-top-right-radius: 0.3rem;
+    box-shadow: -1px 0 0 rgba($white, 0.16);
+    color: rgba($grey-lightest, 0.4);
     cursor: pointer;
     font-size: 2.4rem;
     line-height: 3rem;
     right: 0;
     text-align: center;
-    transition:
-      background-color .15s $curve,
-      color .15s $curve;
+    transition: background-color 0.15s $curve, color 0.15s $curve;
     width: 3rem;
 
     &:hover {
@@ -454,7 +476,9 @@
       text-transform: uppercase;
     }
 
-    &-btn { margin-top: .5rem; }
+    &-btn {
+      margin-top: 0.5rem;
+    }
 
     &-failed,
     &-uploading {
@@ -470,7 +494,7 @@
     }
 
     &-failed {
-      background-color: rgba($red-light, .08);
+      background-color: rgba($red-light, 0.08);
       box-shadow: inset 0 0 0 1px $red-light;
       color: $red-med;
 
@@ -482,7 +506,7 @@
       .c-media__status-label {
         display: inline-block;
         flex: 0 0 auto;
-        margin-right: .3em;
+        margin-right: 0.3em;
       }
 
       .c-media__status-msg {
@@ -505,7 +529,7 @@
     }
 
     &-uploading {
-      box-shadow: inset 0 0 0 1px rgba($white, .2);
+      box-shadow: inset 0 0 0 1px rgba($white, 0.2);
       color: $white;
     }
   }
@@ -522,7 +546,9 @@
       margin-right: 1ch;
     }
 
-    &-bold { font-weight: 700; }
+    &-bold {
+      font-weight: 700;
+    }
 
     &-errors:not(:empty) {
       bottom: 2rem;
@@ -530,12 +556,14 @@
       position: absolute;
       right: 2rem;
 
-      + .c-media__text-input { padding-bottom: 6.6rem; }
+      + .c-media__text-input {
+        padding-bottom: 6.6rem;
+      }
     }
 
     &-group {
-      border: .6rem solid rgba($black, .8);
-      box-shadow: inset 0 0 0 1px rgba($white, .12);
+      border: 0.6rem solid rgba($black, 0.8);
+      box-shadow: inset 0 0 0 1px rgba($white, 0.12);
       display: block;
       margin-top: 3rem;
     }
@@ -558,9 +586,11 @@
 
         & + .c-media__text-help {
           background-color: $white;
-          color: rgba($black, .5);
+          color: rgba($black, 0.5);
 
-          .c-media__text-guide { color: $purple-med; }
+          .c-media__text-guide {
+            color: $purple-med;
+          }
         }
       }
     }
@@ -573,30 +603,38 @@
     }
 
     &-help {
-      color: rgba($grey-darkest, .2);
-      color: swatch(swatch-e, .2);
+      color: rgba($grey-darkest, 0.2);
+      color: swatch(swatch-e, 0.2);
       display: flex;
       font-size: 1.1rem;
-      padding: 0 2rem .5rem;
+      padding: 0 2rem 0.5rem;
     }
 
-    &-italic { font-style: italic; }
+    &-italic {
+      font-style: italic;
+    }
 
-    &-link { text-decoration: underline; }
+    &-link {
+      text-decoration: underline;
+    }
   }
 
   &__video {
-    background-color: rgba($black, .8);
+    background-color: rgba($black, 0.8);
 
     &::after {
       content: '';
       display: table;
     }
 
-    .c-media__header { background-color: transparent; }
+    .c-media__header {
+      background-color: transparent;
+    }
   }
 }
 
 @include media-query('max-width', 1020px) {
-  .c-media__add { position: static; }
+  .c-media__add {
+    position: static;
+  }
 }

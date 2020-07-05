@@ -6,7 +6,9 @@
   text-align: left;
 
   &__prop,
-  &__val { white-space: normal; }
+  &__val {
+    white-space: normal;
+  }
 
   &__prop {
     font-weight: 700;
@@ -16,8 +18,12 @@
   &__val {
     margin-bottom: 1rem;
 
-    &:last-child { margin-bottom: 0; }
+    &:last-child {
+      margin-bottom: 0;
+    }
 
-    @supports (display: grid) { margin: 0; }
+    @supports (display: grid) {
+      margin: 0;
+    }
   }
 }

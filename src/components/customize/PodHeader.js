@@ -5,9 +5,9 @@ const PodHeader = ({ id }) => {
   const podsState = useContext(Pods);
   const { podUpdater } = podsState;
 
-  const movePodDown = () => podUpdater({ type: 'movePodDown', pod: id });
-  const movePodUp = () => podUpdater({ type: 'movePodUp', pod: id });
-  const removePod = () => podUpdater({ type: 'removePod', pod: id });
+  const movePodDown = () => podUpdater({ type: 'MOVE_POD_DOWN', pod: id });
+  const movePodUp = () => podUpdater({ type: 'MOVE_POD_UP', pod: id });
+  const removePod = () => podUpdater({ type: 'REMOVE_POD', pod: id });
 
   return (
     <header className="c-media__header">
