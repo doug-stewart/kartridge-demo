@@ -113,8 +113,8 @@ const Preview = ({ background }) => {
                 <span className="c-tabs__link c-avatar-trigger disabled">
                   <span className="c-feat-pg__tab-media">
                     <span className="gp-body__dev-avatar c-avatar c-avatar--sml gp-body__dev-avatar">
-                      <span className="c-avatar__media c-avatar__character" style={{ backgroundImage: "url('https://placekitten.com/40/40')" }} />
-                      <span className="c-avatar__media c-avatar__background" style={{ backgroundImage: "url('https://placekitten.com/40/40')" }} />
+                      <span className="c-avatar__media c-avatar__character" />
+                      <span className="c-avatar__media c-avatar__background" style={{ backgroundImage: "url('/game/dev-avatar.png')" }} />
                     </span>
                   </span>
                   <span className="c-feat-pg__tab-label truncate">by also_doug</span>
