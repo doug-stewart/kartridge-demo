@@ -1,5 +1,10 @@
 // stylelint-disable block-closing-brace-newline-after, at-rule-empty-line-before
-@mixin media-query($first-type, $first-num, $second-type: false, $second-num: false) {
+@mixin media-query(
+  $first-type,
+  $first-num,
+  $second-type: false,
+  $second-num: false
+) {
   $first-new-num: $first-num + $sidebar-width;
 
   @if $second-type {

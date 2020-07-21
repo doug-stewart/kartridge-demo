@@ -19,8 +19,15 @@ const Gallery = ({ layout, images }) => {
       <ul className={`c-media__artwork c-media__artwork--x${layout}`}>
         {images.map((item) => (
           <li key={item.image} className="c-media__art">
-            <button className="c-media__art-box" title="View screenshot" onClick={() => toggleModal(item.image)}>
-              <img alt="Pine screenshot" src={item.image} className="c-media__art-img" />
+            <button
+              className="c-media__art-box"
+              title="View screenshot"
+              onClick={() => toggleModal(item.image)}>
+              <img
+                alt="Pine screenshot"
+                src={item.image}
+                className="c-media__art-img"
+              />
             </button>
           </li>
         ))}

@@ -57,15 +57,15 @@
     width: 100%;
   }
 
-  .c-avatar-trigger:hover &__media,
-  &:hover &__media,
-  &--animate-loop &__media {
-    animation-iteration-count: infinite;
+  &--animate-once &__media {
+    animation-iteration-count: 3;
     animation-play-state: running;
   }
 
-  &--animate-once &__media {
-    animation-iteration-count: 3;
+  &--animate-loop &__media,
+  .c-avatar-trigger:hover &__media,
+  &:hover &__media {
+    animation-iteration-count: infinite;
     animation-play-state: running;
   }
 }

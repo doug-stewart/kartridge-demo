@@ -44,16 +44,6 @@
     white-space: nowrap;
     z-index: 2;
 
-    &-show {
-      background-color: $red-med;
-      color: $white;
-      opacity: 1;
-
-      .c-upload__delete-txt {
-        display: block;
-      }
-    }
-
     &-ico {
       font-size: 1.8rem;
       line-height: 1em;
@@ -70,6 +60,16 @@
       margin-left: 0.7rem;
       margin-right: 0.1rem;
       text-transform: uppercase;
+    }
+
+    &-show {
+      background-color: $red-med;
+      color: $white;
+      opacity: 1;
+
+      .c-upload__delete-txt {
+        display: block;
+      }
     }
 
     &:hover {

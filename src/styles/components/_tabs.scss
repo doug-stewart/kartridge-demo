@@ -43,7 +43,10 @@
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
-    transition: background-color 0.16s $curve, border-bottom-color 0.16s $curve, color 0.16s $curve;
+    transition:
+      background-color 0.16s $curve,
+      border-bottom-color 0.16s $curve,
+      color 0.16s $curve;
     width: 100%;
 
     &:hover {
@@ -56,6 +59,10 @@
       background-color: transparent;
       border-bottom-color: transparent;
     }
+  }
+
+  &--secondary &__link {
+    border-bottom-color: transparent;
   }
 
   &__item:last-child .c-tabs__link {
@@ -89,13 +96,9 @@
       display: block;
     }
   }
-}
 
-.c-tabs--secondary {
-  height: auto;
-
-  .c-tabs__link {
-    border-bottom-color: transparent;
+  &--secondary {
+    height: auto;
   }
 }
 

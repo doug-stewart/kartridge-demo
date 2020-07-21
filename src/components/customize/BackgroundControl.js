@@ -15,7 +15,9 @@ const BackgroundControl = ({ background, setBackground }) => {
     setBackground({ name: '', data: '', type: '' });
   };
 
-  const bgCtrlClasses = classNames('c-bgctrl__labe', { checked: background.name !== '' });
+  const bgCtrlClasses = classNames('c-bgctrl__labe', {
+    checked: background.name !== '',
+  });
 
   return (
     <fieldset className="u-custom__bg-ctrl c-bgctrl">
@@ -23,20 +25,26 @@ const BackgroundControl = ({ background, setBackground }) => {
       <div className="c-bgctrl__option-image">
         <div className={bgCtrlClasses}>
           <span className="c-bgctrl__txt">Upload a video or image</span>
-          <em className="c-bgctrl__note">Minimum 720p. JPG, GIF, PNG, or MP4 recommended.</em>
+          <em className="c-bgctrl__note">
+            Minimum 720p. JPG, GIF, PNG, or MP4 recommended.
+          </em>
           <Dropzone classes="c-upload has-preview" returner={updateBackground}>
             {background.name === '' ? (
               <span className="c-upload__info">
                 <span className="c-upload__msg">
                   <strong>Drag and Drop your file here</strong>
                   or
-                  <span className="btn--light btn--s c-upload__action">Select from Computer</span>
+                  <span className="btn--light btn--s c-upload__action">
+                    Select from Computer
+                  </span>
                 </span>
               </span>
             ) : (
               <span className="c-upload__info">
                 <strong className="c-upload__title">{background.name}</strong>
-                <span className="btn--light btn--s c-upload__change">Change File</span>
+                <span className="btn--light btn--s c-upload__change">
+                  Change File
+                </span>
               </span>
             )}
           </Dropzone>

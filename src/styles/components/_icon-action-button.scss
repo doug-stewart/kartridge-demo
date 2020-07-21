@@ -2,7 +2,11 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  transition: background-color 0.16s $curve, box-shadow 0.16s $curve, color 0.16s $curve, opacity 0.16s $curve;
+  transition:
+    background-color 0.16s $curve,
+    box-shadow 0.16s $curve,
+    color 0.16s $curve,
+    opacity 0.16s $curve;
 
   &:disabled,
   &.disabled {

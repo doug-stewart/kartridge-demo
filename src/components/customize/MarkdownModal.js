@@ -9,7 +9,13 @@ const MarkdownModal = ({ closeModal }) => {
       <article className="m-markdown__guide is-selectable">
         <h1>Formatting text with Markdown</h1>
         <p>
-          The text pods support a wide array of Markdown features for text formatting. Below is a quick primer for those who are new to Markdown. For more information refer to <a href="https://guides.github.com/features/mastering-markdown/">our documentation</a>.
+          The text pods support a wide array of Markdown features for text
+          formatting. Below is a quick primer for those who are new to Markdown.
+          For more information refer to{' '}
+          <a href="https://guides.github.com/features/mastering-markdown/">
+            our documentation
+          </a>
+          .
         </p>
         <h2>Headings</h2>
         <pre>

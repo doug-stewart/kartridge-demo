@@ -26,7 +26,14 @@
     z-index: 0;
 
     &::after {
-      background-image: repeating-linear-gradient(to bottom, $grey-lighter 0, $grey-lighter 1px, $grey-light 1px, $grey-light 2px);
+      background-image:
+        repeating-linear-gradient(
+          to bottom,
+          $grey-lighter 0,
+          $grey-lighter 1px,
+          $grey-light 1px,
+          $grey-light 2px
+        );
       bottom: 0;
       content: '';
       left: 0;

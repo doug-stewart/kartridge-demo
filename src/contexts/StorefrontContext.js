@@ -76,7 +76,9 @@ const reducer = (state, action) => {
 
     // Bork
     default:
-      console.error('StorefrontContext: Reducer was called without an `action` argument.');
+      console.error(
+        'StorefrontContext: Reducer was called without an `action` argument.'
+      );
       return { ...temp };
   }
 };

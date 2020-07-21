@@ -9,18 +9,10 @@ li.disabled {
   pointer-events: none;
 }
 
-.hyphens {
-  &,
-  & * {
-    hyphens: auto;
-    word-wrap: break-word;
-  }
-}
-
-.is-selectable,
 input,
 textarea,
-[contenteditable] {
+[contenteditable],
+.is-selectable {
   cursor: text;
   pointer-events: all;
   user-select: text;
@@ -29,6 +21,14 @@ textarea,
     cursor: inherit;
     pointer-events: all;
     user-select: text;
+  }
+}
+
+.hyphens {
+  &,
+  & * {
+    hyphens: auto;
+    word-wrap: break-word;
   }
 }
 
