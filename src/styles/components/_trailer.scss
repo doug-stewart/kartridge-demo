@@ -50,10 +50,14 @@
     box-shadow: 0 0 0 1px rgba($white, 0.12);
     display: block;
     height: 0;
-    margin: 2rem;
+    margin: 2rem 0;
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
+
+    .c-media__trailer > & {
+      margin: 2rem;
+    }
 
     &-media {
       height: 100%;

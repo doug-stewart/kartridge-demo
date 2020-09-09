@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 import Dropzone from './Dropzone';
 
 const BackgroundControl = ({ background, setBackground }) => {
@@ -15,12 +15,12 @@ const BackgroundControl = ({ background, setBackground }) => {
     setBackground({ name: '', data: '', type: '' });
   };
 
-  const bgCtrlClasses = classNames('c-bgctrl__labe', {
+  const bgCtrlClasses = cx('c-bgctrl__labe', {
     checked: background.name !== '',
   });
 
   return (
-    <fieldset className="u-custom__bg-ctrl c-bgctrl">
+    <fieldset className={cx('u-custom__bg-ctrl', 'c-bgctrl')}>
       <h2 className="c-bgctrl__title">Set your background artwork</h2>
       <div className="c-bgctrl__option-image">
         <div className={bgCtrlClasses}>
@@ -34,7 +34,8 @@ const BackgroundControl = ({ background, setBackground }) => {
                 <span className="c-upload__msg">
                   <strong>Drag and Drop your file here</strong>
                   or
-                  <span className="btn--light btn--s c-upload__action">
+                  <span
+                    className={cx('btn--light', 'btn--s', 'c-upload__action')}>
                     Select from Computer
                   </span>
                 </span>
@@ -42,7 +43,7 @@ const BackgroundControl = ({ background, setBackground }) => {
             ) : (
               <span className="c-upload__info">
                 <strong className="c-upload__title">{background.name}</strong>
-                <span className="btn--light btn--s c-upload__change">
+                <span className={cx('btn--light btn--s', 'c-upload__change')}>
                   Change File
                 </span>
               </span>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 import tinycolor from 'tinycolor2';
 import { Theme } from '../../contexts/ThemeContext';
 import NavButton from './NavButton';
@@ -7,7 +7,7 @@ import NavButton from './NavButton';
 const AppNavigation = () => {
   const themeState = useContext(Theme);
   const isLight = tinycolor(themeState.state.a).isLight();
-  const navClasses = classNames('ap-nav', 'ap-nav--desktop', {
+  const navClasses = cx('ap-nav', 'ap-nav--desktop', {
     'is-light': isLight,
   });
 

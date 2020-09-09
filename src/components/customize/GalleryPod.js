@@ -1,40 +1,35 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ReactSortable } from 'react-sortablejs';
-import { Pods } from '../../contexts/StorefrontContext';
-import PodHeader from './PodHeader';
 import GalleryImage from './GalleryImage';
 import Dropzone from './Dropzone';
 
-const GalleryPod = ({ podId }) => {
+const GalleryPod = ({
+  pod,
+  images,
+  layout,
+  setLayout,
+  setImages,
+  addImage,
+  removeImage,
+}) => {
   const columns = ['1', '2', '3'];
-  const podsState = useContext(Pods);
-  const { podUpdater } = podsState;
-  const gallery = podsState.state.items[podId];
-
-  const setLayout = (layout) =>
-    podUpdater({ type: 'SET_LAYOUT', pod: podId, layout: layout });
-  const setImages = (list) =>
-    podUpdater({ type: 'SET_IMAGE', pod: podId, images: list.items });
-  const addImage = (data) =>
-    podUpdater({ type: 'ADD_IMAGE', pod: podId, image: data });
-  const removeImage = (image) =>
-    podUpdater({ type: 'REMOVE_IMAGE', pod: podId, image: image });
 
   const processUpload = (data) => {
     const isImage = data.type.toLowerCase().includes('jpeg', 'jpg', 'png');
-    if (isImage) addImage(data);
+    if (isImage) addImage(pod, data);
   };
 
+  const updateImages = (items) => setImages(pod, items);
+
   return (
-    <li className="c-media__container c-media__gallery">
-      <PodHeader id={podId} />
+    <>
       <p className="c-media__col-ctrl">
         <strong className="c-media__col-ctrl__title">Images Per Row:</strong>
         <select
           className="c-media__col-ctrl__select"
-          value={gallery.layout}
-          onBlur={(event) => setLayout(podId, event.target.value)}
-          onChange={(event) => setLayout(event.target.value)}>
+          value={layout}
+          onBlur={(event) => setLayout(pod, event.target.value)}
+          onChange={(event) => setLayout(pod, event.target.value)}>
           {columns.map((column) => {
             return (
               <option key={column} value={column}>
@@ -45,20 +40,20 @@ const GalleryPod = ({ podId }) => {
         </select>
       </p>
       <div className="c-media__artwork-cont">
-        {gallery.images.length !== 0 && (
+        {images.length !== 0 && (
           <ReactSortable
-            className={`c-media__artwork sortable-objects c-media__artwork--x${gallery.layout}`}
-            list={gallery.images}
-            setList={(items) => {
-              setImages({ items });
-            }}
+            className={`c-media__artwork sortable-objects c-media__artwork--x${layout}`}
+            list={images}
+            setList={(items) => updateImages({ items })}
             tag="ul">
-            {gallery.images.map((item) => {
+            {images.map((item) => {
               return (
                 <GalleryImage
-                  key={item.image}
+                  key={item.id}
+                  id={item.id}
+                  pod={pod}
                   image={item.image}
-                  removeImage={() => removeImage(item.image)}
+                  removeImage={removeImage}
                 />
               );
             })}
@@ -75,7 +70,7 @@ const GalleryPod = ({ podId }) => {
           </span>
         </Dropzone>
       </div>
-    </li>
+    </>
   );
 };
 

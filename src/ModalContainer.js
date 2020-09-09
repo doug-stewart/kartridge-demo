@@ -8,9 +8,9 @@ const Modal = ({ children, close }) => {
         {children}
         <div
           className="c-modal__overlay"
-          onClick={close}
+          onClick={() => close(false)}
           onKeyDown={(event) => {
-            if (event.keyCode === 32) close();
+            if (event.keyCode === 32) close(false);
           }}
           role="button"
           tabIndex="0"

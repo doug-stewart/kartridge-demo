@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "type": "trailer",
+    "url": "https://www.youtube.com/watch?v=mGzpaAfEiAs"
+  },
+  {
+    "id": 2,
+    "type": "text",
+    "text": "A very important piece of text."
+  },
+  {
+    "id": 3,
+    "type": "gallery",
+    "layout": 3,
+    "images": [
+      {
+        "id": 1,
+        "image": "/game/screenshot-01.jpg"
+      },
+      {
+        "id": 2,
+        "image": "/game/screenshot-02.jpg"
+      },
+      {
+        "id": 3,
+        "image": "/game/screenshot-03.jpg"
+      },
+      {
+        "id": 4,
+        "image": "/game/screenshot-04.jpg"
+      },
+      {
+        "id": 5,
+        "image": "/game/screenshot-05.jpg"
+      },
+      {
+        "id": 6,
+        "image": "/game/screenshot-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "type": "text",
+    "text": "A very important piece of text."
+  },
+  {
+    "id": 5,
+    "type": "gallery",
+    "layout": 2,
+    "images": [
+      {
+        "id": 1,
+        "image": "/game/screenshot-07.jpg"
+      },
+      {
+        "id": 2,
+        "image": "/game/screenshot-08.jpg"
+      },
+      {
+        "id": 3,
+        "image": "/game/screenshot-09.jpg"
+      },
+      {
+        "id": 4,
+        "image": "/game/screenshot-10.jpg"
+      }
+    ]
+  }
+]

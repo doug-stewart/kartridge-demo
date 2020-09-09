@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import cx from 'classnames';
 
 const BackgroundMedia = ({ background }) => {
   const backgroundVideo = useRef();
@@ -15,12 +16,13 @@ const BackgroundMedia = ({ background }) => {
   }, [background.data, background.type]);
 
   return (
-    <div className="c-feat-pg__bg c-feat-pg__bg-image">
+    <div className={cx('c-feat-pg__bg', 'c-feat-pg__bg-image')}>
       <div className="c-feat-pg__overlay" />
       {background.type.includes('video') && (
         <video
           autoPlay
           className="c-feat-pg__bg-vid"
+          data-testid="background-video"
           disableremoteplayback=""
           loop
           muted
@@ -31,10 +33,20 @@ const BackgroundMedia = ({ background }) => {
         />
       )}
       {background.type.includes('image') && (
-        <img alt="" src={background.data} className="c-feat-pg__bg-vid" />
+        <img
+          alt=""
+          className="c-feat-pg__bg-vid"
+          data-testid="background-image"
+          src={background.data}
+        />
       )}
       {background.type === '' && (
-        <img alt="" src="/game/game-icon.png" className="c-feat-pg__bg-vid" />
+        <img
+          alt=""
+          className="c-feat-pg__bg-vid"
+          data-testid="background-icon"
+          src="/game/game-icon.png"
+        />
       )}
     </div>
   );

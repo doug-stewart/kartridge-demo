@@ -1,85 +1,113 @@
 import React, { createContext, useReducer } from 'react';
-import storefront from '../data.json';
 
-const initialState = storefront;
+const initialState = [];
 
 const Pods = createContext(initialState);
 const { Provider } = Pods;
 
+const changeIndex = (inputArray, oldIndex, newIndex) => {
+  const array = [...inputArray];
+  const item = array.splice(oldIndex, 1)[0];
+  array.splice(newIndex, 0, item);
+  return array;
+};
+
+const getIndex = (array, id) => {
+  return array.findIndex((item) => item.id === id);
+};
+
 const reducer = (state, action) => {
-  let temp = { ...state };
-  switch (true) {
+  let podId;
+
+  if (action.pod) {
+    podId = getIndex(state, action.pod);
+  }
+
+  switch (action.type) {
     // Pod Management
-    case action.type === 'REORDER_PODS':
-      return action.pods;
+    case 'SET_PODS':
+      return [...action.data];
 
-    case action.type === 'REMOVE_POD':
-      temp.items.splice(action.pod, 1);
-      return { ...temp };
+    case 'REMOVE_POD':
+      if (podId !== -1) state.splice(podId, 1);
+      return [...state];
 
-    case action.type === 'MOVE_POD_DOWN': {
-      const downer = temp.items[action.pod];
-      temp.items.splice(action.pod, 1);
-      temp.items.splice(action.pod + 1, 0, downer);
-      return { ...temp };
-    }
+    case 'MOVE_POD_DOWN':
+      return changeIndex(state, podId, podId + 1);
 
-    case action.type === 'MOVE_POD_UP': {
-      const upper = temp.items[action.pod];
-      temp.items.splice(action.pod, 1);
-      temp.items.splice(action.pod - 1, 0, upper);
-      return { ...temp };
-    }
+    case 'MOVE_POD_UP':
+      return changeIndex(state, podId, podId - 1);
 
     // Gallery Pod
-    case action.type === 'ADD_POD' && action.kind === 'gallery':
-      temp.items.push({ type: 'gallery', layout: 2, images: [] });
-      return { ...temp };
+    case 'ADD_GALLERY':
+      return [
+        ...state,
+        {
+          id: state[state.length - 1].id + 1,
+          type: 'gallery',
+          layout: 2,
+          images: [],
+        },
+      ];
 
-    case action.type === 'SET_LAYOUT':
-      temp.items[action.pod].layout = action.layout;
-      return { ...temp };
+    case 'SET_LAYOUT':
+      state[podId].layout = action.layout;
+      return [...state];
 
-    case action.type === 'SET_IMAGE':
-      temp.items[action.pod].images = action.images;
-      return { ...temp };
+    case 'SET_IMAGES':
+      state[podId].images = [...action.images.items];
+      return [...state];
 
-    case action.type === 'ADD_IMAGE':
-      temp.items[action.pod].images.push({ image: action.image.data });
-      return { ...temp };
+    case 'ADD_IMAGE':
+      state[podId].images.push({
+        id: state[podId].images[state[podId].images.length - 1].id + 1,
+        image: action.image.data,
+      });
+      return [...state];
 
-    case action.type === 'REMOVE_IMAGE': {
-      const gallery = temp.items[action.pod].images;
-      const index = gallery.findIndex((item) => item.image === action.image);
-
-      gallery.splice(index, 1);
-      return { ...temp };
-    }
+    case 'REMOVE_IMAGE':
+      const imageId = state[podId].images.findIndex(
+        (i) => i.id === action.image
+      );
+      if (imageId !== -1) state[podId].images.splice(imageId, 1);
+      return [...state];
 
     // Text Pod
-    case action.type === 'ADD_POD' && action.kind === 'text':
-      temp.items.push({ type: 'text', value: '' });
-      return { ...temp };
+    case 'ADD_TEXT':
+      return [
+        ...state,
+        {
+          id: state[state.length - 1].id + 1,
+          type: 'text',
+          value: '',
+        },
+      ];
 
-    case action.type === 'UPDATE_TEXT':
-      temp.items[action.pod].text = action.text;
-      return { ...temp };
+    case 'SET_TEXT':
+      state[podId].text = action.text;
+      return [...state];
 
     // Trailer Pod
-    case action.type === 'ADD_POD' && action.kind === 'trailer':
-      temp.items.push({ type: 'trailer', url: '' });
-      return { ...temp };
+    case 'ADD_TRAILER':
+      return [
+        ...state,
+        {
+          id: state[state.length - 1].id + 1,
+          type: 'trailer',
+          url: '',
+        },
+      ];
 
-    case action.type === 'UPDATE_TRAILER':
-      temp.items[action.pod].url = action.url;
-      return { ...temp };
+    case 'SET_TRAILER':
+      state[podId].url = action.url;
+      return [...state];
 
     // Bork
     default:
       console.error(
         'StorefrontContext: Reducer was called without an `action` argument.'
       );
-      return { ...temp };
+      return state;
   }
 };
 

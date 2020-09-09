@@ -3,14 +3,7 @@
 
   &__guide {
     flex: 1;
-    margin: -2rem;
     max-width: 60rem;
-    overflow: auto;
-    padding: 3.5rem 4rem;
-
-    &::-webkit-scrollbar-track {
-      margin: 4rem 0;
-    }
 
     code,
     pre {

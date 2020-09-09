@@ -24,6 +24,8 @@
     display: flex;
     flex-direction: column;
     padding-top: $header-height;
+    position: relative;
+    z-index: 0;
 
     .c-unsupported ~ & {
       height: 0;
@@ -43,6 +45,34 @@
     min-height: 0;
     position: relative;
   }
+
+  &-size-warning {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    padding: 2em;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    h1,
+    p {
+      color: #fff;
+      max-width: 54ch;
+    }
+
+    p {
+      line-height: 1.618;
+      margin-top: 1em;
+    }
+  }
+
+  &-size-warning + &-frame { opacity: 0; }
 }
 
 @media (max-width: $mobile-flip-inv) {

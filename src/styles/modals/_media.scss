@@ -4,38 +4,14 @@
     background-color: $black;
     display: flex;
     justify-content: center;
-    max-height: 100%;
-    max-width: 100%;
     min-height: 25rem;
     min-width: 25rem;
     padding: 2px;
-    position: relative;
   }
 
   &__close {
     background-color: $black;
-    border-radius: 50%;
     color: $white;
-    display: block;
-    font-size: 3rem;
-    font-weight: 500;
-    height: 4rem;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translate(50%, -50%);
-    width: 4rem;
-    z-index: 2;
-  }
-
-  &__outer {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    z-index: 1;
   }
 
   &__nav {
