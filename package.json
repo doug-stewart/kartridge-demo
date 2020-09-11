@@ -1,5 +1,6 @@
 {
   "name": "kartridge-demo",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,6 +19,7 @@
     "react-player": "^2.5.0",
     "react-scripts": "3.4.1",
     "react-sortablejs": "^2.0.11",
+    "react-textarea-autosize": "^8.2.0",
     "react-uid": "^2.2.0",
     "spectrum-colorpicker": "^1.8.0"
   },

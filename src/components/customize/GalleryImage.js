@@ -10,7 +10,11 @@ const GalleryImage = ({ pod, image, id, removeImage }) => {
         ×
       </button>
       <span className="c-media__art-box">
-        <img alt="" src={image} className="c-media__art-img" />
+        <img
+          alt=""
+          src={`${process.env.PUBLIC_URL + image}`}
+          className="c-media__art-img"
+        />
       </span>
     </li>
   );

@@ -10,7 +10,7 @@ const GalleryModal = ({ image, isOpen, closeModal }) => {
       toggleCallback={closeModal}>
       <img
         alt="Large Pine screenshot"
-        src={image}
+        src={`${process.env.PUBLIC_URL + image}`}
         className="m-media__screenshot"
       />
     </Modal>

@@ -124,7 +124,7 @@ const Preview = ({ background }) => {
                         loop
                         muted
                         playsInline
-                        poster="/game/game-icon.png"
+                        poster={`${process.env.PUBLIC_URL}/game/game-icon.png`}
                         preload="none"
                       />
                     </span>
@@ -178,7 +178,7 @@ const Preview = ({ background }) => {
                           'c-avatar__background'
                         )}
                         style={{
-                          backgroundImage: "url('/game/dev-avatar.png')",
+                          backgroundImage: `url(${process.env.PUBLIC_URL}/game/dev-avatar.png)`,
                         }}
                       />
                     </span>
