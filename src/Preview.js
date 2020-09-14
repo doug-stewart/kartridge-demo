@@ -28,6 +28,29 @@ const Preview = ({ background }) => {
     return podKey++;
   };
 
+  const getDate = () => {
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'April',
+      'May',
+      'June',
+      'July',
+      'Aug',
+      'Sept',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    const today = new Date();
+    const date = `${
+      months[today.getMonth()]
+    }, ${today.getDate()}, ${today.getFullYear()}`;
+
+    return date;
+  };
+
   return (
     <section className={mainClasses}>
       <span
@@ -48,7 +71,7 @@ const Preview = ({ background }) => {
       </span>
       <header className={cx('c-feat-pg__title', 'gp-title')}>
         <h1 className={cx('gp-name', 'is-selectable')}>
-          <span className="gp-name-txt">Test Game</span>
+          <span className="gp-name-txt">Dawn Racer 2049</span>
         </h1>
         <div className="gp-meta">
           <ul className={cx('gp-platforms', 'c-platforms')}>
@@ -65,10 +88,13 @@ const Preview = ({ background }) => {
           </ul>
           <ul className={cx('c-tags', 'gp-tags')}>
             <li className={cx('c-tag', 'c-tag--linked')}>
-              <span className="c-tag__link">Action</span>
+              <span className="c-tag__link">Racing</span>
             </li>
             <li className={cx('c-tag', 'c-tag--linked')}>
-              <span className="c-tag__link">Shooter</span>
+              <span className="c-tag__link">Sci-Fi</span>
+            </li>
+            <li className={cx('c-tag', 'c-tag--linked')}>
+              <span className="c-tag__link">Adventure</span>
             </li>
             <li className={cx('c-tag', 'c-tooltip__trigger')}>
               DRM Free
@@ -193,7 +219,7 @@ const Preview = ({ background }) => {
           <div className={cx('c-tabs__section', 'gp-media', 'is-active')}>
             <ul className={cx('c-stats', 'gp-stats')}>
               <li className="c-stats__item">
-                <strong className="c-stats__main">Jan 28, 2020</strong>
+                <strong className="c-stats__main">{getDate()}</strong>
                 <span className="c-stats__sec">Updated</span>
               </li>
               <li className={cx('c-stats__item', 'c-tooltip__trigger')}>

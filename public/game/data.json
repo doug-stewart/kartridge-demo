@@ -7,7 +7,7 @@
   {
     "id": 2,
     "type": "text",
-    "text": "A very important piece of text."
+    "text": "## Demos are cool!\n\nThis is a demo of the [Kartridge](https://www.kartridge.com/) game storefront customization screen, a part of the broader game publishing flow. It was designed to give developers a broad level of control over how their game storefront looked while still maintaining Katridge's own aesthetic.\n\n### Storefront Customization Features\n\nGame developers had numerous options for customizing their game storefront, including:\n\n- Customizing the color palette\n- Uploading a video or image background\n- Adding YouTube trailers\n- Adding image galleries\n- Adding text content with Markdown formatting\n\nOne of my favorite features we were able to make a reality was generating starter color palettes based on the screenshots the user uploaded. That, along with the general ease of use compared to competing platforms, got the biggest wow when we first demoed the publishing flow to our game developer partners. Seeing their delight is still one of the highlights of my time at Kongregate."
   },
   {
     "id": 3,
@@ -67,5 +67,10 @@
         "image": "/game/screenshot-10.jpg"
       }
     ]
+  },
+  {
+    "id": 6,
+    "type": "text",
+    "text": "_Artwork created by [Larich](https://www.shutterstock.com/g/Larich) and purchased from [ShutterStock](https://www.shutterstock.com/)._"
   }
 ]
