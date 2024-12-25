@@ -1,0 +1,33 @@
+.c-platforms {
+  display: flex;
+}
+
+.c-platform {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+
+  &:not(:first-child) {
+    margin-left: 0.5ch;
+  }
+}
+
+.c-platform-ico {
+  display: block;
+  fill: var(--white);
+  fill: inherit;
+  flex: 0 0 auto;
+  height: 1em;
+  overflow: visible;
+  width: 1em;
+
+  &--mac {
+    height: 1.2em;
+    transform: translateY(-0.1em);
+  }
+
+  &--web {
+    width: 0.85em;
+  }
+}

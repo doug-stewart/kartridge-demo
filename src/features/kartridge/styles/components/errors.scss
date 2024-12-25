@@ -1,0 +1,28 @@
+.c-validation {
+  &__item {
+    color: var(--red-med);
+    font-weight: 500;
+    margin-top: 0.5rem;
+
+    &.is-valid {
+      color: var(--green-med);
+    }
+
+    p {
+      margin-top: 1rem;
+    }
+
+    &:first-child,
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    &.has-errors {
+      display: block;
+    }
+  }
+}
