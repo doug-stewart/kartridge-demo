@@ -14,10 +14,10 @@ import Gallery from '../components/Gallery';
 import Text from '../components/Text';
 import Trailer from '../components/Trailer';
 import { podsStore } from '../stores/pods.store';
-import type { Media } from '../types';
+import type { MediaObj } from '../types';
 
 type PreviewProps = {
-    background: Media;
+    background: MediaObj;
 };
 
 const Preview = ({ background }: PreviewProps) => {

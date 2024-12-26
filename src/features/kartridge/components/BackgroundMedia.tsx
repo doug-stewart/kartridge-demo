@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import { useEffect, useRef } from 'react';
 
-import type { Media } from '../types';
+import type { MediaObj } from '../types';
 
 type BackgroundMedia = {
-    background: Media;
+    background: MediaObj;
 };
 
 const BackgroundMedia = ({ background }: BackgroundMedia) => {

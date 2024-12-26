@@ -1,16 +1,16 @@
 import clsx from 'clsx';
 
-import type { Media } from '../types';
+import type { MediaObj } from '../types';
 
 import Dropzone from './Dropzone';
 
 type BackgroundControlProps = {
-    background: Media;
-    setBackground: (data: any) => void;
+    background: MediaObj;
+    setBackground: (data: MediaObj) => void;
 };
 
 const BackgroundControl = ({ background, setBackground }: BackgroundControlProps) => {
-    const updateBackground = (data: Media) => {
+    const updateBackground = (data: MediaObj) => {
         if (data.type.includes('video/') || data.type.includes('image/')) {
             setBackground(data);
         } else {

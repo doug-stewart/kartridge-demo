@@ -1,30 +1,30 @@
-export type Media = {
+export type MediaObj = {
     name: string;
     data: string;
     type: string;
 };
 
-export type GalleryImage = { id: number; image: string };
+export type ImageObj = { id: number; image: string };
 
-export type GalleryPod = {
+export type GalleryObj = {
     id: number;
     type: 'gallery';
     layout: 1 | 2 | 3;
-    images: Array<GalleryImage>;
+    images: Array<Image>;
 };
 
-export type TextPod = {
+export type TextObj = {
     id: number;
     type: 'text';
     text: string;
 };
 
-export type TrailerPod = {
+export type TrailerObj = {
     id: number;
     type: 'trailer';
     url: string;
 };
 
-export type Pod = GalleryPod | TextPod | TrailerPod;
+export type PodObj = GalleryObj | TextObj | TrailerObj;
 
-export type Pods = Array<Pod>;
+export type PodsArr = Array<PodObj>;

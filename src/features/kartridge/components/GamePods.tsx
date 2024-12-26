@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ReactSortable } from 'react-sortablejs';
 
 import { podsStore } from '../stores/pods.store';
-import type { GalleryImage, GalleryPod as GalleryPodType, Pod, Pods } from '../types';
+import type { ImageObj, GalleryObj, PodObj, PodsArr } from '../types';
 
 import GalleryPod from './GalleryPod';
 import GamePod from './GamePod';
@@ -16,11 +16,11 @@ const GamePods = () => {
 
     const podArea = useRef<HTMLDivElement | null>(null);
 
-    const [kind, setKind] = useState<Pod['type'] | ''>('');
+    const [kind, setKind] = useState<PodObj['type'] | ''>('');
     const [adding, setAdding] = useState(false);
     const [dragging, setDragging] = useState(false);
 
-    const addPod = (kind: Pod['type']) => {
+    const addPod = (kind: PodObj['type']) => {
         const pod = { type: kind };
 
         if (kind === 'gallery') {
@@ -35,37 +35,37 @@ const GamePods = () => {
             Object.assign(pod, { url: '' });
         }
 
-        podsStore.send({ type: 'add', pod: pod as Pod });
+        podsStore.send({ type: 'add', pod: pod as PodObj });
         setAdding(true);
     };
 
-    const reorderPods = (pods: Pods) => podsStore.send({ type: 'set', pods: pods });
-    const movePodDown = (pod: Pod) => podsStore.send({ type: 'moveDown', id: pod.id });
-    const movePodUp = (pod: Pod) => podsStore.send({ type: 'moveUp', id: pod.id });
-    const removePod = (pod: Pod) => podsStore.send({ type: 'remove', id: pod.id });
+    const reorderPods = (pods: PodsArr) => podsStore.send({ type: 'set', pods: pods });
+    const movePodDown = (pod: PodObj) => podsStore.send({ type: 'moveDown', id: pod.id });
+    const movePodUp = (pod: PodObj) => podsStore.send({ type: 'moveUp', id: pod.id });
+    const removePod = (pod: PodObj) => podsStore.send({ type: 'remove', id: pod.id });
 
-    const setLayout = (pod: Pod, layout: GalleryPodType['layout']) =>
+    const setLayout = (pod: PodObj, layout: GalleryObj['layout']) =>
         podsStore.send({ type: 'update', pod: Object.assign(pod, { layout }) });
 
-    const setImages = (pod: Pod, images: GalleryPodType['images']) =>
+    const setImages = (pod: PodObj, images: GalleryObj['images']) =>
         podsStore.send({ type: 'update', pod: Object.assign(pod, { images }) });
 
-    const addImage = (pod: GalleryPodType, data: GalleryImage) =>
+    const addImage = (pod: GalleryObj, data: ImageObj) =>
         podsStore.send({
             type: 'update',
             pod: Object.assign(pod, { images: pod.images.push(data) }),
         });
 
-    const removeImage = (pod: GalleryPodType, id: number) =>
+    const removeImage = (pod: GalleryObj, id: number) =>
         podsStore.send({
             type: 'update',
             pod: Object.assign(pod, { images: pod.images.filter((image) => image.id !== id) }),
         });
 
-    const setText = (pod: Pod, text: string) =>
+    const setText = (pod: PodObj, text: string) =>
         podsStore.send({ type: 'update', pod: Object.assign(pod, { text }) });
 
-    const setTrailer = (pod: Pod, url: string) =>
+    const setTrailer = (pod: PodObj, url: string) =>
         podsStore.send({ type: 'update', pod: Object.assign(pod, { url }) });
 
     useEffect(() => {
@@ -103,8 +103,8 @@ const GamePods = () => {
                 <div className="c-media__add">
                     <select
                         className="c-media__add-choice"
-                        onBlur={(event) => setKind(event.target.value as Pod['type'])}
-                        onChange={(event) => setKind(event.target.value as Pod['type'])}
+                        onBlur={(event) => setKind(event.target.value as PodObj['type'])}
+                        onChange={(event) => setKind(event.target.value as PodObj['type'])}
                     >
                         <option value="">Choose content to add…</option>
                         <option value="trailer">Video Pod</option>

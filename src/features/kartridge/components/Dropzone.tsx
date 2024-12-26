@@ -1,10 +1,10 @@
 import { PropsWithChildren } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-import type { Media } from '../types';
+import type { MediaObj } from '../types';
 
 type DropzoneProps = PropsWithChildren & {
-    returner: (file: Media) => void;
+    returner: (file: MediaObj) => void;
     classes: string;
 };
 

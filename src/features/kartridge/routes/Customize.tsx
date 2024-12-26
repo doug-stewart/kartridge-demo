@@ -6,11 +6,11 @@ import WindowsIco from '../assets/images/icons/windows.svg?react';
 import BackgroundControl from '../components/BackgroundControl';
 import BackgroundMedia from '../components/BackgroundMedia';
 import GamePods from '../components/GamePods';
-import type { Media } from '../types';
+import type { MediaObj } from '../types';
 
 type CustomizeProps = {
-    background: Media;
-    setBackground: any;
+    background: MediaObj;
+    setBackground: (data: MediaObj) => void;
 };
 
 const Customize = ({ background, setBackground }: CustomizeProps) => {
