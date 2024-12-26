@@ -1,0 +1,368 @@
+@use '../mixins.scss' as *;
+@use '../variables.scss' as *;
+
+.c-feat-pg {
+    &__bg {
+        background-color: var(--swatch-d);
+        height: 44rem;
+        left: 0;
+        overflow: hidden;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transition: transform 0.24s var(--curve);
+        width: 100%;
+        will-change: transform;
+        z-index: 0;
+
+        @supports (display: grid) {
+            grid-area: title;
+            height: calc(100% + 12rem);
+        }
+
+        &-img,
+        &-vid,
+        iframe {
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 0;
+            left: 50%;
+            min-height: 101%;
+            min-width: 101%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: 0 0;
+            transition: transform 0.24s var(--curve);
+            width: 0;
+            z-index: 0;
+        }
+    }
+
+    &__footer,
+    &__header {
+        background-color: var(--white);
+        display: grid;
+        grid-gap: 3rem;
+        grid-template:
+            'text controls' auto
+            / 1fr auto;
+        padding: 1rem 2rem;
+        z-index: 2;
+
+        .c-ctrls__ctrl {
+            margin-bottom: 0;
+        }
+    }
+
+    &__footer {
+        border-top: 1px solid var(--purple-lighter);
+        box-shadow: 0 -0.4rem 0 color-mix(in srgb, transparent, var(--grey-darker) 10%);
+        grid-area: footer;
+    }
+
+    &__header {
+        border-bottom: 1px solid var(--purple-lighter);
+        box-shadow: 0 0.4rem 0 color-mix(in srgb, transparent, var(--grey-darker) 10%);
+        grid-area: header;
+
+        &-title {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__main {
+        flex: 1;
+        grid-area: content;
+        overflow: hidden auto;
+        overflow-y: overlay;
+        position: relative;
+        width: 100%;
+        z-index: 0;
+
+        .is-viewing-bg & {
+            overflow: hidden;
+        }
+
+        @supports (display: grid) {
+            display: grid;
+            grid-template:
+                'keys' 0
+                'title' min-content
+                'sections' minmax(min-content, auto)
+                / 100%;
+        }
+    }
+
+    &__outer {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    &__overlay {
+        background-image: radial-gradient(
+                70vw 44rem at calc(50% - 20rem) top,
+                color-mix(in srgb, transparent, var(--swatch-b) 50%) 0,
+                color-mix(in srgb, transparent, var(--swatch-b) 0%) 100%
+            ),
+            linear-gradient(
+                to bottom,
+                color-mix(in srgb, transparent, var(--swatch-d) 0%) 32rem,
+                var(--swatch-d) calc(100% - 10px)
+            );
+        background-position: 0 0;
+        background-size: 100% 100%;
+        height: calc(100% + 20px);
+        left: -10px;
+        position: absolute;
+        top: -10px;
+        transition: opacity 0.12s var(--curve);
+        width: calc(100% + 20px);
+        z-index: 1;
+
+        .is-viewing-bg & {
+            opacity: 0;
+            transition-delay: 0.24s;
+        }
+    }
+
+    &__sections,
+    &__title {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    &__sections {
+        grid-column: title / sections;
+        grid-row: sections;
+        max-width: 100vw;
+        min-height: 100%;
+        position: relative;
+        transform-origin: 0 0;
+        transition: transform 0.24s var(--curve);
+        will-change: transform;
+        z-index: 1;
+
+        @media (min-width: $mobile-flip) {
+            max-width: 712px;
+        }
+
+        &-inner {
+            box-shadow:
+                0 0 1px color-mix(in srgb, transparent, var(--black) 20%),
+                0 0 0 2px color-mix(in srgb, transparent, var(--black) 30%);
+            height: auto;
+            min-height: 100%;
+        }
+
+        &-nav {
+            position: sticky;
+            top: 0;
+        }
+
+        .is-viewing-bg & {
+            transform: translateY(8rem);
+        }
+    }
+
+    &__tab {
+        &-label {
+            bottom: 0;
+            left: 1.2em;
+            line-height: 3.2em;
+            position: absolute;
+            right: 1.2em;
+        }
+
+        &-media {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            font-size: 3em;
+            font-weight: 400;
+            justify-content: center;
+            padding: 0.3em 0 0.8em;
+        }
+    }
+
+    &__title {
+        align-items: start;
+        grid-area: title;
+        max-height: 100%;
+        max-width: 792px;
+        min-height: 32rem;
+        padding: 4.2rem 2rem;
+        position: relative;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+
+        a,
+        button,
+        fieldset,
+        form,
+        input,
+        label,
+        [role='button'] {
+            pointer-events: all;
+        }
+
+        a,
+        button,
+        [role='button'] {
+            position: relative;
+        }
+    }
+
+    &__view-bg {
+        border-radius: 3px;
+        box-shadow: 0 0 0 1px color-mix(in srgb, transparent var(--header-offset) 14%);
+        cursor: pointer;
+        overflow: hidden;
+        position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+        z-index: 4;
+
+        &__ico {
+            background-color: color-mix(in srgb, transparent var(--header-offset) 12%);
+            display: block;
+            fill: var(--swatch-c);
+            height: 3rem;
+            pointer-events: none;
+            width: 4rem;
+        }
+
+        &__tooltip {
+            bottom: calc(100% + 1.2rem);
+            width: 24rem;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+@media (width >= 480px) {
+    .c-feat-pg__title {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+@include media-query('min-width', 1080px) {
+    .c-feat-pg {
+        &__bg {
+            grid-column: title / sections;
+            grid-row: sections;
+            height: auto;
+            mask-image: linear-gradient(to right, #000, #000);
+            mask-repeat: no-repeat;
+            mask-size: calc(100% - 1px) 100%;
+            position: static;
+            transform: translateX(-27.5rem);
+            transform-origin: 0 0;
+        }
+
+        &__main {
+            --sections-width: 55rem;
+
+            display: grid;
+            grid-template:
+                'keys keys' 0
+                'title sections' 1fr
+                / 1fr var(--sections-width);
+            overflow: hidden;
+        }
+
+        &__overlay {
+            background-image: radial-gradient(
+                    70vw 44rem at calc(50% - 20rem) top,
+                    color-mix(in srgb, transparent, var(--swatch-b) 50%) 0,
+                    color-mix(in srgb, transparent, var(--swatch-b) 0%) 100%
+                ),
+                linear-gradient(
+                    to right,
+                    color-mix(in srgb, transparent, var(--swatch-d) 0%) calc(100% - 35rem),
+                    var(--swatch-d) calc(100% - 10px)
+                );
+        }
+
+        &__sections {
+            max-width: 100%;
+            min-height: inherit;
+            overflow: hidden auto;
+            overflow-y: overlay;
+            padding-left: calc(100% - var(--sections-width));
+            width: 100%;
+
+            .c-tabs__section {
+                flex: 0 0 auto;
+                overflow: visible;
+            }
+        }
+
+        &__title {
+            max-width: 100%;
+            pointer-events: none;
+        }
+
+        &__view-bg {
+            inset: auto auto 2.5rem 11.4rem;
+            position: fixed;
+        }
+    }
+
+    .is-viewing-bg {
+        .c-feat-pg {
+            &__bg {
+                transform: translateX(0);
+            }
+
+            &__sections {
+                transform: translateX(46.2rem);
+            }
+        }
+    }
+}
+
+@include media-query('min-width', 1260px) {
+    .c-feat-pg {
+        &__bg {
+            transform: translateX(-30rem);
+        }
+
+        &__main {
+            --sections-width: 60rem;
+        }
+    }
+
+    .is-viewing-bg {
+        .c-feat-pg__sections {
+            transform: translateX(51.2rem);
+        }
+    }
+}
+
+@include media-query('min-width', 1360px) {
+    .c-feat-pg {
+        &__bg {
+            transform: translateX(-35rem);
+        }
+
+        &__main {
+            --sections-width: 70rem;
+        }
+    }
+
+    .is-viewing-bg {
+        .c-feat-pg__sections {
+            transform: translateX(61.2rem);
+        }
+    }
+}

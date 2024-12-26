@@ -1,60 +1,91 @@
 {
-  "name": "kartridge-demo",
-  "homepage": "./",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "classnames": "^2.2.6",
-    "node-sass": "^4.14.1",
-    "node-vibrant": "^3.1.5",
-    "react": "^16.13.1",
-    "react-color": "^2.18.1",
-    "react-dom": "^16.13.1",
-    "react-dropzone": "^11.0.1",
-    "react-markdown": "^4.3.1",
-    "react-modal": "^3.11.2",
-    "react-player": "^2.5.0",
-    "react-scripts": "3.4.1",
-    "react-sortablejs": "^2.0.11",
-    "react-textarea-autosize": "^8.2.0",
-    "react-uid": "^2.2.0",
-    "spectrum-colorpicker": "^1.8.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^2.0.5",
-    "sass": "^1.26.9",
-    "stylelint": "^13.6.1",
-    "stylelint-config-css-modules": "^2.2.0",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.18.0"
-  }
+    "name": "kartridge-demo",
+    "homepage": "./",
+    "version": "0.2.0",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "lint": "npm run lint:css ; npm run lint:ts ; npm run lint:js",
+        "lint:css": "stylelint \"**/*.{css,scss}\" --fix",
+        "lint:js": "eslint . --fix",
+        "lint:ts": "tsc -b",
+        "pretty": "prettier --ignore-path .gitignore --write ."
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "dependencies": {
+        "@types/tinycolor2": "^1.4.6",
+        "@xstate/store": "^2.6.2",
+        "clsx": "^2.1.1",
+        "node-sass": "^9.0.0",
+        "node-vibrant": "^4.0.0",
+        "react": "^19.0.0",
+        "react-color": "^2.19.3",
+        "react-dom": "^19.0.0",
+        "react-dropzone": "^14.3.5",
+        "react-markdown": "^9.0.1",
+        "react-modal": "^3.16.3",
+        "react-player": "^2.16.0",
+        "react-sortablejs": "^6.1.4",
+        "react-textarea-autosize": "^8.5.6",
+        "react-uid": "^2.3.3",
+        "spectrum-colorpicker": "^1.8.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.17.0",
+        "@testing-library/dom": "^10.4.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.1.0",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/eslint__js": "^8.42.3",
+        "@types/react": "^19.0.2",
+        "@types/react-color": "^3.0.13",
+        "@types/react-dom": "^19.0.2",
+        "@types/react-modal": "^3.16.3",
+        "@typescript-eslint/eslint-plugin": "^8.18.2",
+        "@typescript-eslint/parser": "^8.18.2",
+        "@vitejs/plugin-react": "^4.3.4",
+        "eslint": "^9.17.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-astro": "^1.3.1",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-jsx-a11y": "^6.10.2",
+        "eslint-plugin-prettier": "^5.2.1",
+        "eslint-plugin-react": "^7.37.3",
+        "eslint-plugin-react-hooks": "^5.1.0",
+        "eslint-plugin-react-refresh": "^0.4.16",
+        "globals": "^15.14.0",
+        "msw": "^2.7.0",
+        "prettier": "^3.4.2",
+        "prettier-plugin-astro": "^0.14.1",
+        "resize-observer-polyfill": "^1.5.1",
+        "sass": "^1.83.0",
+        "stylelint": "^16.12.0",
+        "stylelint-config-html": "^1.1.0",
+        "stylelint-config-recommended": "^14.0.1",
+        "stylelint-config-standard-scss": "^14.0.0",
+        "stylelint-order": "^6.0.4",
+        "stylelint-prettier": "^5.0.2",
+        "stylelint-scss": "^6.10.0",
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.18.2",
+        "vite": "^6.0.6",
+        "vite-plugin-svgr": "^4.3.0",
+        "vitest": "^2.1.8"
+    }
 }

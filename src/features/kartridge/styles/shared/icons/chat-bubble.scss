@@ -1,0 +1,86 @@
+.chat-bubbles {
+    height: 3.2em;
+    width: 3.2em;
+
+    &__back,
+    &__front {
+        &-fill,
+        &-line {
+            transition: fill 0.2s ease;
+        }
+    }
+
+    &__back {
+        &-fill {
+            fill: color-mix(in srgb, transparent, var(--grey-med) 60%);
+        }
+
+        &-line {
+            fill: var(--grey-darkest);
+        }
+
+        @at-root .is-active & {
+            &-fill {
+                fill: var(--blue-light);
+            }
+
+            &-line {
+                fill: var(--blue-darker);
+            }
+        }
+    }
+
+    &__front {
+        &-fill {
+            fill: var(--grey-lightest);
+        }
+
+        &-line {
+            fill: var(--grey-darkest);
+        }
+
+        @at-root .is-active & {
+            &-fill {
+                fill: var(--white);
+            }
+
+            &-line {
+                fill: var(--blue-darker);
+            }
+        }
+
+        @at-root .has-notifications & {
+            &-fill {
+                fill: var(--white);
+            }
+
+            &-line {
+                fill: var(--red-med);
+            }
+        }
+    }
+
+    &--btn {
+        position: relative;
+        transform: translateY(0.2rem);
+
+        &-ico {
+            font-size: 0.7em;
+            position: relative;
+            z-index: 1;
+        }
+
+        &-label {
+            color: var(--grey-darkest);
+            font-size: 0.9rem;
+            left: 1.2rem;
+            opacity: 0.8;
+            position: absolute;
+            text-align: center;
+            text-decoration: none;
+            top: 1rem;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+    }
+}

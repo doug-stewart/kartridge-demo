@@ -1,0 +1,17 @@
+.c-subsect {
+    &__label {
+        color: var(--red-med);
+        cursor: pointer;
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 1.2rem;
+    }
+
+    &__item {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}

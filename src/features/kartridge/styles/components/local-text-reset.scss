@@ -1,0 +1,98 @@
+.c-local-reset {
+    blockquote {
+        border-left: 0.3rem color-mix(in srgb, transparent, var(--swatch-e) 30%);
+        padding-left: 2rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    p,
+    pre,
+    table,
+    ul {
+        color: var(--swatch-e);
+        line-height: 2.2rem;
+        margin-bottom: 1.8rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--swatch-f);
+    }
+
+    img {
+        display: block;
+        height: auto;
+        margin: 0 auto;
+        max-width: 100%;
+        width: auto;
+    }
+
+    li,
+    p {
+        letter-spacing: 0.02em;
+        line-height: 1.8;
+        word-wrap: break-word;
+    }
+
+    li {
+        margin-bottom: 0.9rem;
+    }
+
+    ol,
+    ul {
+        margin-left: 3rem;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    p {
+        .u-custom__empty-gallery & {
+            background-color: color-mix(in srgb, transparent, var(--swatch-e) 12%);
+            height: 1.8rem;
+
+            &:nth-child(5) {
+                width: 66.666%;
+            }
+        }
+    }
+
+    pre {
+        background-color: color-mix(in srgb, transparent, var(--swatch-e) 10%);
+        border-radius: 3px;
+        display: block;
+        overflow: auto;
+        padding: 0.5rem;
+    }
+
+    table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border-color: color-mix(in srgb, transparent, var(--swatch-e) 20%);
+        padding: 0.2rem 0.5rem;
+        text-align: center;
+    }
+
+    th {
+        background-color: color-mix(in srgb, transparent, var(--swatch-e) 10%);
+    }
+
+    ul {
+        list-style: disc;
+    }
+}

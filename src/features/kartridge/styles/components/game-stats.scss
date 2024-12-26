@@ -1,0 +1,42 @@
+.c-stats {
+    border-bottom-color: color-mix(in srgb, transparent, var(--swatch-e) 24%);
+    color: var(--swatch-e);
+    display: flex;
+    font-size: 1.8rem;
+    list-style: none;
+    text-align: center;
+
+    &__ico {
+        display: inline-block;
+        fill: color-mix(in srgb, transparent, var(--grey-darkest) 42%);
+        height: 1.5rem;
+        margin-left: 0.2rem;
+        width: 1.5rem;
+    }
+
+    &__item {
+        flex: 1;
+        position: relative;
+        white-space: nowrap;
+    }
+
+    &__main,
+    &__sec {
+        display: block;
+        line-height: 1.6;
+    }
+
+    &__main {
+        font-weight: 400;
+    }
+
+    &__sec {
+        color: var(--swatch-f);
+        display: block;
+        font-family: var(--roboto-family);
+        font-size: 0.66em;
+        letter-spacing: 0.02em;
+        margin-top: 0.42em;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,13 @@
+.ico-more-games-badges {
+    &__shadow {
+        fill: var(--yellow-darker);
+    }
+
+    &__base {
+        fill: color-mix(in srgb, transparent, var(--black) 40%);
+    }
+
+    &__border {
+        fill: var(--yellow-med);
+    }
+}
