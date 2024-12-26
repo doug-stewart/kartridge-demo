@@ -1,7 +1,6 @@
 import { useSelector } from '@xstate/store/react';
 import clsx from 'clsx';
-import Vibrant from 'node-vibrant';
-import tinycolor from 'tinycolor2';
+import { Vibrant } from 'node-vibrant/browser';
 
 import { podsStore } from '../stores/pods.store';
 import { themeStore } from '../stores/theme.store';
@@ -41,12 +40,12 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
 
         const palette = await Vibrant.from(image).getPalette();
 
-        themeStore.send({ type: 'a', color: `#${tinycolor(palette.Vibrant).toHex()}` });
-        themeStore.send({ type: 'b', color: `#${tinycolor(palette.DarkMuted).toHex()}` });
-        themeStore.send({ type: 'c', color: `#${tinycolor(palette.Muted).toHex()}` });
-        themeStore.send({ type: 'd', color: `#${tinycolor(palette.DarkVibrant).toHex()}` });
-        themeStore.send({ type: 'e', color: `#${tinycolor(palette.Muted).toHex()}` });
-        themeStore.send({ type: 'f', color: `#${tinycolor(palette.LightMuted).toHex()}` });
+        themeStore.send({ type: 'a', color: palette.Vibrant?.hex || '#000' });
+        themeStore.send({ type: 'b', color: palette.DarkMuted?.hex || '#fff' });
+        themeStore.send({ type: 'c', color: palette.Muted?.hex || '#fff' });
+        themeStore.send({ type: 'd', color: palette.DarkVibrant?.hex || '#000' });
+        themeStore.send({ type: 'e', color: palette.Muted?.hex || '#fff' });
+        themeStore.send({ type: 'f', color: palette.LightMuted?.hex || '#fff' });
     };
 
     return (
