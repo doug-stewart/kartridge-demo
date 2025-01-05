@@ -45,7 +45,7 @@
     "stylelint-order": "^3.0.1"
   },
   "scripts": {
-    "build": "parcel build index.html -d docs --public-url docs",
+    "build": "parcel build index.html -d docs --public-url katridge-demo/docs",
     "dev": "parcel index.html",
     "format": "prettier \"app/**/*.{js,html}\" --write",
     "lint": "eslint \"app/**/*.{js,jsx}\" --quiet",
