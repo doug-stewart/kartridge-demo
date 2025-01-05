@@ -41,12 +41,12 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
 
         const palette = await Vibrant.from(image).getPalette();
 
-        themeStore.send({ type: 'a', color: tinycolor(palette.Vibrant).toHex() });
-        themeStore.send({ type: 'b', color: tinycolor(palette.DarkMuted).toHex() });
-        themeStore.send({ type: 'c', color: tinycolor(palette.Muted).toHex() });
-        themeStore.send({ type: 'd', color: tinycolor(palette.DarkVibrant).toHex() });
-        themeStore.send({ type: 'e', color: tinycolor(palette.Muted).toHex() });
-        themeStore.send({ type: 'f', color: tinycolor(palette.LightMuted).toHex() });
+        themeStore.send({ type: 'a', color: `#${tinycolor(palette.Vibrant).toHex()}` });
+        themeStore.send({ type: 'b', color: `#${tinycolor(palette.DarkMuted).toHex()}` });
+        themeStore.send({ type: 'c', color: `#${tinycolor(palette.Muted).toHex()}` });
+        themeStore.send({ type: 'd', color: `#${tinycolor(palette.DarkVibrant).toHex()}` });
+        themeStore.send({ type: 'e', color: `#${tinycolor(palette.Muted).toHex()}` });
+        themeStore.send({ type: 'f', color: `#${tinycolor(palette.LightMuted).toHex()}` });
     };
 
     return (
