@@ -253,7 +253,7 @@
       background-color: $mac-red;
 
       &::before {
-        mask: url('../../images/icons/mac-close.svg') no-repeat 50% 50%;
+        mask: url('./../../images/icons/mac-close.svg') no-repeat 50% 50%;
         mask-size: 4px 4px;
       }
     }
@@ -266,7 +266,7 @@
       background-color: $mac-green;
 
       &::before {
-        mask: url('../../images/icons/mac-maximize.svg') no-repeat 50% 50%;
+        mask: url('./../../images/icons/mac-maximize.svg') no-repeat 50% 50%;
         mask-size: 6px 6px;
       }
     }
@@ -277,7 +277,7 @@
       background-color: $mac-yellow;
 
       &::before {
-        mask: url('../../images/icons/mac-minimize.svg') no-repeat 50% 50%;
+        mask: url('./../../images/icons/mac-minimize.svg') no-repeat 50% 50%;
         mask-size: 8px 2px;
       }
     }
@@ -449,7 +449,7 @@
     background-color: $black;
     display: block;
     height: 100%;
-    mask: url('../../images/icons/win-menu.svg') no-repeat 50% 50%;
+    mask: url('./../../images/icons/win-menu.svg') no-repeat 50% 50%;
     mask-size: 1.2rem 0.9rem;
     opacity: 0.66;
     width: 100%;
@@ -491,21 +491,21 @@
 
   &__close {
     &-link {
-      mask: url('../../images/icons/win-close.svg') no-repeat 50% 50%;
+      mask: url('./../../images/icons/win-close.svg') no-repeat 50% 50%;
       mask-size: 10px 10px;
     }
   }
 
   &__max {
     &-link {
-      mask: url('../../images/icons/win-maximize.svg') no-repeat 50% 50%;
+      mask: url('./../../images/icons/win-maximize.svg') no-repeat 50% 50%;
       mask-size: 10px 10px;
     }
   }
 
   &__min {
     &-link {
-      mask: url('../../images/icons/win-minimize.svg') no-repeat 50% 50%;
+      mask: url('./../../images/icons/win-minimize.svg') no-repeat 50% 50%;
       mask-size: 10px 2px;
     }
   }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
 import MarkdownModal from '../customize/MarkdownModal';
 
 const TextPod = ({ pod, text, setText }) => {
@@ -6,7 +7,7 @@ const TextPod = ({ pod, text, setText }) => {
 
   return (
     <label htmlFor={`text-${pod}`} className="c-media__text-group">
-      <textarea
+      <TextareaAutosize
         className="c-media__text-input"
         id={`text-${pod}`}
         style={{ height: '94px', overflow: 'hidden' }}

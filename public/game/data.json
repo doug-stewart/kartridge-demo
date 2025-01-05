@@ -43,7 +43,7 @@
   {
     "id": 4,
     "type": "text",
-    "text": "A very important piece of text."
+    "text": "### Credits\n\n- **My Website:** [https://dougstewart.io/](https://dougstewart.io/)\n- **GitHub Repo:** [https://github.com/doug-stewart/kartridge-demo](https://github.com/doug-stewart/kartridge-demo)\n\n[Kartridge](https://www.kartridge.com/) is a PC gaming platform by [Kongregate](https://www.kongregate.com/) focused on the indie games community. It was made with love by a diverse group of designers, engineers and product managers."
   },
   {
     "id": 5,

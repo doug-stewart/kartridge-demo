@@ -101,7 +101,11 @@ const Header = ({ preview, toggleAction }) => {
                 <button
                   className="c-filmstrip__btn"
                   onClick={() => generatePalette(item.image)}>
-                  <img alt="" src={item.image} className="c-filmstrip__img" />
+                  <img
+                    alt=""
+                    src={`${process.env.PUBLIC_URL + item.image}`}
+                    className="c-filmstrip__img"
+                  />
                 </button>
               </li>
             ))}

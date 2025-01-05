@@ -21,7 +21,7 @@ const Gallery = ({ layout, images }) => {
               onClick={() => openModal(item.image)}>
               <img
                 alt="Pine screenshot"
-                src={item.image}
+                src={`${process.env.PUBLIC_URL + item.image}`}
                 className="c-media__art-img"
               />
             </button>
