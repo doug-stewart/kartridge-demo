@@ -95,7 +95,7 @@ input[type='checkbox']:checked,
     content: '';
     height: 80%;
     left: 15%;
-    mask: url('/app/assets/icons/check.svg') no-repeat 50% 50%;
+    mask: url('/assets/icons/check.svg') no-repeat 50% 50%;
     mask-size: contain;
     position: absolute;
     top: 10%;
@@ -109,7 +109,7 @@ input[type='file'] {
 }
 
 select {
-  background-image: url('/app/assets/icons/arrows.svg');
+  background-image: url('/assets/icons/arrows.svg');
   background-position: right 1em center;
   background-repeat: no-repeat;
   background-size: auto 40%;
