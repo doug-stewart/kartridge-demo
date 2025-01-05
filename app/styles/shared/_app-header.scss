@@ -263,13 +263,6 @@
         mask: url('/assets/icons/mac-maximize.svg') no-repeat 50% 50%;
         mask-size: 6px 6px;
       }
-
-      &.maximized {
-        &::before {
-          mask: url('/assets/icons/mac-demaximize.svg') no-repeat 50% 50%;
-          mask-size: 10px 10px;
-        }
-      }
     }
   }
 
@@ -503,11 +496,6 @@
     &-link {
       mask: url('/assets/icons/win-maximize.svg') no-repeat 50% 50%;
       mask-size: 10px 10px;
-
-      &.maximized {
-        mask: url('/assets/icons/win-demaximize.svg') no-repeat 50% 50%;
-        mask-size: 10px 10px;
-      }
     }
   }
 
@@ -530,9 +518,6 @@
         height: 4.2em;
         margin-right: -17.5em;
         width: 23.56em;
-
-        .svg-full-logo__text,
-        .svg-full-logo__text-shadow { display: none; }
       }
     }
 
