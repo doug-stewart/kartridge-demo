@@ -1,0 +1,90 @@
+.c-rating {
+    &__all,
+    &__my {
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 1.33;
+        overflow: visible;
+        white-space: nowrap;
+
+        &-star {
+            display: inline-block;
+            height: 1.1em;
+            overflow: visible;
+            transform: translateY(0.08em);
+            vertical-align: baseline;
+            width: 1.1em;
+        }
+    }
+
+    &__all {
+        &-star {
+            fill: var(--red-med);
+        }
+
+        &.is-under-judgement {
+            .c-rating__all-star {
+                fill: transparent;
+                stroke: var(--red-light);
+                stroke-linejoin: round;
+                stroke-width: 6px;
+            }
+
+            .c-rating__rating {
+                background-color: var(--white);
+                border: 1px solid var(--grey-med);
+                border-bottom-width: 2px;
+                border-radius: 3px;
+                bottom: calc(100% + 4px);
+                color: var(--grey-darkest);
+                font-size: 0.94em;
+                font-style: italic;
+                font-weight: normal;
+                opacity: 0;
+                padding: 0.2rem 0.6rem;
+                pointer-events: none;
+                position: absolute;
+                right: -1.5rem;
+                transition: opacity 0.2s ease;
+
+                &::after,
+                &::before {
+                    border-style: solid;
+                    border-width: 0.5rem;
+                    content: '';
+                    height: 0;
+                    padding: 0;
+                    position: absolute;
+                    right: 1.5rem;
+                    width: 0;
+                }
+
+                &::after {
+                    border-color: var(--white) transparent transparent;
+                    top: 100%;
+                }
+
+                &::before {
+                    border-color: var(--grey-med) transparent transparent;
+                    top: calc(100% + 2px);
+                }
+            }
+        }
+    }
+
+    &__my {
+        margin-left: 0.44rem;
+
+        &-star {
+            fill: var(--blue-med);
+        }
+
+        a {
+            color: var(--white);
+            display: inline-block;
+            font-size: 0.72em;
+            text-transform: uppercase;
+            transform: translateY(-0.11em);
+        }
+    }
+}

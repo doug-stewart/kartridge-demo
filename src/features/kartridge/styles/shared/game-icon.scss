@@ -1,0 +1,11 @@
+.c-game-ico {
+    &__video {
+        display: block;
+        height: calc(100% - 3px);
+        left: 1px;
+        object-fit: cover;
+        position: absolute;
+        top: 1px;
+        width: calc(100% - 2px);
+    }
+}

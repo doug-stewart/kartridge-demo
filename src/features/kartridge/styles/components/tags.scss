@@ -1,0 +1,79 @@
+.c-tags {
+    display: block;
+    overflow: hidden;
+}
+
+.c-tag {
+    &,
+    &__add,
+    &--feat,
+    &--linked {
+        background-color: var(--grey-light);
+        color: color-mix(in srgb, transparent, var(--black) 60%);
+        display: block;
+        fill: color-mix(in srgb, transparent, var(--black) 60%);
+        float: left;
+        font: 1.3rem/1.31 var(--roboto-cond-family);
+        margin: 0 0.15em 0.15em 0;
+        padding: 0 0.38em;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+    &__add {
+        cursor: pointer;
+        text-transform: none;
+
+        &::before {
+            content: '+ ';
+            font-family: var(--gordita-family);
+            font-weight: bold;
+        }
+    }
+
+    &__ico {
+        fill: inherit;
+        height: 0.8em;
+        margin-left: 0.1em;
+        width: auto;
+    }
+
+    &__link {
+        color: inherit;
+        padding: 0 0.38em;
+        text-decoration: none;
+    }
+
+    &--feat {
+        background-color: var(--grey-darker);
+        color: var(--white);
+        fill: var(--white);
+    }
+
+    &--linked {
+        padding: 0;
+    }
+}
+
+.c-tags--inline {
+    .c-tag {
+        background-color: transparent;
+        color: inherit;
+        display: inline;
+        float: none;
+        font-size: 1.08em;
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+
+        &:not(:last-child)::after {
+            content: ',';
+            margin-left: -0.33ch;
+        }
+
+        &__link {
+            padding: 0;
+        }
+    }
+}

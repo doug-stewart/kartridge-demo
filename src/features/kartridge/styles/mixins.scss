@@ -1,0 +1,35 @@
+// stylelint-disable block-closing-brace-newline-after, at-rule-empty-line-before
+
+@use 'variables' as *;
+
+@mixin media-query($first-type, $first-num, $second-type: false, $second-num: false) {
+    $first-new-num: $first-num + $sidebar-width;
+
+    @if $second-type {
+        $second-new-num: $second-num + $sidebar-width;
+
+        @at-root .ap-frame:not(.has-app-sidebar) {
+            @media ($first-type: $first-num) and ($second-type: $second-num) {
+                @content;
+            }
+        }
+
+        @at-root .has-app-sidebar {
+            @media ($first-type: $first-new-num) and ($second-type: $second-new-num) {
+                @content;
+            }
+        }
+    } @else {
+        @at-root .ap-frame:not(.has-app-sidebar) {
+            @media ($first-type: $first-num) {
+                @content;
+            }
+        }
+
+        @at-root .has-app-sidebar {
+            @media ($first-type: $first-new-num) {
+                @content;
+            }
+        }
+    }
+}

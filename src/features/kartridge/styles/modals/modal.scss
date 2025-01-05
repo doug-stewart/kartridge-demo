@@ -1,0 +1,73 @@
+.c-modal {
+    &__btn {
+        background-color: var(--grey-darkest);
+        border: 2px solid var(--grey-lighter);
+        border-radius: 50%;
+        color: var(--white);
+        font-size: 2.4rem;
+        font-weight: 700;
+        height: 3.5rem;
+        line-height: calc(3.5rem - 4px);
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        transform: translate(33.333%, -33.333%);
+        transition: background-color 0.2s ease;
+        width: 3.5rem;
+        z-index: 1;
+
+        &:hover {
+            background-color: var(--grey-darker);
+        }
+    }
+
+    &__content {
+        background-color: var(--grey-lighter);
+        color: var(--grey-darkest);
+        display: block;
+        overflow: auto;
+        padding: 3.5rem 4rem;
+        position: relative;
+        width: 100%;
+        z-index: 0;
+
+        &::-webkit-scrollbar-track {
+            margin: 4rem 0;
+        }
+    }
+
+    &__inner {
+        margin: auto;
+        max-height: calc(100% - 8rem);
+        max-width: calc(100% - 8rem);
+        position: relative;
+        z-index: 1;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-scrollbar {
+            &-thumb {
+                background-color: color-mix(in srgb, transparent, var(--white) 24%);
+            }
+
+            &-track {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__outer {
+        --text: var(--black);
+
+        background-color: color-mix(in srgb, transparent, var(--black) 70%);
+        display: flex;
+        font-size: 1.2rem;
+        inset: 0;
+        position: fixed;
+        scrollbar-color: color-mix(in srgb, transparent, var(--white) 24%) transparent;
+        z-index: 11;
+    }
+}

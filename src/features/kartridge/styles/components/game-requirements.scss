@@ -1,0 +1,29 @@
+.c-requires {
+    display: grid;
+    font-size: 1.3rem;
+    grid-gap: 1rem 2rem;
+    grid-template-columns: auto 1fr;
+    text-align: left;
+
+    &__prop,
+    &__val {
+        white-space: normal;
+    }
+
+    &__prop {
+        font-weight: 700;
+        text-align: right;
+    }
+
+    &__val {
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @supports (display: grid) {
+            margin: 0;
+        }
+    }
+}
