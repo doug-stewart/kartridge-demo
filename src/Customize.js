@@ -28,7 +28,7 @@ const Customize = ({ background, setBackground }) => {
           </span>
         </span>
         <div className={cx('c-feat-pg__title', 'gp-title', 'is-editing')}>
-          <h1 className="gp-name">Ghost In The Shell: Arise</h1>
+          <h1 className="gp-name">Dawn Racer 2049</h1>
           <div className="gp-meta">
             <ul className={cx('gp-platforms', 'c-platforms')}>
               <li className="c-platform">
@@ -44,10 +44,13 @@ const Customize = ({ background, setBackground }) => {
             </ul>
             <ul className={cx('c-tags', 'gp-tags')}>
               <li className={cx('c-tag', 'c-tag--linked')}>
-                <span className="c-tag__link">Action</span>
+                <span className="c-tag__link">Racing</span>
               </li>
               <li className={cx('c-tag', 'c-tag--linked')}>
-                <span className="c-tag__link">Shooter</span>
+                <span className="c-tag__link">Sci-Fi</span>
+              </li>
+              <li className={cx('c-tag', 'c-tag--linked')}>
+                <span className="c-tag__link">Adventure</span>
               </li>
               <li className={cx('c-tag', 'c-tooltip__trigger')}>
                 DRM Free
