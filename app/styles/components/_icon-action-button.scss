@@ -18,49 +18,6 @@
   }
 }
 
-.btn-ico-action--share__text {
-  background-color: $red-dark;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  left: 50%;
-  line-height: 1.1rem;
-  padding: 2px;
-  position: absolute;
-  top: 100%;
-  transform: translate(-50%, -50%);
-}
-
-.btn-ico-action--favorite {
-  &::before {
-    content: '+';
-    font-weight: 700;
-    left: .7rem;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &:not(:hover).is-added::before {
-    background-color: $white;
-    content: '';
-    height: .6rem;
-    mask: url('/assets/icons/check.svg') no-repeat 50% 50%;
-    mask-size: contain;
-    width: .8rem;
-  }
-
-  &:hover.is-added::before { content: '-'; }
-}
-
-.btn-favorite-ico {
-  display: block;
-  fill: inherit;
-  height: .9rem;
-  pointer-events: none;
-  width: 1.1rem;
-}
-
 .btn-wishlist-ico {
   &--add,
   &--remove {

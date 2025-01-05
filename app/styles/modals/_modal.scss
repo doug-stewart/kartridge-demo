@@ -17,182 +17,24 @@
     &-track { background-color: transparent; }
   }
 
-  &__btn {
-    &-back {
-      background-color: transparent;
-      color: transparent;
-      font-size: .857em;
-      font-weight: 500;
-      left: 0;
-      padding: .357em .714em .357em 1.6em;
-      position: absolute;
-      text-transform: uppercase;
-      top: 0;
-      transition:
-        background-color .2s ease,
-        color .2s ease;
-      z-index: 1;
+  &__btn-close {
+    background-color: $grey-darkest;
+    border: 2px solid $grey-lighter;
+    border-radius: 50%;
+    color: $white;
+    font-size: 2.4rem;
+    font-weight: 700;
+    height: 3.5rem;
+    line-height: calc(3.5rem - 4px);
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transform: translate(33.333%, -33.333%);
+    transition: background-color .2s ease;
+    width: 3.5rem;
 
-      &__arrow {
-        color: $grey-darkest;
-        display: block;
-        height: .833em;
-        left: .5em;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: fill .2s ease;
-        width: .833em;
-      }
-
-      &:hover {
-        background-color: $grey-darker;
-        color: $white;
-      }
-
-      &:hover &__arrow { fill: $white; }
-    }
-
-    &-cc,
-    &-dark,
-    &-pos,
-    &-pp,
-    &-purple,
-    &-std,
-    &-warn {
-      align-items: center;
-      color: $white;
-      cursor: pointer;
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      font-weight: 700;
-      isolation: isolate;
-      justify-content: center;
-      position: relative;
-      text-decoration: none;
-      transition:
-        background-color .3s ease,
-        box-shadow .3s ease,
-        color .3s ease;
-    }
-
-    &-cc,
-    &-pp {
-      font-size: 1.3rem;
-      font-weight: 400;
-      line-height: 1.6em;
-      padding: .64em 2.14em .99em;
-      text-align: center;
-
-      strong {
-        font-size: 1.4rem;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-    }
-
-    &-cc {
-      background-color: $grey-darker;
-      box-shadow: inset 0 -.3rem 0 $grey-darkest;
-
-      &:hover { background-color: $grey-darkest; }
-    }
-
-    &-close {
-      background-color: $grey-darkest;
-      border: 2px solid $grey-lighter;
-      border-radius: 50%;
-      color: $white;
-      font-size: 2.4rem;
-      font-weight: 700;
-      height: 3.5rem;
-      line-height: calc(3.5rem - 4px);
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 0;
-      transform: translate(33.333%, -33.333%);
-      transition: background-color .2s ease;
-      width: 3.5rem;
-
-      &:hover { background-color: $grey-darker; }
-    }
-
-    &-ico {
-      height: 2rem;
-      margin: 0 .4ch;
-      transform: translateY(-8%);
-      vertical-align: middle;
-      width: auto;
-    }
-
-    &-dark,
-    &-pos,
-    &-purple,
-    &-std,
-    &-warn {
-      font-size: 1.4rem;
-      line-height: 1.4;
-      padding: 1em 1.88em 1.3em;
-      text-transform: uppercase;
-    }
-
-    &-dark {
-      background-color: rgba($black, .3);
-      box-shadow: inset 0 -.3rem 0 rgba($black, .6);
-
-      &:hover {
-        background-color: rgba($black, .5);
-        box-shadow: inset 0 -.3rem 0 rgba($black, 0);
-      }
-    }
-
-    &-pos {
-      background-color: $green-med;
-      box-shadow: inset 0 -.3rem 0 $green-dark;
-
-      &:hover { background-color: $green-dark; }
-    }
-
-    &-pp {
-      background-color: $paypal-med;
-      box-shadow: inset 0 -.3rem 0 $paypal-dark;
-
-      .c-modal__option-type {
-        fill: $white;
-        height: 1.5rem;
-        transform: translateY(5%);
-        width: 100%;
-      }
-
-      &:hover { background-color: $paypal-dark; }
-    }
-
-    &-purple {
-      background-color: $purple-med;
-      box-shadow: inset 0 -.3rem 0 $purple-dark;
-
-      &:hover { background-color: $purple-dark; }
-    }
-
-    &-std {
-      background-color: rgba($grey-med, .33);
-      box-shadow: inset 0 -.3rem 0 rgba($grey-darker, .33);
-      color: $grey-darkest;
-
-      &:hover {
-        background-color: rgba($grey-darker, .33);
-        box-shadow: none;
-      }
-    }
-
-    &-warn {
-      background-color: $red-light;
-      box-shadow: inset 0 -.3rem 0 rgba($red-dark, .33);
-
-      &:hover { background-color: $red-dark; }
-    }
+    &:hover { background-color: $grey-darker; }
   }
 
   &__content {
@@ -205,27 +47,6 @@
     z-index: 1;
   }
 
-  &__error {
-    border: 1px solid $red-med;
-    border-radius: 3px;
-    color: $red-med;
-    display: block;
-    margin-bottom: 2.4rem;
-    padding: .8rem 1rem;
-  }
-
-  &__form {
-    padding: 0;
-
-    .c-form__label { margin-bottom: 1rem; }
-
-    .c-form__directions,
-    .c-form__group,
-    .c-form__intro { margin-bottom: 2.4rem; }
-
-    .c-form__intro { margin-top: -1.5rem; }
-  }
-
   &__inner {
     margin: auto;
     max-width: 100%;
@@ -233,33 +54,6 @@
     position: relative;
     width: 100%;
     z-index: 1;
-  }
-
-  &__options {
-    display: flex;
-    margin: 2rem -2rem -2rem;
-  }
-
-  &__option {
-    display: flex;
-    flex: 1;
-    text-align: center;
-
-    &-type {
-      display: block;
-      font-weight: 500;
-    }
-
-    .c-loading__spinner {
-      display: none;
-      vertical-align: baseline;
-    }
-
-    &.disabled {
-      .c-loading__spinner {
-        display: inline-block;
-      }
-    }
   }
 
   &__overlay {
@@ -272,104 +66,6 @@
     top: 0;
     z-index: 0;
   }
-
-  &__title {
-    color: $grey-darkest;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 2.4rem;
-    text-transform: none;
-
-    &--referral {
-      em {
-        color: $purple-light;
-        font-style: normal;
-        font-weight: 700;
-      }
-
-      strong {
-        display: block;
-      }
-    }
-  }
-}
-
-// Standard Modal
-.m-basic {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 27rem;
-  padding-bottom: 8rem;
-  text-align: center;
-}
-
-.m-container { flex: 1; }
-
-.m-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  min-height: 100%;
-  padding: 5rem 0;
-}
-
-.m-errors { margin-top: 1.5rem; }
-
-.m-footer { padding: 5rem 0; }
-
-.m-game-listing { margin: 1.3rem 0 1.5rem; }
-
-.m-hide {
-  &-check[type='checkbox'] {
-    margin-right: .5rem;
-    vertical-align: text-bottom;
-  }
-
-  &-label {
-    bottom: 8rem;
-    font-size: 1.1rem;
-    left: 0;
-    position: absolute;
-    right: 0;
-    text-transform: uppercase;
-  }
-}
-
-.m-input {
-  .m-msg + & { margin-top: 1.5rem; }
-}
-
-.m-msg,
-.m-title {
-  color: $grey-darkest;
-  line-height: 2.4rem;
-}
-
-.m-msg {
-  font-size: 1.5rem;
-  font-weight: 300;
-  word-wrap: break-word;
-
-  strong {
-    color: $grey-darker;
-    font-weight: 500;
-  }
-}
-
-.m-options {
-  bottom: 0;
-  left: 0;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-}
-
-.m-title {
-  font-size: 1.6rem;
-  margin-bottom: .2rem;
 }
 
 @media (min-width: 480px) {
@@ -379,6 +75,4 @@
       width: auto;
     }
   }
-
-  .m-basic { width: 42.4rem; }
 }
