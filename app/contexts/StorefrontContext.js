@@ -44,12 +44,16 @@ const reducer = (state, action) => {
       return { ...state };
 
     case action.type === 'addImage':
-      state.items[action.pod].images.push(action.image.data);
+      state.items[action.pod].images.push({ image: action.image.data });
       return { ...state };
 
-    case action.type === 'removeImage':
-      state.items[action.pod].images.splice(action.image, 1);
+    case action.type === 'removeImage': {
+      const gallery = state.items[action.pod].images;
+      const index = gallery.findIndex(item => item.image === action.image);
+
+      gallery.splice(index, 1);
       return { ...state };
+    }
 
     // Text Pod
     case action.type === 'addPod' && action.kind === 'text':
