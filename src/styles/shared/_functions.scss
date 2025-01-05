@@ -1,11 +1,11 @@
 @function split($hex) {
-  $blue:  blue($hex);
+  $blue: blue($hex);
   $green: green($hex);
-  $red:   red($hex);
+  $red: red($hex);
 
   @return unquote('#{$red},#{$green},#{$blue}');
 }
 
-@function swatch($color, $alpha:1) {
+@function swatch($color, $alpha: 1) {
   @return unquote('rgba(var(--#{$color}), #{$alpha})');
 }

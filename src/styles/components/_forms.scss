@@ -6,13 +6,20 @@ textarea {
   appearance: none;
   font-size: 1.4rem;
 
-  &::placeholder { color: $grey-med; }
-  &.has-error::placeholder { color: $red-med; }
+  &::placeholder {
+    color: $grey-med;
+  }
+
+  &.has-error::placeholder {
+    color: $red-med;
+  }
 
   &:focus {
     outline: none;
 
-    &::placeholder { color: transparent; }
+    &::placeholder {
+      color: transparent;
+    }
   }
 }
 
@@ -28,7 +35,9 @@ select {
   padding: 1.2rem 1.6rem;
   width: 100%;
 
-  &:focus { border-color: $grey-dark; }
+  &:focus {
+    border-color: $grey-dark;
+  }
 
   &.has-error {
     background-color: $red-lightest;
@@ -42,7 +51,9 @@ select {
   }
 }
 
-input::-ms-clear { display: none; }
+input::-ms-clear {
+  display: none;
+}
 
 input[type='file'] {
   display: flex;
@@ -52,21 +63,15 @@ input[type='file'] {
 select {
   --arrow-color: #444;
 
-  background-image:
-    linear-gradient(45deg, var(--arrow-color) 45%, transparent 55%, transparent),
-    linear-gradient(130deg, transparent 45%, var(--arrow-color) 55%, var(--arrow-color)),
-    linear-gradient(130deg, var(--arrow-color) 45%, transparent 55%, transparent),
-    linear-gradient(45deg, transparent 45%, var(--arrow-color) 55%, var(--arrow-color));
-  background-position:
-    calc(100% - 12px) calc(50% - 4px),
-    calc(100% - 17px) calc(50% - 4px),
-    calc(100% - 12px) calc(50% + 3px),
-    calc(100% - 17px) calc(50% + 3px);
+  background-image: linear-gradient(45deg, var(--arrow-color) 45%, transparent 55%, transparent), linear-gradient(130deg, transparent 45%, var(--arrow-color) 55%, var(--arrow-color)), linear-gradient(130deg, var(--arrow-color) 45%, transparent 55%, transparent), linear-gradient(45deg, transparent 45%, var(--arrow-color) 55%, var(--arrow-color));
+  background-position: calc(100% - 12px) calc(50% - 4px), calc(100% - 17px) calc(50% - 4px), calc(100% - 12px) calc(50% + 3px), calc(100% - 17px) calc(50% + 3px);
   background-repeat: no-repeat;
   background-size: 5px 5px;
   cursor: pointer;
 
-  option:disabled { color: $grey-med; }
+  option:disabled {
+    color: $grey-med;
+  }
 }
 
 textarea {
@@ -77,7 +82,9 @@ textarea {
   resize: vertical;
   width: 100%;
 
-  &.is-auto-sized { resize: none; }
+  &.is-auto-sized {
+    resize: none;
+  }
 }
 
 .c-form-drop {
@@ -87,27 +94,27 @@ textarea {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    padding: .5rem;
+    padding: 0.5rem;
     text-align: left;
-    transition:
-      background-color .16s $curve,
-      box-shadow .16s $curve;
+    transition: background-color 0.16s $curve, box-shadow 0.16s $curve;
     width: 100%;
 
     &:focus,
     &:hover {
-      background-color: rgba($black, .03);
-      box-shadow: inset 0 0 0 1px rgba($black, .08);
+      background-color: rgba($black, 0.03);
+      box-shadow: inset 0 0 0 1px rgba($black, 0.08);
 
-      .c-facet-list__name { color: $purple-med; }
+      .c-facet-list__name {
+        color: $purple-med;
+      }
     }
   }
 
   &__arrow {
     border-color: $grey-darkest transparent transparent;
     border-style: solid;
-    border-width: .5rem .5rem 0;
-    opacity: .4;
+    border-width: 0.5rem 0.5rem 0;
+    opacity: 0.4;
     pointer-events: none;
     position: absolute;
     right: 1.2rem;
@@ -115,9 +122,7 @@ textarea {
     transform: translate(-50%, -50%);
 
     .is-focused > & {
-      transform:
-        translate(-50%, -50%)
-        rotate(.5turn);
+      transform: translate(-50%, -50%) rotate(0.5turn);
     }
   }
 
@@ -132,14 +137,16 @@ textarea {
     top: 100%;
     z-index: 1;
 
-    .is-focused > & { display: flex; }
+    .is-focused > & {
+      display: flex;
+    }
   }
 
   &__desc,
   &__name,
   &__sub {
     display: block;
-    opacity: .6;
+    opacity: 0.6;
   }
 
   &__grp {
@@ -149,7 +156,9 @@ textarea {
     padding: 0 3.5rem 0 1.6rem;
     position: relative;
 
-    &.is-disabled { pointer-events: none; }
+    &.is-disabled {
+      pointer-events: none;
+    }
 
     &.is-focused {
       border-bottom-left-radius: 0;
@@ -170,8 +179,8 @@ textarea {
     border: 1px solid $grey-med;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    border-top-color: rgba($grey-dark, .12);
-    box-shadow: 0 .3rem 0 rgba($black, .2);
+    border-top-color: rgba($grey-dark, 0.12);
+    box-shadow: 0 0.3rem 0 rgba($black, 0.2);
     display: grid;
     flex: 1 1 100%;
     font-size: 1.2rem;
@@ -190,30 +199,32 @@ textarea {
     display: flex;
     font-size: 1.4rem;
     left: 1.6rem;
-    opacity: .5;
+    opacity: 0.5;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
 
   &__name {
-    margin: .3rem 0 .4rem;
+    margin: 0.3rem 0 0.4rem;
     opacity: 1;
   }
 
   &__remove {
     align-items: center;
-    background-color: rgba($black, .08);
+    background-color: rgba($black, 0.08);
     border-radius: 3px;
     display: flex;
     flex: 0 0 auto;
     height: 3rem;
-    margin: .8rem .5rem .8rem 0;
+    margin: 0.8rem 0.5rem 0.8rem 0;
     max-width: 100%;
-    padding: 0 .5rem 0 1rem;
-    transition: background-color .16s $curve;
+    padding: 0 0.5rem 0 1rem;
+    transition: background-color 0.16s $curve;
 
-    &:hover { background-color: rgba($black, .12); }
+    &:hover {
+      background-color: rgba($black, 0.12);
+    }
 
     &-x {
       border-radius: 50%;
@@ -221,11 +232,9 @@ textarea {
       flex: 0 0 auto;
       font-weight: 700;
       line-height: 1.8rem;
-      margin-left: .5rem;
-      opacity: .16;
-      transition:
-        color .16s $curve,
-        opacity .16s $curve;
+      margin-left: 0.5rem;
+      opacity: 0.16;
+      transition: color 0.16s $curve, opacity 0.16s $curve;
       width: 1.8rem;
 
       :hover > & {

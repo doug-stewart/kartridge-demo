@@ -2,8 +2,8 @@
   background-color: $white;
   border: 1px solid $grey-med;
   border-radius: 3px;
-  box-shadow: 0 .3rem 0 rgba($black, .2);
-  color: rgba($black, .87);
+  box-shadow: 0 0.3rem 0 rgba($black, 0.2);
+  color: rgba($black, 0.87);
   display: none;
   font: normal 400 1.4rem/1.8 $gordita-family;
   padding: 1rem;
@@ -29,7 +29,7 @@
     background-color: $white;
     border: 1px solid $white;
     border-bottom-color: $grey-med;
-    border-bottom-right-radius: .3rem;
+    border-bottom-right-radius: 0.3rem;
     border-right-color: $grey-med;
     height: 1.2rem;
     top: calc(100% + 1px);
@@ -38,14 +38,14 @@
   }
 
   &::before {
-    border: .9rem solid;
-    border-color: rgba($black, .2) transparent transparent transparent;
-    top: calc(100% + 1px + .3rem);
+    border: 0.9rem solid;
+    border-color: rgba($black, 0.2) transparent transparent transparent;
+    top: calc(100% + 1px + 0.3rem);
     transform: translateX(-50%);
   }
 
   &__headline {
-    color: rgba($purple-med, .5);
+    color: rgba($purple-med, 0.5);
     display: block;
     font-size: 1rem;
     text-transform: uppercase;
@@ -53,37 +53,43 @@
 
   &__trigger {
     &,
-    & * { cursor: pointer; }
+    & * {
+      cursor: pointer;
+    }
   }
 
   &--left {
     &::after,
-    &::before { left: 2rem; }
+    &::before {
+      left: 2rem;
+    }
   }
 
   &--right {
     &::after,
-    &::before { left: calc(100% - 2rem); }
+    &::before {
+      left: calc(100% - 2rem);
+    }
   }
 
   &--top {
     &::after {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      border-color:
-        $grey-med
-        $white
-        $white
-        $grey-med;
+      border-color: $grey-med $white $white $grey-med;
       top: -1px;
     }
 
-    &::before { display: none; }
+    &::before {
+      display: none;
+    }
   }
 
   &__trigger:hover &,
   &__trigger:hover + &,
-  &.is-persistant { display: block; }
+  &.is-persistant {
+    display: block;
+  }
 }
 
 .c-sml-tooltip {
@@ -98,7 +104,7 @@
   &--top-right {
     background-color: $grey-lighter;
     border: 1px solid $grey-darker;
-    box-shadow: 0 0 .3rem .1rem rgba($grey-med, .16);
+    box-shadow: 0 0 0.3rem 0.1rem rgba($grey-med, 0.16);
     color: $black;
     display: block;
     font-size: 1rem;
@@ -106,62 +112,66 @@
     font-weight: 500;
     line-height: 1.7rem;
     opacity: 0;
-    padding: 0 .4em;
+    padding: 0 0.4em;
     pointer-events: none;
     position: absolute;
-    transition: opacity .16s $curve;
+    transition: opacity 0.16s $curve;
     white-space: nowrap;
     z-index: 1;
   }
 
   &--bottom-left {
-    right: calc(100% + .5rem);
-    top: calc(100% + .5rem);
+    right: calc(100% + 0.5rem);
+    top: calc(100% + 0.5rem);
   }
 
   &--bottom-mid {
     left: 50%;
-    top: calc(100% + .5rem);
+    top: calc(100% + 0.5rem);
     transform: translateX(-50%);
   }
 
   &--bottom-right {
-    left: calc(100% + .5rem);
-    top: calc(100% + .5rem);
+    left: calc(100% + 0.5rem);
+    top: calc(100% + 0.5rem);
   }
 
   &,
   &--center-left {
-    right: calc(100% + .5rem);
+    right: calc(100% + 0.5rem);
     top: 50%;
     transform: translateY(-50%);
   }
 
   &--center-right {
-    left: calc(100% + .5rem);
+    left: calc(100% + 0.5rem);
     right: unset;
     top: 50%;
     transform: translateY(-50%);
   }
 
   &--top-left {
-    bottom: calc(100% + .5rem);
-    right: calc(100% + .5rem);
+    bottom: calc(100% + 0.5rem);
+    right: calc(100% + 0.5rem);
   }
 
   &--top-mid {
-    bottom: calc(100% + .5rem);
+    bottom: calc(100% + 0.5rem);
     left: 50%;
     transform: translateX(-50%);
   }
 
   &--top-right {
-    bottom: calc(100% + .5rem);
-    left: calc(100% + .5rem);
+    bottom: calc(100% + 0.5rem);
+    left: calc(100% + 0.5rem);
   }
 
-  &-trigger { position: relative; }
+  &-trigger {
+    position: relative;
+  }
 
   &-trigger:hover &,
-  &.is-persistant { opacity: 1; }
+  &.is-persistant {
+    opacity: 1;
+  }
 }

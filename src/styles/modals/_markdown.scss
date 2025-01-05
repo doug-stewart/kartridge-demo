@@ -8,17 +8,21 @@
     overflow: auto;
     padding: 3.5rem 4rem;
 
-    &::-webkit-scrollbar-track { margin: 4rem 0; }
+    &::-webkit-scrollbar-track {
+      margin: 4rem 0;
+    }
 
     code,
     pre {
-      background-color: rgba($black, .08);
+      background-color: rgba($black, 0.08);
       border-radius: 3px;
       display: inline-block;
-      padding: 0 .2rem;
+      padding: 0 0.2rem;
     }
 
-    code { font-family: $mono-family; }
+    code {
+      font-family: $mono-family;
+    }
 
     dl,
     h1,
@@ -34,20 +38,24 @@
       grid-template-columns: auto 1fr;
     }
 
-    dt { font-weight: 700; }
+    dt {
+      font-weight: 700;
+    }
 
     h2 {
       font-size: 1.8rem;
       text-transform: none;
     }
 
-    h3 { font-size: 1em; }
+    h3 {
+      font-size: 1em;
+    }
 
     pre {
-      border: 1px solid rgba($black, .12);
+      border: 1px solid rgba($black, 0.12);
       display: block;
       margin-bottom: 2rem;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
 
       code {
         background-color: transparent;

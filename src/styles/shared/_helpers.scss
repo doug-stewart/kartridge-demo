@@ -5,7 +5,7 @@ button.disabled,
 input[type='submit'].disabled,
 li.disabled {
   cursor: default;
-  opacity: .42;
+  opacity: 0.42;
   pointer-events: none;
 }
 
@@ -43,12 +43,12 @@ button {
   }
 }
 
-input[type="button"],
-input[type="checkbox"],
-input[type="file"],
-input[type="radio"],
-input[type="reset"],
-input[type="submit"],
+input[type='button'],
+input[type='checkbox'],
+input[type='file'],
+input[type='radio'],
+input[type='reset'],
+input[type='submit'],
 select {
   &,
   &.is-selectable,

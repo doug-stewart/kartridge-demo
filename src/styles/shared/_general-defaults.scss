@@ -5,7 +5,9 @@ body {
   overflow: hidden;
 }
 
-html { font-size: 10px; }
+html {
+  font-size: 10px;
+}
 
 body {
   background-color: #444;
@@ -50,4 +52,6 @@ h6,
   font-weight: 400;
 }
 
-code { font-family: $mono-family; }
+code {
+  font-family: $mono-family;
+}

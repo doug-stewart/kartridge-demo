@@ -19,9 +19,7 @@
     background-position: 0 0;
     background-repeat: repeat;
     border-radius: 5px;
-    box-shadow:
-      0 0 0 1px rgba(#000, .1),
-      5px 0 10px rgba(#000, .8);
+    box-shadow: 0 0 0 1px rgba(#000, 0.1), 5px 0 10px rgba(#000, 0.8);
     color: $grey-darkest;
     display: flex;
     flex-direction: column;
@@ -48,7 +46,9 @@
 }
 
 @media (max-width: $mobile-flip-inv) {
-  .ap-frame.is-web { padding-top: 0; }
+  .ap-frame.is-web {
+    padding-top: 0;
+  }
 }
 
 @supports (display: grid) {
@@ -72,6 +72,8 @@
       min-width: 0;
     }
 
-    &:not(.is-authentic) .ap-content { max-width: 100vw; }
+    &:not(.is-authentic) .ap-content {
+      max-width: 100vw;
+    }
   }
 }

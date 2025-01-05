@@ -6,7 +6,7 @@ const initialState = {
   c: '#ffffff',
   d: '#1a0a2a',
   e: '#ffffff',
-  f: '#7bffbf'
+  f: '#7bffbf',
 };
 
 const Theme = createContext(initialState);
@@ -14,7 +14,7 @@ const { Provider } = Theme;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'update':
+    case 'UPDATE':
       return { ...state, [action.color]: action.value };
     default:
       throw new Error();

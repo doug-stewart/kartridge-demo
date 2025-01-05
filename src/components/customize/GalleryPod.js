@@ -11,12 +11,12 @@ const GalleryPod = ({ podId }) => {
   const { podUpdater } = podsState;
   const gallery = podsState.state.items[podId];
 
-  const setLayout = layout => podUpdater({ type: 'setLayout', pod: podId, layout: layout });
-  const setImages = list => podUpdater({ type: 'setImages', pod: podId, images: list.items });
-  const addImage = data => podUpdater({ type: 'addImage', pod: podId, image: data });
-  const removeImage = image => podUpdater({ type: 'removeImage', pod: podId, image: image });
+  const setLayout = (layout) => podUpdater({ type: 'SET_LAYOUT', pod: podId, layout: layout });
+  const setImages = (list) => podUpdater({ type: 'SET_IMAGE', pod: podId, images: list.items });
+  const addImage = (data) => podUpdater({ type: 'ADD_IMAGE', pod: podId, image: data });
+  const removeImage = (image) => podUpdater({ type: 'REMOVE_IMAGE', pod: podId, image: image });
 
-  const processUpload = data => {
+  const processUpload = (data) => {
     const isImage = data.type.toLowerCase().includes('jpeg', 'jpg', 'png');
     if (isImage) addImage(data);
   };
@@ -26,8 +26,8 @@ const GalleryPod = ({ podId }) => {
       <PodHeader id={podId} />
       <p className="c-media__col-ctrl">
         <strong className="c-media__col-ctrl__title">Images Per Row:</strong>
-        <select className="c-media__col-ctrl__select" value={gallery.layout} onBlur={event => setLayout(podId, event.target.value)} onChange={event => setLayout(event.target.value)}>
-          {columns.map(column => {
+        <select className="c-media__col-ctrl__select" value={gallery.layout} onBlur={(event) => setLayout(podId, event.target.value)} onChange={(event) => setLayout(event.target.value)}>
+          {columns.map((column) => {
             return (
               <option key={column} value={column}>
                 {column} Image
@@ -41,11 +41,11 @@ const GalleryPod = ({ podId }) => {
           <ReactSortable
             className={`c-media__artwork sortable-objects c-media__artwork--x${gallery.layout}`}
             list={gallery.images}
-            setList={items => {
+            setList={(items) => {
               setImages({ items });
             }}
             tag="ul">
-            {gallery.images.map(item => {
+            {gallery.images.map((item) => {
               return <GalleryImage key={item.image} image={item.image} removeImage={() => removeImage(item.image)} />;
             })}
           </ReactSortable>

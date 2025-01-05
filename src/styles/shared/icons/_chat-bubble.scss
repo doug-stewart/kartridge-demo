@@ -6,50 +6,75 @@
   &__front {
     &-fill,
     &-line {
-      transition: fill .2s ease;
+      transition: fill 0.2s ease;
     }
   }
 
   &__back {
-    &-fill { fill: rgba($grey-med, .6); }
-    &-line { fill: $grey-darkest; }
+    &-fill {
+      fill: rgba($grey-med, 0.6);
+    }
+
+    &-line {
+      fill: $grey-darkest;
+    }
 
     @at-root .is-active & {
-      &-fill { fill: $blue-light; }
-      &-line { fill: $blue-darker; }
+      &-fill {
+        fill: $blue-light;
+      }
+
+      &-line {
+        fill: $blue-darker;
+      }
     }
   }
 
   &__front {
-    &-fill { fill: $grey-lightest; }
-    &-line { fill: $grey-darkest; }
+    &-fill {
+      fill: $grey-lightest;
+    }
+
+    &-line {
+      fill: $grey-darkest;
+    }
 
     @at-root .is-active & {
-      &-fill { fill: $white; }
-      &-line { fill: $blue-darker; }
+      &-fill {
+        fill: $white;
+      }
+
+      &-line {
+        fill: $blue-darker;
+      }
     }
 
     @at-root .has-notifications & {
-      &-fill { fill: $white; }
-      &-line { fill: $red-med; }
+      &-fill {
+        fill: $white;
+      }
+
+      &-line {
+        fill: $red-med;
+      }
     }
   }
 
   &--btn {
     position: relative;
-    transform: translateY(.2rem);
+    transform: translateY(0.2rem);
 
     &-ico {
-      font-size: .7em;
+      font-size: 0.7em;
       position: relative;
       z-index: 1;
     }
 
     &-label {
       color: $grey-darkest;
-      font-size: .9rem;
+      font-size: 0.9rem;
       left: 1.2rem;
-      opacity: .8;
+      opacity: 0.8;
       position: absolute;
       text-align: center;
       text-decoration: none;

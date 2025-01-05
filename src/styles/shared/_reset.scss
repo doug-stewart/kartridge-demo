@@ -10,13 +10,19 @@
   vertical-align: baseline;
 }
 
-body { -webkit-text-size-adjust: 100%; }
+body {
+  -webkit-text-size-adjust: 100%;
+}
 
 ol,
-ul { list-style: none; }
+ul {
+  list-style: none;
+}
 
 blockquote,
-q { quotes: none; }
+q {
+  quotes: none;
+}
 
 blockquote::before,
 blockquote::after,
@@ -32,7 +38,9 @@ table {
 }
 
 ul,
-ol { list-style: none; }
+ol {
+  list-style: none;
+}
 
 a,
 button,
@@ -51,18 +59,28 @@ button,
 
 a,
 button,
-input { -webkit-app-region: no-drag; }
+input {
+  -webkit-app-region: no-drag;
+}
 
-a { text-decoration: underline; }
+a {
+  text-decoration: underline;
+}
 
-strong { font-weight: 700; }
+strong {
+  font-weight: 700;
+}
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
-img { overflow: hidden; }
+img {
+  overflow: hidden;
+}
 
 input {
-  &[type=number] {
+  &[type='number'] {
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       appearance: none;

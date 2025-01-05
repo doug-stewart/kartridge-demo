@@ -8,7 +8,7 @@ const TrailerPod = ({ podId }) => {
   const { podUpdater } = podsState;
   const youTubePod = podsState.state.items[podId];
 
-  const updateTrailer = (pod, url) => podUpdater({ type: 'updateTrailer', pod: pod, url: url });
+  const updateTrailer = (pod, url) => podUpdater({ type: 'UPDATE_TRAILER', pod: pod, url: url });
 
   return (
     <li className="c-media__container c-media__video">

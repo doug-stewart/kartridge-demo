@@ -1,7 +1,7 @@
 .c-local-reset {
   blockquote {
-    border-left: .3rem rgba($grey-darkest, .3);
-    border-left-color: swatch(swatch-e, .3);
+    border-left: 0.3rem rgba($grey-darkest, 0.3);
+    border-left-color: swatch(swatch-e, 0.3);
     padding-left: 2rem;
   }
 
@@ -42,37 +42,43 @@
 
   li,
   p {
-    letter-spacing: .02em;
+    letter-spacing: 0.02em;
     line-height: 1.8;
     word-wrap: break-word;
   }
 
-  li { margin-bottom: .9rem; }
+  li {
+    margin-bottom: 0.9rem;
+  }
 
   ol,
   ul {
     margin-left: 3rem;
   }
 
-  ol { list-style: decimal; }
+  ol {
+    list-style: decimal;
+  }
 
   p {
     .u-custom__empty-gallery & {
-      background-color: rgba($grey-darkest, .12);
-      background-color: swatch(swatch-e, .12);
+      background-color: rgba($grey-darkest, 0.12);
+      background-color: swatch(swatch-e, 0.12);
       height: 1.8rem;
 
-      &:nth-child(5) { width: 66.666%; }
+      &:nth-child(5) {
+        width: 66.666%;
+      }
     }
   }
 
   pre {
-    background-color: rgba($grey-darkest, .1);
-    background-color: swatch(swatch-e, .1);
+    background-color: rgba($grey-darkest, 0.1);
+    background-color: swatch(swatch-e, 0.1);
     border-radius: 3px;
     display: block;
     overflow: auto;
-    padding: .5rem;
+    padding: 0.5rem;
   }
 
   table {
@@ -82,16 +88,18 @@
 
   td,
   th {
-    border: 1px solid rgba($grey-darkest, .2);
-    border-color: swatch(swatch-e, .2);
-    padding: .2rem .5rem;
+    border: 1px solid rgba($grey-darkest, 0.2);
+    border-color: swatch(swatch-e, 0.2);
+    padding: 0.2rem 0.5rem;
     text-align: center;
   }
 
   th {
-    background-color: rgba($grey-darkest, .1);
-    background-color: swatch(swatch-e, .1);
+    background-color: rgba($grey-darkest, 0.1);
+    background-color: swatch(swatch-e, 0.1);
   }
 
-  ul { list-style: disc; }
+  ul {
+    list-style: disc;
+  }
 }

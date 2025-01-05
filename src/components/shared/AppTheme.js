@@ -5,14 +5,14 @@ import { Theme } from '../../contexts/ThemeContext';
 const AppTheme = () => {
   const themeState = useContext(Theme);
 
-  const split = color => {
+  const split = (color) => {
     const rgb = tinycolor(color).toRgb();
     return `${rgb.r},${rgb.g},${rgb.b}`;
   };
 
   const swatches = () => {
     return Object.keys(themeState.state)
-      .map(color => `--swatch-${color}: ${split(themeState.state[color])};`)
+      .map((color) => `--swatch-${color}: ${split(themeState.state[color])};`)
       .join(' ');
   };
 

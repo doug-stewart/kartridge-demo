@@ -11,14 +11,16 @@
       display: inline-block;
       height: 1.1em;
       overflow: visible;
-      transform: translateY(.08em);
+      transform: translateY(0.08em);
       vertical-align: baseline;
       width: 1.1em;
     }
   }
 
   &__all {
-    &-star { fill: $red-med; }
+    &-star {
+      fill: $red-med;
+    }
 
     &.is-under-judgement {
       .c-rating__all-star {
@@ -35,20 +37,20 @@
         border-radius: 3px;
         bottom: calc(100% + 4px);
         color: $grey-darkest;
-        font-size: .94em;
+        font-size: 0.94em;
         font-style: italic;
         font-weight: normal;
         opacity: 0;
-        padding: .2rem .6rem;
+        padding: 0.2rem 0.6rem;
         pointer-events: none;
         position: absolute;
         right: -1.5rem;
-        transition: opacity .2s ease;
+        transition: opacity 0.2s ease;
 
         &::after,
         &::before {
           border-style: solid;
-          border-width: .5rem;
+          border-width: 0.5rem;
           content: '';
           height: 0;
           padding: 0;
@@ -78,16 +80,18 @@
   // }
 
   &__my {
-    margin-left: .44rem;
+    margin-left: 0.44rem;
 
-    &-star { fill: $blue-med; }
+    &-star {
+      fill: $blue-med;
+    }
 
     a {
       color: $white;
       display: inline-block;
-      font-size: .72em;
+      font-size: 0.72em;
       text-transform: uppercase;
-      transform: translateY(-.11em);
+      transform: translateY(-0.11em);
     }
   }
 }

@@ -151,6 +151,7 @@
   &.has-note {
     flex-direction: column;
   }
+
   .btn__tag {
     transform: translateX(2em);
   }
@@ -563,6 +564,7 @@
   &:hover {
     z-index: 2;
   }
+
   .is-viewing-bg & {
     opacity: 0;
   }
@@ -886,6 +888,7 @@
   &__pagination {
     margin-top: 2rem;
   }
+
   &--loading {
     display: flex;
   }
@@ -1193,9 +1196,11 @@
   .c-tag__ico {
     opacity: 0.66;
   }
+
   .c-tag__link {
     padding: 0 0.58em 1px;
   }
+
   .c-tooltip__trigger {
     pointer-events: all;
   }
@@ -1352,9 +1357,11 @@
   .gp-buy {
     font-size: 1rem;
   }
+
   .gp-chat {
     font-size: 1.5rem;
   }
+
   .gp-copy-count {
     min-width: 28rem;
   }
