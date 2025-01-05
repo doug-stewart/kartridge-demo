@@ -230,6 +230,8 @@
       display: table;
     }
 
+    &:empty { display: block; }
+
     @supports (display: grid) {
       display: grid;
       grid-column: 1 / -1;
@@ -366,7 +368,7 @@
   }
 
   &__gallery,
-  &__video {
+  &__trailer {
     padding-top: 3rem;
   }
 
@@ -630,7 +632,7 @@
     }
   }
 
-  &__video {
+  &__trailer {
     background-color: rgba($black, 0.8);
 
     &::after {

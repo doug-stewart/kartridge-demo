@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 import { Pods } from './contexts/StorefrontContext';
 import BackgroundMedia from './components/shared/BackgroundMedia';
 import Gallery from './components/preview/Gallery';
@@ -16,14 +16,11 @@ import { ReactComponent as WishIco } from './images/icons/wishlist.svg';
 
 const Preview = ({ background }) => {
   const podsState = useContext(Pods);
-  const allPods = podsState.state.items;
+  const allPods = podsState.state;
   const [viewBg, setViewBg] = useState(false);
-  const mainClasses = classNames(
-    'c-feat-pg__main',
-    'gp-main',
-    'u-custom__preview',
-    { 'is-viewing-bg': viewBg }
-  );
+  const mainClasses = cx('c-feat-pg__main', 'gp-main', 'u-custom__preview', {
+    'is-viewing-bg': viewBg,
+  });
 
   let podKey = 1;
 
@@ -49,30 +46,39 @@ const Preview = ({ background }) => {
         }}>
         <PreviewIco className="c-feat-pg__view-bg__ico" />
       </span>
-      <header className="c-feat-pg__title gp-title">
-        <h1 className="gp-name is-selectable">
+      <header className={cx('c-feat-pg__title', 'gp-title')}>
+        <h1 className={cx('gp-name', 'is-selectable')}>
           <span className="gp-name-txt">Test Game</span>
         </h1>
         <div className="gp-meta">
-          <ul className="gp-platforms c-platforms">
+          <ul className={cx('gp-platforms', 'c-platforms')}>
             <li className="c-platform">
-              <WindowsIco className="c-platform-ico c-platform-ico--win" />
+              <WindowsIco
+                className={cx('c-platform-ico', 'c-platform-ico--win')}
+              />
             </li>
             <li className="c-platform">
-              <AppleIco className="c-platform-ico c-platform-ico--win" />
+              <AppleIco
+                className={cx('c-platform-ico', 'c-platform-ico--mac')}
+              />
             </li>
           </ul>
-          <ul className="c-tags gp-tags">
-            <li className="c-tag c-tag--linked">
+          <ul className={cx('c-tags', 'gp-tags')}>
+            <li className={cx('c-tag', 'c-tag--linked')}>
               <span className="c-tag__link">Action</span>
             </li>
-            <li className="c-tag c-tag--linked">
+            <li className={cx('c-tag', 'c-tag--linked')}>
               <span className="c-tag__link">Shooter</span>
             </li>
-            <li className="c-tag c-tooltip__trigger">
+            <li className={cx('c-tag', 'c-tooltip__trigger')}>
               DRM Free
               <InfoSmlIco className="c-tag__ico" />
-              <span className="gp-tags__tooltip c-tooltip c-tooltip--top">
+              <span
+                className={cx(
+                  'gp-tags__tooltip',
+                  'c-tooltip',
+                  'c-tooltip--top'
+                )}>
                 This game does not utilize DRM or require Kartridge to play.
               </span>
             </li>
@@ -80,12 +86,17 @@ const Preview = ({ background }) => {
         </div>
         <div className="gp-actions">
           <span className="gp-buy">
-            <button className="gp-buy-btn btn--red btn--xl has-subtag">
+            <button
+              className={cx('gp-buy-btn', 'btn--red', 'btn--xl', 'has-subtag')}>
               <strong>Buy</strong> for <strong>$24.99</strong>
             </button>
           </span>
           <button
-            className="btn-ico-action btn-ico-action--wishlist c-sml-tooltip-trigger"
+            className={cx(
+              'btn-ico-action',
+              'btn-ico-action--wishlist',
+              'c-sml-tooltip-trigger'
+            )}
             type="submit">
             <span className="c-sml-tooltip">Add to Wishlist</span>
             <WishIco className="btn-wishlist-ico--add" />
@@ -93,16 +104,22 @@ const Preview = ({ background }) => {
         </div>
       </header>
       <section className="c-feat-pg__sections">
-        <div className="c-feat-pg__sections-inner c-tabs gp-body">
-          <nav className="gp-tabs gp-tabs--main c-feat-pg__sections-nav c-tabs__nav">
+        <div className={cx('c-feat-pg__sections-inner', 'c-tabs', 'gp-body')}>
+          <nav
+            className={cx(
+              'gp-tabs',
+              'gp-tabs--main',
+              'c-feat-pg__sections-nav',
+              'c-tabs__nav'
+            )}>
             <ul className="c-tabs__list">
               <li className="c-tabs__item">
-                <span className="c-tabs__link disabled active">
+                <span className={cx('c-tabs__link', 'disabled', 'active')}>
                   <span className="c-feat-pg__tab-media">
                     <span className="gp-ico">
                       <video
                         autoPlay
-                        className="c-game-ico__video"
+                        className="c-game-ico__trailer"
                         disableremoteplayback=""
                         loop
                         muted
@@ -112,60 +129,91 @@ const Preview = ({ background }) => {
                       />
                     </span>
                   </span>
-                  <span className="c-feat-pg__tab-label truncate">About</span>
+                  <span className={cx('c-feat-pg__tab-label', 'truncate')}>
+                    About
+                  </span>
                 </span>
               </li>
               <li className="c-tabs__item">
-                <span className="c-tabs__link disabled">
-                  <span className="c-rating c-feat-pg__tab-media gp-rating">
-                    <span className="c-rating__all c-sml-tooltip-trigger">
+                <span className={cx('c-tabs__link', 'disabled')}>
+                  <span
+                    className={cx(
+                      'c-rating',
+                      'c-feat-pg__tab-media',
+                      'gp-rating'
+                    )}>
+                    <span
+                      className={cx('c-rating__all', 'c-sml-tooltip-trigger')}>
                       <StarIco className="c-rating__all-star" />
                       <span className="c-rating__rating">4.38</span>
                       <span className="c-rating__count">(16 Ratings)</span>
                     </span>
                   </span>
-                  <span className="c-feat-pg__tab-label truncate">Reviews</span>
+                  <span className={cx('c-feat-pg__tab-label', 'truncate')}>
+                    Reviews
+                  </span>
                 </span>
               </li>
               <li className="c-tabs__item">
-                <span className="c-tabs__link c-avatar-trigger disabled">
+                <span
+                  className={cx(
+                    'c-tabs__link',
+                    'c-avatar-trigger',
+                    'disabled'
+                  )}>
                   <span className="c-feat-pg__tab-media">
-                    <span className="gp-body__dev-avatar c-avatar c-avatar--sml gp-body__dev-avatar">
-                      <span className="c-avatar__media c-avatar__character" />
+                    <span
+                      className={cx(
+                        'gp-body__dev-avatar',
+                        'c-avatar',
+                        'c-avatar--sml',
+                        'gp-body__dev-avatar'
+                      )}>
                       <span
-                        className="c-avatar__media c-avatar__background"
+                        className={cx('c-avatar__media', 'c-avatar__character')}
+                      />
+                      <span
+                        className={cx(
+                          'c-avatar__media',
+                          'c-avatar__background'
+                        )}
                         style={{
                           backgroundImage: "url('/game/dev-avatar.png')",
                         }}
                       />
                     </span>
                   </span>
-                  <span className="c-feat-pg__tab-label truncate">
+                  <span className={cx('c-feat-pg__tab-label', 'truncate')}>
                     by also_doug
                   </span>
                 </span>
               </li>
             </ul>
           </nav>
-          <div className="c-tabs__section gp-media is-active">
-            <ul className="c-stats gp-stats">
+          <div className={cx('c-tabs__section', 'gp-media', 'is-active')}>
+            <ul className={cx('c-stats', 'gp-stats')}>
               <li className="c-stats__item">
                 <strong className="c-stats__main">Jan 28, 2020</strong>
                 <span className="c-stats__sec">Updated</span>
               </li>
-              <li className="c-stats__item c-tooltip__trigger">
+              <li className={cx('c-stats__item', 'c-tooltip__trigger')}>
                 <strong className="c-stats__main">
                   High
                   <InfoIco className="c-stats__ico" />
                 </strong>
                 <span className="c-stats__sec">System Reqs</span>
-                <span className="c-tooltip c-tooltip--top gp-reqs__tooltip">
+                <span
+                  className={cx(
+                    'c-tooltip',
+                    'c-tooltip--top',
+                    'gp-reqs__tooltip'
+                  )}>
                   <dl className="c-subsect">
-                    <dt className="c-subsect__label active">
+                    <dt className={cx('c-subsect__label', 'active')}>
                       System Requirements
                     </dt>
-                    <dd className="c-subsect__item active">
-                      <dl className="c-requires is-selectable">
+                    <dd className={cx('c-subsect__item', 'active')}>
+                      <dl className={cx('c-requires', 'is-selectable')}>
                         <dt className="c-requires__prop">CPU</dt>
                         <dd className="c-requires__val">
                           Quad - Core @3.5 GHz or better

@@ -1,12 +1,19 @@
 import React from 'react';
+import cx from 'classnames';
+import Modal from '../shared/Modal';
 
-const MarkdownModal = ({ closeModal }) => {
+const MarkdownModal = ({ isOpen, closeModal }) => {
   return (
-    <div className="c-modal__content m-markdown">
-      <button className="c-modal__btn-close" onClick={closeModal}>
-        ×
-      </button>
-      <article className="m-markdown__guide is-selectable">
+    <Modal
+      innerClass="m-markdown"
+      openState={isOpen}
+      toggleCallback={closeModal}>
+      <article
+        className={cx(
+          'c-modal__content',
+          'm-markdown__guide',
+          'is-selectable'
+        )}>
         <h1>Formatting text with Markdown</h1>
         <p>
           The text pods support a wide array of Markdown features for text
@@ -83,7 +90,7 @@ const MarkdownModal = ({ closeModal }) => {
 > They also can be multi-line.`}</code>
         </pre>
       </article>
-    </div>
+    </Modal>
   );
 };
 

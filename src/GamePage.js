@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React, { useContext, useEffect, useState } from 'react';
+import cx from 'classnames';
+import { Pods } from './contexts/StorefrontContext';
 import Header from './components/shared/Header';
 import Customize from './Customize';
 import Preview from './Preview';
-import { PodsProvider } from './contexts/StorefrontContext';
 
 const GamePage = () => {
+  const json = '/game/data.json';
+  const podsState = useContext(Pods);
+  const { podUpdater } = podsState;
   const [background, setBackground] = useState({
     name: 'background.mp4',
     data: '/game/background.mp4',
@@ -13,19 +16,25 @@ const GamePage = () => {
   });
   const [preview, setPreview] = useState(false);
   const togglePreview = () => setPreview(!preview);
-  const customClasses = classNames('u-custom', { 'is-preview': preview });
+  const customClasses = cx('u-custom', { 'is-preview': preview });
+
+  useEffect(() => {
+    fetch(json)
+      .then((response) => response.json())
+      .then((data) => {
+        podUpdater({ type: 'SET_PODS', data: data });
+      });
+  }, [podUpdater]);
 
   return (
-    <PodsProvider>
-      <div className={customClasses}>
-        <Header preview={preview} toggleAction={togglePreview} />
-        {preview ? (
-          <Preview background={background} />
-        ) : (
-          <Customize background={background} setBackground={setBackground} />
-        )}
-      </div>
-    </PodsProvider>
+    <div className={customClasses}>
+      <Header preview={preview} toggleAction={togglePreview} />
+      {preview ? (
+        <Preview background={background} />
+      ) : (
+        <Customize background={background} setBackground={setBackground} />
+      )}
+    </div>
   );
 };
 

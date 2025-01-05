@@ -5,8 +5,14 @@ import {
   Saturation,
 } from 'react-color/lib/components/common/';
 import { CustomPicker } from 'react-color';
-import { HuePointer } from './HuePointer';
-import { SaturationPointer } from './SaturationPointer';
+
+export const HuePointer = () => {
+  return <div className="c-palette__hue-pointer" />;
+};
+
+export const SaturationPointer = () => {
+  return <div className="c-palette__saturation-pointer" />;
+};
 
 const ColorPicker = ({ hsl, hsv, hex, label, onChange }) => {
   const [shows, toggleShow] = useState(false);
@@ -30,6 +36,7 @@ const ColorPicker = ({ hsl, hsv, hex, label, onChange }) => {
       </button>
       <div
         className="c-palette__popup"
+        data-testid="color-picker"
         style={{ display: shows ? '' : 'none' }}>
         <div className="c-palette__saturation">
           <Saturation

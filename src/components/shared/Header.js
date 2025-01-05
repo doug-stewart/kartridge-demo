@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import cx from 'classnames';
 import Vibrant from 'node-vibrant';
 import tinycolor from 'tinycolor2';
 import ColorPicker from './ColorPicker';
@@ -11,7 +12,7 @@ const Header = ({ preview, toggleAction }) => {
   const { themeUpdater } = themeState;
 
   const gameIcon = '/game/game-icon.png';
-  const allScreenshots = podsState.state.items
+  const allScreenshots = podsState.state
     .filter((item) => item.images && item.images.length > 0)
     .map((item) => item.images)
     .flat();
@@ -64,7 +65,7 @@ const Header = ({ preview, toggleAction }) => {
       <div className="u-custom__header-title">
         <h1 className="u-custom__title">Customize storefront</h1>
         <button
-          className="btn--light btn--s u-custom__save-btn"
+          className={cx('btn--light', 'btn--s', 'u-custom__save-btn')}
           onClick={toggleAction}>
           {preview ? 'Leave Preview' : 'Preview Page'}
         </button>
@@ -82,8 +83,8 @@ const Header = ({ preview, toggleAction }) => {
           ))}
         </ul>
       </div>
-      <div className="u-custom__header-screenshots c-filmstrip">
-        <h2 className="c-filmstrip__title u-custom__header-subtitle">
+      <div className={cx('u-custom__header-screenshots', 'c-filmstrip')}>
+        <h2 className={cx('c-filmstrip__title', 'u-custom__header-subtitle')}>
           Grab color palette from screenshots
         </h2>
         <div className="c-filmstrip__spacer">
@@ -110,14 +111,19 @@ const Header = ({ preview, toggleAction }) => {
       <nav className="u-custom__header-btns">
         <button
           disabled=""
-          className="btn--purple btn--m u-custom__header-btns__btn"
+          className={cx('btn--purple', 'btn--m', 'u-custom__header-btns__btn')}
           type="submit">
           Save Changes
         </button>
         <a
           href="/"
           role="button"
-          className="btn--light btn--m u-custom__header-btns__btn active">
+          className={cx(
+            'btn--light',
+            'btn--m',
+            'u-custom__header-btns__btn',
+            'active'
+          )}>
           Back / Cancel
         </a>
       </nav>

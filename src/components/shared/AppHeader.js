@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid*/
 
 import React from 'react';
+import cx from 'classnames';
 import AvatarBack from '../../images/avatar-back.png';
 import AvatarFront from '../../images/avatar-front.png';
 import { ReactComponent as ChatIco } from '../../images/icons/chat.svg';
@@ -56,7 +57,7 @@ export default class AppHeader extends React.Component {
             </li>
           </ul>
         </nav>
-        <section className="ap-search c-search">
+        <section className={cx('ap-search', 'c-search')}>
           <div className="c-search__form">
             <SearchIco className="c-search__ico" />
             <div className="c-search__field-grp">
@@ -70,14 +71,20 @@ export default class AppHeader extends React.Component {
           </div>
           <ul className="c-search__results"></ul>
         </section>
-        <div className="ap-menu c-options--toggle ap-user">
-          <a role="button" className="ap-user__group c-avatar-trigger">
-            <span className="ap-user__avatar c-avatar c-avatar--sml ap-user__avatar">
+        <div className={cx('ap-menu c-options--toggle', 'ap-user')}>
+          <a role="button" className={cx('ap-user__group', 'c-avatar-trigger')}>
+            <span
+              className={cx(
+                'ap-user__avatar',
+                'c-avatar',
+                'c-avatar--sml',
+                'ap-user__avatar'
+              )}>
               <span
-                className="c-avatar__media c-avatar__character"
+                className={cx('c-avatar__media', 'c-avatar__character')}
                 style={{ backgroundImage: `url('${AvatarFront}')` }}></span>
               <span
-                className="c-avatar__media c-avatar__background"
+                className={cx('c-avatar__media', 'c-avatar__background')}
                 style={{ backgroundImage: `url('${AvatarBack}')` }}></span>
             </span>
             <strong className="ap-user__name">
@@ -122,17 +129,21 @@ export default class AppHeader extends React.Component {
             </ul>
           </nav>
         </div>
-        <nav className="ap-header__sidebar-nav ap-sidebar-nav">
+        <nav className={cx('ap-header__sidebar-nav', 'ap-sidebar-nav')}>
           <ul className="ap-sidebar-nav__list">
             <li className="ap-sidebar-nav__item">
               <a className="ap-sidebar-nav__link">
-                <ChatIco className="ap-sidebar-nav__ico chat-bubbles" />
+                <ChatIco
+                  className={cx('ap-sidebar-nav__ico', 'chat-bubbles')}
+                />
                 <span className="ap-sidebar-nav__status">•••</span>
               </a>
             </li>
             <li className="ap-sidebar-nav__item">
-              <a className="ap-sidebar-nav__link ap-meta-link">
-                <TokenIco className="ap-sidebar-nav__ico ap-meta-ico" />
+              <a className={cx('ap-sidebar-nav__link', 'ap-meta-link')}>
+                <TokenIco
+                  className={cx('ap-sidebar-nav__ico', 'ap-meta-ico')}
+                />
               </a>
             </li>
           </ul>

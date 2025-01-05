@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 import { ReactComponent as LabelHighlight } from '../../images/navigation/label-highlight.svg';
 
 export default class NavButton extends React.Component {
@@ -13,7 +13,7 @@ export default class NavButton extends React.Component {
 
   render() {
     const isActive = this.props.label === 'Publish';
-    const buttonClasses = classNames(
+    const buttonClasses = cx(
       'ap-nav__action',
       `ap-nav__${this.props.label.toLowerCase()}`,
       { active: isActive, 'is-playing': this.state.isPlaying }

@@ -1,17 +1,13 @@
-import React, { useContext, useState } from 'react';
-import { Modal } from '../../contexts/ModalContext';
-import ModalContainer from '../../ModalContainer';
+import React, { useState } from 'react';
+import GalleryModal from './GalleryModal';
 
 const Gallery = ({ layout, images }) => {
-  const modalState = useContext(Modal);
-  const { modalUpdater } = modalState;
+  const [showModal, setShowModal] = useState(false);
   const [image, setImage] = useState('');
-  const modal = modalState.state;
 
-  const toggleModal = (image) => {
-    console.log('close modal');
-    modalUpdater({ type: 'TOGGLE', id: image });
-    setImage(image);
+  const openModal = (src) => {
+    setImage(src);
+    setShowModal(true);
   };
 
   return (
@@ -22,7 +18,7 @@ const Gallery = ({ layout, images }) => {
             <button
               className="c-media__art-box"
               title="View screenshot"
-              onClick={() => toggleModal(item.image)}>
+              onClick={() => openModal(item.image)}>
               <img
                 alt="Pine screenshot"
                 src={item.image}
@@ -32,18 +28,11 @@ const Gallery = ({ layout, images }) => {
           </li>
         ))}
       </ul>
-      {modal.showModal && modal.id === image ? (
-        <ModalContainer close={toggleModal}>
-          <div className="m-media__outer">
-            <div className="m-media__art">
-              <button className="m-media__close" onClick={toggleModal}>
-                ×
-              </button>
-              <img alt="" src={image} className="m-media__screenshot" />
-            </div>
-          </div>
-        </ModalContainer>
-      ) : null}
+      <GalleryModal
+        image={image}
+        isOpen={showModal}
+        closeModal={() => setShowModal(false)}
+      />
     </>
   );
 };

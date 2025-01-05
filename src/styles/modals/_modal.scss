@@ -1,28 +1,5 @@
 .c-modal {
-  --text: #{$black};
-
-  bottom: 0;
-  display: flex;
-  font-size: 1.2rem;
-  left: 0;
-  overflow: auto;
-  position: fixed;
-  right: 0;
-  scrollbar-color: rgba($white, 0.24) transparent;
-  top: 0;
-  z-index: 11;
-
-  &::-webkit-scrollbar {
-    &-thumb {
-      background-color: rgba($white, 0.24);
-    }
-
-    &-track {
-      background-color: transparent;
-    }
-  }
-
-  &__btn-close {
+  &__btn {
     background-color: $grey-darkest;
     border: 2px solid $grey-lighter;
     border-radius: 50%;
@@ -38,6 +15,7 @@
     transform: translate(33.333%, -33.333%);
     transition: background-color 0.2s ease;
     width: 3.5rem;
+    z-index: 1;
 
     &:hover {
       background-color: $grey-darker;
@@ -47,38 +25,50 @@
   &__content {
     background-color: $grey-lighter;
     color: $grey-darkest;
-    flex: 0 0 auto;
-    padding: 2rem;
+    display: block;
+    overflow: auto;
+    padding: 3.5rem 4rem;
     position: relative;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
+
+    &::-webkit-scrollbar-track {
+      margin: 4rem 0;
+    }
   }
 
   &__inner {
     margin: auto;
-    max-width: 100%;
-    padding: 2rem;
+    max-height: calc(100% - 8rem);
+    max-width: calc(100% - 8rem);
     position: relative;
-    width: 100%;
     z-index: 1;
+
+    &:focus { outline: none; }
+
+    &::-webkit-scrollbar {
+      &-thumb {
+        background-color: rgba($white, 0.24);
+      }
+
+      &-track {
+        background-color: transparent;
+      }
+    }
   }
 
-  &__overlay {
+  &__outer {
+    --text: #{$black};
+
     background-color: rgba($black, 0.7);
     bottom: 0;
+    display: flex;
+    font-size: 1.2rem;
     left: 0;
     position: fixed;
     right: 0;
+    scrollbar-color: rgba($white, 0.24) transparent;
     top: 0;
-    z-index: 0;
-  }
-}
-
-@media (min-width: 480px) {
-  .c-modal {
-    &__inner {
-      padding: 4rem;
-      width: auto;
-    }
+    z-index: 11;
   }
 }
