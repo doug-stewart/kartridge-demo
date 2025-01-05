@@ -1,0 +1,49 @@
+.btn-share {
+  align-items: center;
+  border-radius: 3px;
+  display: inline-flex;
+  height: 3.4rem;
+  justify-content: center;
+  transition: background-color .3s ease;
+  width: 3.6rem;
+
+  &__icon {
+    fill: white;
+  }
+
+  &--facebook {
+    background-color: $facebook-med;
+    box-shadow: 0 2px 0 0 $facebook-dark;
+
+    &:hover {
+      background-color: $facebook-dark;
+    }
+  }
+
+  &--messenger {
+    background-color: $messenger-med;
+    box-shadow: 0 2px 0 0 $messenger-dark;
+
+    &:hover {
+      background-color: $messenger-dark;
+    }
+  }
+
+  &--skype {
+    background-color: $skype-med;
+    box-shadow: 0 2px 0 0 $skype-dark;
+
+    &:hover {
+      background-color: $skype-dark;
+    }
+  }
+
+  &--twitter {
+    background-color: $twitter-med;
+    box-shadow: 0 2px 0 0 $twitter-dark;
+
+    &:hover {
+      background-color: $twitter-dark;
+    }
+  }
+}

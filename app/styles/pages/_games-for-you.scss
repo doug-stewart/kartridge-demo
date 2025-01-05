@@ -1,0 +1,193 @@
+.rp-back-btn {
+  background-color: $grey-lighter;
+  border-radius: .4rem;
+  color: $grey-darker;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  transition:
+    background-color .16s $curve,
+    color .16s $curve;
+
+  &:hover {
+    background-color: $grey-darkest;
+    color: $white;
+  }
+
+  &__arrow {
+    fill: $grey-dark;
+    margin-right: .2rem;
+    transition: fill .16s $curve;
+
+    :hover > & { fill: $white; }
+  }
+}
+
+.rp-finder {
+  grid-column: span 2;
+  margin-bottom: 4rem;
+}
+
+.rp-game-group {
+  grid-column: span 2;
+  margin-top: 3rem;
+
+  &__games {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0 -1.2rem;
+
+    .c-listing {
+      margin-bottom: 0;
+
+      &:nth-child(n+3) { display: none; }
+    }
+  }
+
+  &__see-all {
+    color: $grey-dark;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-left: 1ch;
+    text-transform: none;
+  }
+
+  &__title { margin-bottom: .3rem; }
+}
+
+.rp-header {
+  font-size: 1.9rem;
+  font-weight: 500;
+  grid-column: span 2;
+  margin-bottom: 10px;
+}
+
+.rp-main {
+  flex: 1;
+  justify-content: center;
+  overflow: auto;
+  overflow: overlay;
+  padding: 3.6rem 2rem 4rem;
+}
+
+.rp-sidebar { margin: 1rem 0 1rem 1rem; }
+
+.rp-spotlight-games {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 50rem;
+
+  & + & { margin-top: 3rem; }
+
+  &__ctrls {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__dot {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    height: 3rem;
+    justify-content: center;
+    position: relative;
+    width: 2.5rem;
+
+    &::before {
+      background-color: $grey-darkest;
+      border-radius: .5rem;
+      content: '';
+      display: block;
+      height: 1rem;
+      opacity: .3;
+      transition:
+        background-color .16s $curve,
+        opacity .16s $curve,
+        width .16s $curve;
+      width: 1rem;
+    }
+
+    &.is-active::before {
+      opacity: .6;
+      width: 2rem;
+    }
+
+    &:hover::before {
+      background-color: $purple-med;
+      opacity: 1;
+    }
+  }
+
+  &__list { flex: 1; }
+
+  &__next,
+  &__prev {
+    color: $grey-darkest;
+    display: block;
+    flex: 0 0 auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 3rem;
+    opacity: .4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity .16s $curve;
+
+    &:hover {
+      color: $purple-med;
+      opacity: 1;
+    }
+  }
+
+  &__next {
+    margin-left: auto;
+    padding-left: 2rem;
+  }
+
+  &__prev {
+    margin-right: auto;
+    padding-right: 2rem;
+  }
+
+  &__title {
+    color: inherit;
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+    text-transform: none;
+  }
+}
+
+@media (min-width: $mobile-flip) {
+  .rp-back-btn { display: none; }
+
+  .rp-main {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@include media-query('min-width', 1160px) {
+  .rp-game-group__games {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+    .c-listing:nth-child(3) { display: block; }
+  }
+
+  .rp-main {
+    align-content: start;
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: minmax(auto, 48rem) minmax(auto, 48rem);
+  }
+
+  .rp-spotlight-games {
+    height: 100%;
+    margin: 0;
+  }
+}

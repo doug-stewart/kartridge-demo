@@ -1,0 +1,132 @@
+.c-options {
+  &--hover,
+  &--toggle { position: relative; }
+
+  &__btn {
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+      bottom: 0;
+      content: '';
+      height: 1rem;
+      left: 0;
+      position: absolute;
+      right: 0;
+      transition: transform 0ms linear 150ms;
+      z-index: -1;
+    }
+
+    &-icon {
+      display: inline-block;
+      fill: $grey-darker;
+      height: .6rem;
+      margin-left: .3em;
+      margin-right: -.3em;
+      transform: translateY(-.1rem);
+      width: 1rem;
+    }
+  }
+
+  &--toggle.is-active &__btn,
+  &__btn:hover {
+    &::after { transform: translateY(100%); }
+  }
+
+  &--toggle.is-active &__menu,
+  &--hover &__btn:hover ~ &__menu,
+  &__menu:hover {
+    animation: 150ms options-in 0ms ease 1 forwards;
+    opacity: 1;
+    pointer-events: all;
+    transition-delay: 0ms;
+  }
+
+  &__item {
+    &--divided {
+      border-top: 1px solid $grey-lighter;
+      margin-top: .6rem;
+      padding-top: .6rem;
+    }
+  }
+
+  &__link {
+    background-color: $white;
+    display: block;
+    line-height: 3.6rem;
+    padding: 0 1.5rem;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color .3s ease;
+    white-space: nowrap;
+    width: 100%;
+
+    &:hover { background-color: $grey-lightest; }
+
+    &:disabled,
+    &.disabled,
+    &.is-disabled {
+      opacity: .42;
+      pointer-events: none;
+    }
+
+    &-note {
+      font-size: .846em;
+      font-style: normal;
+    }
+  }
+
+  &__menu {
+    animation: 150ms options-out 150ms ease 1 forwards;
+    font-size: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: -1rem;
+    top: calc(100% + .2rem);
+    transition: opacity 150ms ease 150ms;
+    z-index: 4;
+
+    .c-options--toggle & { transition-delay: 0ms; }
+
+    &::before {
+      bottom: 100%;
+      content: '';
+      height: .2rem;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+
+    &-list {
+      background-color: $white;
+      border: 1px solid $grey-darker;
+      border-radius: 3px;
+      box-shadow:
+        inset 0 -.3rem 0 $grey-lighter,
+        0 .3rem 0 rgba($black, .2);
+      min-width: 16rem;
+      padding: .6rem 0 .9rem;
+      position: relative;
+    }
+
+    &--left {
+      left: -1rem;
+      right: auto;
+    }
+  }
+}
+
+// stylelint-disable block-opening-brace-space-before
+@keyframes options-in {
+  0%   { transform: scale(1) translateY(1rem); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes options-out {
+  0%   { transform: scale(1) translateY(0); }
+  99%  { transform: scale(1) translateY(1rem); }
+  100% { transform: scale(0); }
+}
+// stylelint-enable

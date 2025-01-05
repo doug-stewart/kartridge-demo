@@ -1,0 +1,12 @@
+.c-loading {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+
+  &--spinner {
+    --text: #{$grey-lighter};
+
+    flex: 0 0 auto;
+  }
+}

@@ -1,0 +1,58 @@
+.i-coupon,
+.i-token {
+  &,
+  & * { transition: fill .16s $curve; }
+}
+
+.i-coupon {
+  &.is-inactive {
+    .i-coupon__fill { fill: $grey-light; }
+    .i-coupon__line { fill: $grey-darkest; }
+  }
+}
+
+.i-token {
+  height: 1.2em;
+  margin: -.4em .2ch;
+  transform: translateY(-12%);
+  vertical-align: middle;
+  width: auto;
+
+  &.is-inactive {
+    .i-token__base { fill: $grey-med; }
+    .i-token__border { fill: $grey-darkest; }
+    .i-token__fill { fill: $grey-darker; }
+    .i-token__inset { fill: $grey-lightest; }
+    .i-token__left { fill: $grey-lighter; }
+    .i-token__right { fill: $grey-dark; }
+    .i-token__shine { fill: $grey-med; }
+  }
+}
+
+.u-admin,
+.u-lvl,
+.u-kp,
+.u-dev {
+  background-color: $purple-med;
+  border-radius: .73em;
+  color: $white;
+  display: inline-block;
+  font-size: .79em;
+  font-weight: 900;
+  line-height: 1.45em;
+  padding: 0 .64em;
+}
+
+.u-friend {
+  display: inline-block;
+  fill: $grey-darker;
+  height: .9em;
+  width: .9em;
+}
+
+.u-mute {
+  display: inline-block;
+  fill: $grey-darker;
+  height: .833em;
+  width: 1em;
+}

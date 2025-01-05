@@ -1,0 +1,63 @@
+.c-trailer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  &.w-video {
+    margin: .5rem;
+    padding-bottom: 52.25%;
+  }
+
+  &__add {
+    bottom: .9rem;
+    position: absolute;
+    right: .9rem;
+  }
+
+  &__form {
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    padding: 1rem 2rem 0;
+
+    &:last-child { padding-bottom: 2rem; }
+
+    &-errors { margin: 1rem 0; }
+  }
+
+  &__label {
+    color: $white;
+    display: block;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  &__note {
+    color: $white;
+    display: block;
+    font-size: .8em;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__preview {
+    box-shadow: 0 0 0 1px rgba($white, .12);
+    display: block;
+    height: 0;
+    margin: 2rem;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    &-media {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

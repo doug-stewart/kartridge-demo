@@ -1,0 +1,51 @@
+.c-rating-ctrl {
+  --starColorDefault: #{rgba($grey-darkest, .2)};
+  --starColorActive: #{$purple-med};
+  --starStrokeColor: transparent;
+  --starStrokeWidth: 1px;
+
+  display: flex;
+  fill: rgba($grey-darkest, .2);
+  fill: var(--starColorDefault);
+  justify-content: center;
+  max-width: 25rem;
+  stroke: rgba($grey-darkest, .2);
+  stroke: var(--starStrokeColor);
+  stroke-width: 1px;
+  stroke-width: var(--starStrokeWidth);
+  width: 100%;
+
+  &__btn {
+    background-color: transparent;
+    flex: 1;
+    height: 100%;
+    padding: 0 .5rem;
+  }
+
+  &__star {
+    display: block;
+    fill: inherit;
+    height: auto;
+    overflow: visible;
+    pointer-events: none;
+    stroke: inherit;
+    stroke-width: inherit;
+    transition: fill .16s ease;
+    width: 100%;
+  }
+
+  &:hover &__btn,
+  &.has-rating &__btn,
+  &.has-rating:hover &__btn {
+    fill: $purple-med;
+    fill: var(--starColorActive);
+  }
+
+  &__btn:hover ~ &__btn,
+  &__btn.is-rating ~ &__btn,
+  &.has-rating:hover,
+  &.has-rating:hover &__btn:hover ~ &__btn {
+    fill: rgba($grey-darkest, .2);
+    fill: var(--starColorDefault);
+  }
+}

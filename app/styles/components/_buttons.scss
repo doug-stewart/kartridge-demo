@@ -1,0 +1,476 @@
+// Button Sizes and Defaults
+.btn--s,
+.btn--m,
+.btn--l,
+.btn--xl {
+  border-radius: 3px;
+  display: inline-block;
+  isolation: isolate;
+  letter-spacing: .04em;
+  opacity: 1;
+  padding: 0 2em 2px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color .3s ease,
+    box-shadow .3s ease,
+    opacity .24s $curve;
+
+  &,
+  *,
+  &::before { cursor: pointer; }
+
+  &.has-tag::before {
+    content: '';
+    display: block;
+    margin-right: auto;
+  }
+
+  .c-spinner--sml {
+    margin-right: .33em;
+    position: relative;
+    top: .13em;
+    vertical-align: baseline;
+  }
+}
+
+.btn--s,
+.btn--m,
+.btn--l {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.btn--s {
+  font-size: 1.1rem;
+  line-height: 2.1;
+  padding: 1px 1em 2px;
+  text-transform: none;
+}
+
+.btn--m {
+  font-size: 1.1rem;
+  line-height: 1.27;
+  padding: .727em 1em .909em;
+}
+
+.btn--l {
+  font-size: 1.4rem;
+  line-height: 2em;
+  padding: 0 1.4em 2px;
+}
+
+.btn--xl {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  justify-content: center;
+  line-height: 1.2;
+  min-height: 3.8em;
+  min-width: 18.7em;
+  padding-bottom: .5em;
+  padding-top: .5em;
+
+  > strong {
+    font-style: normal;
+    font-weight: 700;
+    margin: 0 .33ch;
+    text-transform: uppercase;
+  }
+}
+
+// Button Sub-Components
+.btn {
+  &__inline-ico {
+    display: inline-block;
+    height: .8em;
+    margin-right: .4ch;
+    width: auto;
+
+    .c-loading__spinner ~ & { display: none; }
+  }
+
+  &__ico {
+    display: block;
+    margin-right: .5rem;
+
+    &--spinning {
+      animation: rotate 600ms linear infinite;
+    }
+  }
+
+  &__note {
+    align-self: start;
+    display: block;
+    font-size: .867em;
+    font-style: normal;
+    opacity: .72;
+    transform: translateY(.18em);
+    width: 100%;
+  }
+
+  &__subtxt {
+    display: block;
+    font-size: .867em;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: .4rem 0 -.2rem;
+    max-width: 12rem;
+    text-transform: none;
+  }
+
+  &__tag {
+    align-self: stretch;
+    background-color: $red-dark;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    display: grid;
+    font-style: normal;
+    font-weight: bold;
+    grid-template:
+      'num percent' auto
+      'note note' auto
+      / auto auto;
+    justify-self: stretch;
+    margin: -.5em 0 -.5em auto;
+    padding: 0 1ch 0 calc(.3em + 1ch);
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: translateX(-.5rem);
+    transition: background-color .3s ease;
+
+    &::before {
+      background-color: $red-med;
+      border-bottom-right-radius: 3px;
+      bottom: 0;
+      box-shadow: inset 0 -2px 0 $red-dark;
+      content: '';
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: background-color .3s ease;
+      width: .3rem;
+    }
+
+    &__main {
+      align-self: end;
+      grid-area: num;
+      line-height: 1;
+      margin: 0;
+      padding-bottom: .4rem;
+    }
+
+    &__note {
+      font-size: .733em;
+      grid-area: note;
+    }
+
+    &__sec {
+      align-self: end;
+      font-size: .867em;
+      grid-area: percent;
+      line-height: 1;
+      margin: 0;
+      padding-bottom: .4rem;
+    }
+
+    :hover > & {
+      background-color: $red-darker;
+
+      &::before { background-color: $red-dark; }
+    }
+  }
+}
+
+// Colors
+.btn--clear {
+  background-color: rgba($grey-darkest, .33);
+  background-color: swatch(swatch-e, .33);
+  box-shadow: inset 0 -2px 0 rgba($grey-darkest, .33);
+  box-shadow: inset 0 -2px 0 swatch(swatch-e, .33);
+  color: $grey-darkest;
+  color: swatch(swatch-e);
+
+  svg {
+    fill: $grey-darkest;
+    fill: swatch(swatch-e);
+  }
+
+  &:disabled,
+  &.disabled {
+    box-shadow: none;
+    opacity: .42;
+  }
+
+  &.btn--s {
+    box-shadow: inset 0 -1px 0 rgba($grey-darker, .33);
+    box-shadow: inset 0 -1px 0 swatch(swatch-e, .33);
+  }
+
+  &.is-active,
+  &:hover {
+    &,
+    &.btn--s {
+      background-color: rgba($grey-darkest, .5);
+      background-color: swatch(swatch-e, .5);
+      box-shadow: none;
+    }
+  }
+}
+
+.btn--dark {
+  background-color: $grey-darker;
+  box-shadow: inset 0 -2px 0 $black;
+  color: $white;
+
+  svg { fill: $white; }
+
+  &.is-active,
+  &:hover {
+    background-color: $grey-darkest;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    box-shadow: none;
+    opacity: .42;
+  }
+
+  &.btn--s { box-shadow: inset 0 -1px 0 $black; }
+}
+
+.btn--light {
+  background-color: rgba($grey-med, .33);
+  box-shadow: inset 0 -2px 0 rgba($grey-darker, .33);
+  color: $grey-darker;
+
+  svg { fill: $grey-darker; }
+
+  &::before {
+    background-color: $black;
+    bottom: 0;
+    content: '';
+    left: 0;
+    mix-blend-mode: soft-light;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity .3s ease;
+  }
+
+  &.is-active,
+  &:hover {
+    box-shadow: none;
+
+    &::before { opacity: .12; }
+  }
+
+  &:disabled,
+  &.disabled {
+    box-shadow: none;
+    opacity: .42;
+  }
+
+  &.btn--s { box-shadow: inset 0 -1px 0 rgba($grey-darker, .33); }
+}
+
+.btn--purple {
+  background-color: $purple-med;
+  box-shadow: inset 0 -2px 0 $purple-darker;
+  color: $white;
+
+  svg { fill: $white; }
+
+  &:hover {
+    background-color: $purple-dark;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $purple-lighter;
+    box-shadow: none;
+  }
+
+  &.btn--s { box-shadow: inset 0 -1px 0 $purple-darker; }
+}
+
+.btn--red {
+  background-color: $red-light;
+  box-shadow: inset 0 -2px 0 $red-dark;
+  color: $white;
+
+  svg { fill: $white; }
+
+  &.is-active,
+  &:hover { background-color: $red-dark; }
+
+  &:disabled,
+  &.disabled {
+    background-color: $red-lighter;
+    box-shadow: none;
+  }
+
+  &.btn--s { box-shadow: inset 0 -1px 0 $red-dark; }
+}
+
+.btn--white {
+  background-color: $grey-lightest;
+  box-shadow:
+    inset 0 -2px 0 $purple-darker,
+    inset 0 0 0 1px $purple-med,
+    inset 0 -3px 0 $purple-med;
+  color: $grey-darkest;
+  padding-bottom: .55em;
+  padding-top: .45em;
+
+  &.is-active,
+  &:hover {
+    background-color: $purple-med;
+    box-shadow: none;
+    color: $white;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $white;
+    box-shadow:
+      inset 0 -2px 0 $purple-lighter,
+      inset 0 0 0 1px $purple-lighter,
+      inset 0 -3px 0 $purple-lighter;
+  }
+
+  &.btn--s { box-shadow: inset 0 -1px 0 $purple-darker; }
+}
+
+// Specific Buttons
+.btn__link {
+  background-color: transparent;
+  color: $purple-med;
+  text-decoration: underline;
+
+  &:hover { color: $purple-darker; }
+}
+
+.b-favorite {
+  height: 2.29em;
+  padding: 0;
+  position: relative;
+  width: 2.29em;
+
+  &__ico {
+    height: 50%;
+    left: 25%;
+    position: absolute;
+    top: 26%;
+    width: 50%;
+  }
+}
+
+.b-join-chat {
+  text-transform: uppercase;
+
+  strong {
+    align-self: end;
+    font-size: .87em;
+  }
+
+  .btn__note {
+    align-self: start;
+    font-size: .56em;
+    font-weight: 500;
+    margin-top: .25em;
+  }
+}
+
+.b-wishlist {
+  padding-right: 1.2em;
+
+  &::before {
+    content: '+';
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 6px;
+  }
+}
+
+.b-web-cta,
+.b-web-cta--dark {
+  align-self: center;
+  background-color: $white;
+  border: 1px solid rgba($purple-med, .52);
+  border-radius: 3px;
+  color: $purple-med;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: .75em 1.167em .583em;
+  text-decoration: none;
+  transition:
+    background-color .2s ease,
+    border-color .2s ease,
+    color .2s ease;
+  white-space: nowrap;
+
+  strong {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    background-color: $purple-lighter;
+    border-color: $purple-med;
+    // color: $white;
+  }
+
+  &--dark {
+    background-color: $purple-med;
+    border-color: $purple-med;
+    color: $white;
+
+    &:hover {
+      background-color: $purple-darker;
+      border-color: $purple-darker;
+      color: $white;
+    }
+  }
+}
+
+.btn-tokens {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding-right: .4ch;
+  position: relative;
+  white-space: nowrap;
+  z-index: 0;
+
+  &::after {
+    background-color: rgba($red-dark, .5);
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    content: '';
+    height: 1.9rem;
+    left: .8rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    background: url('/app/assets/images/token.svg') no-repeat 50% 50%;
+    background-size: contain;
+    content: '';
+    display: inline-block;
+    height: 2rem;
+    margin: -.5rem .4ch -.5rem 0;
+    transform: translateY(-5%);
+    vertical-align: baseline;
+    width: 1.7rem;
+  }
+}

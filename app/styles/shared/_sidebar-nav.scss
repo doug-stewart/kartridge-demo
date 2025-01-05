@@ -1,0 +1,126 @@
+.ap-sidebar-nav {
+  grid-area: sidebar-nav;
+
+  &__ico {
+    display: block;
+    flex: 0 0 auto;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__item {
+    height: 100%;
+    min-width: 58px;
+
+    &:last-child { margin-right: 0; }
+  }
+
+  &__link {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+
+    &::after {
+      background-image:
+        repeating-linear-gradient(
+          to bottom,
+          $grey-lighter 0,
+          $grey-lighter 1px,
+          $grey-light 1px,
+          $grey-light 2px
+        );
+      bottom: 0;
+      content: '';
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity .2s ease;
+      z-index: 0;
+    }
+
+    &:hover,
+    &.is-active {
+      &::after { opacity: 1; }
+    }
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin-right: 8px;
+  }
+
+  &__status {
+    font-size: .9rem;
+    left: 50%;
+    opacity: .8;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 2.11em;
+    transform: translate(-1.2em, -50%);
+    z-index: 2;
+
+    @at-root .has-notifications & { color: $red-med; }
+  }
+
+  .is-hidden { display: none; }
+}
+
+.ap-meta-ico {
+  height: 3em;
+  width: 3.84em;
+  z-index: 2;
+
+  &,
+  & * { transition: fill .16s $curve; }
+
+  &__star,
+  &__square {
+    opacity: 0;
+    transition: opacity .16s $curve;
+  }
+
+  &__star {
+    .is-high-priority & { opacity: 1; }
+  }
+
+  &__square {
+    .is-low-priority & { opacity: 1; }
+  }
+}
+
+.ap-meta-link {
+  padding: 0 .2em;
+
+  &:not(.is-active) {
+    .ap-meta-ico {
+      &__base { fill: $grey-med; }
+      &__border { fill: $grey-darkest; }
+      &__fill { fill: $grey-darker; }
+      &__inset { fill: $grey-lightest; }
+      &__left { fill: $grey-lighter; }
+      &__right { fill: $grey-dark; }
+      &__shine { fill: $grey-med; }
+    }
+  }
+}
+
+.ap-meta-tokens {
+  background-color: $grey-darker;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+  color: $white;
+  display: block;
+  font-weight: 500;
+  margin: 0 .87em 0 -1.72em;
+  padding: 1px .54em 1px 1.62em;
+  position: relative;
+  z-index: 1;
+}
