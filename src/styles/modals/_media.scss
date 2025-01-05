@@ -58,14 +58,16 @@
       transition: opacity 0.15s ease;
       width: 33.333%;
       z-index: 1;
-
-      &:hover {
-        opacity: 1;
-      }
     }
 
     &-next {
-      background-image: linear-gradient(to left, rgba($black, 0.4) 0, rgba($black, 0.4) 10rem, rgba($black, 0) 10rem);
+      background-image:
+        linear-gradient(
+          to left,
+          rgba($black, 0.4) 0,
+          rgba($black, 0.4) 10rem,
+          rgba($black, 0) 10rem
+        );
       right: 0;
 
       .m-media__nav-ico {
@@ -74,12 +76,23 @@
     }
 
     &-prev {
-      background-image: linear-gradient(to right, rgba($black, 0.4) 0, rgba($black, 0.4) 10rem, rgba($black, 0) 10rem);
+      background-image:
+        linear-gradient(
+          to right,
+          rgba($black, 0.4) 0,
+          rgba($black, 0.4) 10rem,
+          rgba($black, 0) 10rem
+        );
       left: 0;
 
       .m-media__nav-ico {
         left: 0;
       }
+    }
+
+    &-next:hover,
+    &-prev:hover {
+      opacity: 1;
     }
   }
 

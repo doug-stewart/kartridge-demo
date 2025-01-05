@@ -52,7 +52,12 @@
   &__empty-gallery {
     bottom: 1rem;
     left: 3rem;
-    mask-image: linear-gradient(to bottom, #000 calc(100% - 40rem), transparent 100%);
+    mask-image:
+      linear-gradient(
+        to bottom,
+        #000 calc(100% - 40rem),
+        transparent 100%
+      );
     overflow: hidden;
     position: absolute;
     right: 3rem;

@@ -16,7 +16,8 @@ const GamePods = () => {
   const [adding, setAdding] = useState(false);
   const [dragging, setDragging] = useState(false);
 
-  const reorderPods = (pods) => podUpdater({ type: 'REORDER_PODS', pods: pods });
+  const reorderPods = (pods) =>
+    podUpdater({ type: 'REORDER_PODS', pods: pods });
 
   const addPod = () => {
     podUpdater({ type: 'ADD_POD', kind: kind });
@@ -25,7 +26,11 @@ const GamePods = () => {
 
   useEffect(() => {
     if (adding) {
-      podArea.current.scrollTo({ top: podArea.current.scrollHeight, left: 0, behavior: 'smooth' });
+      podArea.current.scrollTo({
+        top: podArea.current.scrollHeight,
+        left: 0,
+        behavior: 'smooth',
+      });
       setAdding(false);
     }
   }, [adding]);
@@ -36,7 +41,11 @@ const GamePods = () => {
     return podKey++;
   };
 
-  const innerSectionsClasses = classNames('c-feat-pg__sections-inner', 'gp-body', { 'u-custom--dragging': dragging });
+  const innerSectionsClasses = classNames(
+    'c-feat-pg__sections-inner',
+    'gp-body',
+    { 'u-custom--dragging': dragging }
+  );
 
   return (
     <div className="c-feat-pg__sections" ref={podArea}>
@@ -57,7 +66,9 @@ const GamePods = () => {
         </span>
         <div className="c-media__add">
           {/* eslint-disable-next-line jsx-a11y/no-onchange */}
-          <select className="x-select c-media__add-choice" onChange={(event) => setKind(event.target.value)}>
+          <select
+            className="x-select c-media__add-choice"
+            onChange={(event) => setKind(event.target.value)}>
             <option value="" className="x-option is-selected">
               Choose content to add…
             </option>
@@ -72,13 +83,22 @@ const GamePods = () => {
             </option>
           </select>
           {kind !== '' && (
-            <button className="c-media__add-btn btn--red btn--m" onClick={addPod}>
+            <button
+              className="c-media__add-btn btn--red btn--m"
+              onClick={addPod}>
               Add
             </button>
           )}
         </div>
         {allPods.length > 0 ? (
-          <ReactSortable className="u-custom__gallery c-media" handle=".c-media__drag-label" list={allPods} onEnd={() => setDragging(false)} onStart={() => setDragging(true)} setList={(items) => reorderPods({ items })} tag="ul">
+          <ReactSortable
+            className="u-custom__gallery c-media"
+            handle=".c-media__drag-label"
+            list={allPods}
+            onEnd={() => setDragging(false)}
+            onStart={() => setDragging(true)}
+            setList={(items) => reorderPods({ items })}
+            tag="ul">
             {allPods.map((pod, id) => {
               if (pod.type === 'gallery') {
                 return <GalleryPod key={getPodKey()} podId={id} />;

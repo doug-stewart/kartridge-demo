@@ -7,7 +7,9 @@ import NavButton from './NavButton';
 const AppNavigation = () => {
   const themeState = useContext(Theme);
   const isLight = tinycolor(themeState.state.a).isLight();
-  const navClasses = classNames('ap-nav', 'ap-nav--desktop', { 'is-light': isLight });
+  const navClasses = classNames('ap-nav', 'ap-nav--desktop', {
+    'is-light': isLight,
+  });
 
   return (
     <nav className={navClasses}>

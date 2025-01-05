@@ -288,14 +288,6 @@
       &::before {
         display: none;
       }
-
-      &.active {
-        color: var(--nav-base-color);
-
-        .ap-nav__highlight--top {
-          fill-opacity: 1;
-        }
-      }
     }
 
     &__highlight {
@@ -306,14 +298,13 @@
       width: calc(#{$nav-width} + 1.8em);
       z-index: -1;
 
-      .ap-nav__action:hover &,
-      .ap-nav__action.active & {
-        transform: translateX(0.8em);
-      }
-
       &--bottom,
       &--top {
-        transition: fill-opacity 0.2s ease, stroke 0.2s ease, stroke-opacity 0.2s ease, stroke-width 0.2s ease;
+        transition:
+          fill-opacity 0.2s ease,
+          stroke 0.2s ease,
+          stroke-opacity 0.2s ease,
+          stroke-width 0.2s ease;
       }
 
       &--bottom {
@@ -359,6 +350,21 @@
     &__list {
       flex-direction: column;
       padding-top: 1.71em;
+    }
+
+    &__action.active {
+      color: var(--nav-base-color);
+
+      .ap-nav__highlight--top {
+        fill-opacity: 1;
+      }
+    }
+
+    &__highlight &__action {
+      &:hover &,
+      &.active & {
+        transform: translateX(0.8em);
+      }
     }
 
     // Unique Buttons

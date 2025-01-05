@@ -23,13 +23,19 @@ export default class AppHeader extends React.Component {
         {!isWindows && (
           <ul className="ap-mac-window">
             <li className="ap-mac-window__close">
-              <button className="ap-mac-window__close-link" title="Close"></button>
+              <button
+                className="ap-mac-window__close-link"
+                title="Close"></button>
             </li>
             <li className="ap-mac-window__min">
-              <button className="ap-mac-window__min-link" title="Minimize"></button>
+              <button
+                className="ap-mac-window__min-link"
+                title="Minimize"></button>
             </li>
             <li className="ap-mac-window__max">
-              <button className="ap-mac-window__max-link " title="Maximize"></button>
+              <button
+                className="ap-mac-window__max-link "
+                title="Maximize"></button>
             </li>
           </ul>
         )}
@@ -41,7 +47,10 @@ export default class AppHeader extends React.Component {
               </button>
             </li>
             <li className="ap-history__item">
-              <button disabled="" className="ap-history__next-link" title="Next">
+              <button
+                disabled=""
+                className="ap-history__next-link"
+                title="Next">
                 <NextIco className="ap-history__ico" />
               </button>
             </li>
@@ -51,7 +60,11 @@ export default class AppHeader extends React.Component {
           <div className="c-search__form">
             <SearchIco className="c-search__ico" />
             <div className="c-search__field-grp">
-              <input placeholder="Search…" className="c-search__field" type="text" />
+              <input
+                placeholder="Search…"
+                className="c-search__field"
+                type="text"
+              />
               <button className="c-search__clear">×</button>
             </div>
           </div>
@@ -60,8 +73,12 @@ export default class AppHeader extends React.Component {
         <div className="ap-menu c-options--toggle ap-user">
           <a role="button" className="ap-user__group c-avatar-trigger">
             <span className="ap-user__avatar c-avatar c-avatar--sml ap-user__avatar">
-              <span className="c-avatar__media c-avatar__character" style={{ backgroundImage: `url('${AvatarFront}')` }}></span>
-              <span className="c-avatar__media c-avatar__background" style={{ backgroundImage: `url('${AvatarBack}')` }}></span>
+              <span
+                className="c-avatar__media c-avatar__character"
+                style={{ backgroundImage: `url('${AvatarFront}')` }}></span>
+              <span
+                className="c-avatar__media c-avatar__background"
+                style={{ backgroundImage: `url('${AvatarBack}')` }}></span>
             </span>
             <strong className="ap-user__name">
               doug

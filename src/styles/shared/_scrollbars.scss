@@ -1,8 +1,3 @@
-:root {
-  scrollbar-color: rgba($black, 0.2) transparent;
-  scrollbar-width: thin;
-}
-
 ::-webkit-scrollbar {
   background-color: transparent;
   height: 0.6rem;
@@ -11,6 +6,11 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: rgba($black, 0.2);
+}
+
+:root {
+  scrollbar-color: rgba($black, 0.2) transparent;
+  scrollbar-width: thin;
 }
 
 .c-scrollbar {

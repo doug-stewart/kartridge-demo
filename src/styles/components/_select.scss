@@ -104,7 +104,10 @@
     line-height: 1.385em;
     opacity: 0;
     text-align: center;
-    transition: background-color 0.16s ease, color 0.16s ease, opacity 0.16s ease;
+    transition:
+      background-color 0.16s ease,
+      color 0.16s ease,
+      opacity 0.16s ease;
     width: 1.385em;
 
     &:hover {

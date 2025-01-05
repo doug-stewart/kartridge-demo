@@ -37,11 +37,6 @@ table {
   border-spacing: 0;
 }
 
-ul,
-ol {
-  list-style: none;
-}
-
 a,
 button,
 [contenteditable] {
@@ -50,10 +45,6 @@ button,
   &,
   & * {
     cursor: pointer;
-  }
-
-  &:focus {
-    outline: none;
   }
 }
 
@@ -87,4 +78,10 @@ input {
       margin: 0;
     }
   }
+}
+
+a:focus,
+button:focus,
+[contenteditable]:focus {
+  outline: none;
 }

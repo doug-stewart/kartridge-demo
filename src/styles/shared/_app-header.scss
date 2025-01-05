@@ -32,10 +32,6 @@
 .ap-download-btn {
   display: none;
   margin: 0 1.667em 0 1.5em;
-
-  .ap-session-btn + & {
-    margin-left: 0.54em;
-  }
 }
 
 .ap-history {
@@ -69,17 +65,11 @@
     display: flex;
     height: 3.4em;
     justify-content: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease,
+      opacity 0.3s ease;
     width: 3.4em;
-
-    &:hover {
-      background-color: $white;
-    }
-
-    &:disabled {
-      border-color: transparent;
-      box-shadow: none;
-    }
   }
 
   &__next-link {
@@ -89,6 +79,17 @@
 
   &__prev-link {
     padding-right: 0.2em;
+  }
+
+  &__next-link:hover,
+  &__prev-link:hover {
+    background-color: $white;
+  }
+
+  &__next-link:disabled,
+  &__prev-link:disabled {
+    border-color: transparent;
+    box-shadow: none;
   }
 }
 
@@ -244,12 +245,6 @@
         width: 150%;
         z-index: 1;
       }
-
-      &:active {
-        &::after {
-          opacity: 1;
-        }
-      }
     }
   }
 
@@ -288,6 +283,14 @@
     }
   }
 
+  &__close:active,
+  &__max:active,
+  &__min:active {
+    &::after {
+      opacity: 1;
+    }
+  }
+
   &:hover {
     .ap-mac-window {
       &__close,
@@ -308,15 +311,6 @@
 
   .ap-nav & {
     display: block;
-  }
-}
-
-.ap-session-btn {
-  display: block;
-  margin-left: 1.5em;
-
-  &__ico {
-    display: none;
   }
 }
 
@@ -345,7 +339,14 @@
     z-index: 1;
 
     &::before {
-      background-image: repeating-linear-gradient(to bottom, $grey-lighter 0, $grey-lighter 1px, $grey-light 1px, $grey-light 2px);
+      background-image:
+        repeating-linear-gradient(
+          to bottom,
+          $grey-lighter 0,
+          $grey-lighter 1px,
+          $grey-light 1px,
+          $grey-light 2px
+        );
       bottom: 0;
       content: '';
       left: 0;
@@ -361,10 +362,6 @@
     &:hover {
       &::before {
         opacity: 1;
-      }
-
-      + .ap-menu__toggle {
-        border-color: $grey-med;
       }
     }
   }
@@ -421,6 +418,11 @@
     right: 0.4rem;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    .is-active > .ap-user__group + &,
+    .ap-user__group:hover + & {
+      border-color: $grey-med;
+    }
   }
 
   .c-options__menu {
@@ -484,21 +486,6 @@
       opacity: 0.66;
       width: 26px;
       will-change: background-color;
-
-      &:hover {
-        background-color: $purple-med;
-        opacity: 1;
-      }
-
-      .ap-win-window--w-modal & {
-        background-color: $white;
-        opacity: 0.33;
-
-        &:hover {
-          background-color: $white;
-          opacity: 0.66;
-        }
-      }
     }
   }
 
@@ -520,6 +507,25 @@
     &-link {
       mask: url('../../images/icons/win-minimize.svg') no-repeat 50% 50%;
       mask-size: 10px 2px;
+    }
+  }
+
+  &__close &-link:hover,
+  &__max &-link:hover,
+  &__min &-link:hover {
+    background-color: $purple-med;
+    opacity: 1;
+  }
+
+  .ap-win-window--w-modal &__close &-lin,
+  .ap-win-window--w-modal &__max &-link,
+  .ap-win-window--w-modal &__min &-link {
+    background-color: $white;
+    opacity: 0.33;
+
+    &:hover {
+      background-color: $white;
+      opacity: 0.66;
     }
   }
 }
@@ -554,29 +560,6 @@
           left: 0;
           width: 100%;
         }
-      }
-    }
-
-    .ap-session-btn {
-      background: transparent;
-      border-width: 0;
-      font-size: 1em;
-      height: 100%;
-      margin: 0;
-      width: 13em;
-
-      &__ico {
-        display: block;
-        height: 4.2em;
-        margin: 0 auto;
-        opacity: 0.6;
-        width: 4.62em;
-      }
-
-      &__txt {
-        color: transparent;
-        font: 0/0 a;
-        position: absolute;
       }
     }
 

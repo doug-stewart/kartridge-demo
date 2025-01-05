@@ -103,8 +103,28 @@
   }
 
   &__overlay {
-    background-image: radial-gradient(70vw 44rem at calc(50% - 20rem) top, rgba($purple-med, 0.5) 0, rgba($purple-med, 0) 100%), linear-gradient(to bottom, rgba($grey-darkest, 0) 32rem, $grey-darkest calc(100% - 10px));
-    background-image: radial-gradient(70vw 44rem at calc(50% - 20rem) top, swatch(swatch-b, 0.5) 0, swatch(swatch-b, 0) 100%), linear-gradient(to bottom, swatch(swatch-d, 0) 32rem, swatch(swatch-d) calc(100% - 10px));
+    background-image:
+      radial-gradient(
+        70vw 44rem at calc(50% - 20rem) top,
+        rgba($purple-med, 0.5) 0,
+        rgba($purple-med, 0) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba($grey-darkest, 0) 32rem,
+        $grey-darkest calc(100% - 10px)
+      );
+    background-image:
+      radial-gradient(
+        70vw 44rem at calc(50% - 20rem) top,
+        swatch(swatch-b, 0.5) 0,
+        swatch(swatch-b, 0) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        swatch(swatch-d, 0) 32rem,
+        swatch(swatch-d) calc(100% - 10px)
+      );
     background-position: 0 0;
     background-size: 100% 100%;
     height: calc(100% + 20px);
@@ -271,8 +291,28 @@
     }
 
     &__overlay {
-      background-image: radial-gradient(70vw 44rem at calc(50% - 20rem) top, rgba($purple-med, 0.5) 0, rgba($purple-med, 0) 100%), linear-gradient(to right, rgba($grey-darkest, 0) calc(100% - 35rem), $grey-darkest calc(100% - 10px));
-      background-image: radial-gradient(70vw 44rem at calc(50% - 20rem) top, swatch(swatch-b, 0.5) 0, swatch(swatch-b, 0) 100%), linear-gradient(to right, swatch(swatch-d, 0) calc(100% - 35rem), swatch(swatch-d) calc(100% - 10px));
+      background-image:
+        radial-gradient(
+          70vw 44rem at calc(50% - 20rem) top,
+          rgba($purple-med, 0.5) 0,
+          rgba($purple-med, 0) 100%
+        ),
+        linear-gradient(
+          to right,
+          rgba($grey-darkest, 0) calc(100% - 35rem),
+          $grey-darkest calc(100% - 10px)
+        );
+      background-image:
+        radial-gradient(
+          70vw 44rem at calc(50% - 20rem) top,
+          swatch(swatch-b, 0.5) 0,
+          swatch(swatch-b, 0) 100%
+        ),
+        linear-gradient(
+          to right,
+          swatch(swatch-d, 0) calc(100% - 35rem),
+          swatch(swatch-d) calc(100% - 10px)
+        );
     }
 
     &__sections {

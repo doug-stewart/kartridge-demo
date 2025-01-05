@@ -40,7 +40,10 @@ const Customize = ({ background, setBackground }) => {
               </button>
             </span>
           </div>
-          <BackgroundControl background={background} setBackground={setBackground} />
+          <BackgroundControl
+            background={background}
+            setBackground={setBackground}
+          />
         </div>
         <GamePods />
         <BackgroundMedia background={background} />

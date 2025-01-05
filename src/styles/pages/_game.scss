@@ -166,6 +166,58 @@
   }
 }
 
+.gp-copy-count {
+  align-items: center;
+  background-color: rgba($black, 0.48);
+  border-radius: 3px;
+  color: $white;
+  display: flex;
+  grid-column: 1;
+  grid-row: 2;
+  margin-bottom: 2rem;
+  min-width: 24rem;
+  padding: 0.5rem;
+
+  &__label {
+    flex: 0 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.17;
+    margin: 0.1rem 1rem 0 0.6rem;
+    text-transform: uppercase;
+
+    strong {
+      display: block;
+    }
+  }
+
+  &__nums {
+    align-items: baseline;
+    background-color: rgba($black, 0.54);
+    border-radius: 3px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    line-height: 3.6rem;
+    padding: 0 1rem;
+  }
+
+  &__remain {
+    flex: 0 0 auto;
+    font-size: 1.8rem;
+  }
+
+  &__total {
+    flex: 0 0 auto;
+    font-size: 1.4rem;
+
+    &::before {
+      content: '/';
+      float: left;
+      margin: 0 0.1em;
+    }
+  }
+}
+
 .gp-ctrls {
   flex: 0 0 auto;
   margin-top: auto;
@@ -294,64 +346,6 @@
   }
 }
 
-.gp-copy-count {
-  align-items: center;
-  background-color: rgba($black, 0.48);
-  border-radius: 3px;
-  color: $white;
-  display: flex;
-  grid-column: 1;
-  grid-row: 2;
-  margin-bottom: 2rem;
-  min-width: 24rem;
-  padding: 0.5rem;
-
-  &__label {
-    flex: 0 0 auto;
-    font-size: 1.2rem;
-    line-height: 1.17;
-    margin: 0.1rem 1rem 0 0.6rem;
-    text-transform: uppercase;
-
-    strong {
-      display: block;
-    }
-  }
-
-  &__nums {
-    align-items: baseline;
-    background-color: rgba($black, 0.54);
-    border-radius: 3px;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    line-height: 3.6rem;
-    padding: 0 1rem;
-  }
-
-  &__remain {
-    flex: 0 0 auto;
-    font-size: 1.8rem;
-  }
-
-  &__total {
-    flex: 0 0 auto;
-    font-size: 1.4rem;
-
-    &::before {
-      content: '/';
-      float: left;
-      margin: 0 0.1em;
-    }
-  }
-}
-
-.gp-ctrls {
-  flex: 0 0 auto;
-  margin-top: auto;
-  padding-top: 2.6rem;
-}
-
 .gp-dashboard-traits {
   display: flex;
   flex: 1 1 100%;
@@ -455,8 +449,18 @@
 }
 
 .gp-dev-notice {
-  background-image: linear-gradient(to bottom, rgba($grey-darkest, 0.12), rgba($grey-darkest, 0));
-  background-image: linear-gradient(to bottom, swatch(swatch-e, 0.12), swatch(swatch-e, 0));
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba($grey-darkest, 0.12),
+      rgba($grey-darkest, 0)
+    );
+  background-image:
+    linear-gradient(
+      to bottom,
+      swatch(swatch-e, 0.12),
+      swatch(swatch-e, 0)
+    );
   border: 1px solid rgba($grey-darkest, 0.08);
   border-color: swatch(swatch-e, 0.08);
   border-radius: 3px;
@@ -602,7 +606,10 @@
           position: fixed;
           top: 100vh;
           transform: translateX(calc(-50% - 116px));
-          transition: visibility 0.1s ease, right 0.3s $curve, transform 0.1s ease;
+          transition:
+            visibility 0.1s ease,
+            right 0.3s $curve,
+            transform 0.1s ease;
           visibility: hidden;
           z-index: 1;
 
@@ -768,38 +775,6 @@
     align-items: center;
     display: flex;
     justify-content: center;
-
-    &.is-under-judgement {
-      flex-flow: column nowrap;
-      height: 1.2em;
-      margin-bottom: -0.2em;
-
-      .c-rating__all-star {
-        fill: $grey-darkest;
-        fill: swatch(swatch-e);
-        flex: 0 0 auto;
-        margin-bottom: 0;
-        margin-left: 0;
-        stroke-width: 0;
-      }
-
-      .c-rating__tooltip {
-        background-color: transparent;
-        border-width: 0;
-        box-shadow: none;
-        color: inherit;
-        font-size: 0.24em;
-        font-weight: 300;
-        margin-top: 0.6em;
-        opacity: 0.7;
-        order: 2;
-        padding: 0;
-        position: static;
-        text-transform: none;
-        transform: none;
-        white-space: normal;
-      }
-    }
   }
 
   .c-rating__all-star {
@@ -821,6 +796,38 @@
 
   .c-rating__count {
     display: none;
+  }
+
+  .c-rating__all.is-under-judgement {
+    flex-flow: column nowrap;
+    height: 1.2em;
+    margin-bottom: -0.2em;
+
+    .c-rating__all-star {
+      fill: $grey-darkest;
+      fill: swatch(swatch-e);
+      flex: 0 0 auto;
+      margin-bottom: 0;
+      margin-left: 0;
+      stroke-width: 0;
+    }
+
+    .c-rating__tooltip {
+      background-color: transparent;
+      border-width: 0;
+      box-shadow: none;
+      color: inherit;
+      font-size: 0.24em;
+      font-weight: 300;
+      margin-top: 0.6em;
+      opacity: 0.7;
+      order: 2;
+      padding: 0;
+      position: static;
+      text-transform: none;
+      transform: none;
+      white-space: normal;
+    }
   }
 }
 
@@ -962,7 +969,10 @@
     padding: 0 1.2rem;
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.16s $curve, box-shadow 0.16s $curve, color 0.16s $curve;
+    transition:
+      background-color 0.16s $curve,
+      box-shadow 0.16s $curve,
+      color 0.16s $curve;
 
     &:hover,
     &.is-active {
@@ -1064,7 +1074,14 @@
   user-select: none;
 
   &__shape {
-    background-image: linear-gradient(to right, rgba($red-med, 0) 1.2rem, rgba($red-med, 1) 1.2rem, rgba($red-med, 1) calc(100% - 1.2rem), rgba($red-med, 0) calc(100% - 1.2rem));
+    background-image:
+      linear-gradient(
+        to right,
+        rgba($red-med, 0) 1.2rem,
+        rgba($red-med, 1) 1.2rem,
+        rgba($red-med, 1) calc(100% - 1.2rem),
+        rgba($red-med, 0) calc(100% - 1.2rem)
+      );
     bottom: 0;
     display: flex;
     filter: drop-shadow(0 1px 0 $red-dark);
@@ -1179,7 +1196,10 @@
     margin: 0 0.2em 0.2em 0;
     padding: 0 0.58em 1px;
     position: relative;
-    transition: background-color 0.24s ease, box-shadow 0.24s ease, color 0.24s ease;
+    transition:
+      background-color 0.24s ease,
+      box-shadow 0.24s ease,
+      color 0.24s ease;
     z-index: 0;
   }
 
@@ -1224,7 +1244,10 @@
   .btn-ico-action {
     background-color: rgba($black, 0.36);
     border-radius: 3px;
-    box-shadow: inset 0 -0.2rem 0 $red-dark, inset 0 0 0 0.2rem $red-med, inset 0 -0.4rem 0 $red-med;
+    box-shadow:
+      inset 0 -0.2rem 0 $red-dark,
+      inset 0 0 0 0.2rem $red-med,
+      inset 0 -0.4rem 0 $red-med;
     color: $white;
     fill: $white;
     font-size: 1.6rem;
@@ -1235,7 +1258,10 @@
     &.is-added,
     &.is-added:hover {
       background-color: $red-dark;
-      box-shadow: inset 0 -0.2rem 0 $red-dark, inset 0 0 0 0.2rem $red-dark, inset 0 -0.4rem 0 $red-dark;
+      box-shadow:
+        inset 0 -0.2rem 0 $red-dark,
+        inset 0 0 0 0.2rem $red-dark,
+        inset 0 -0.4rem 0 $red-dark;
     }
 
     .is-viewing-bg & {
