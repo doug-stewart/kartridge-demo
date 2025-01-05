@@ -50,11 +50,12 @@ const GamePods = () => {
     const setImages = (pod: PodObj, images: GalleryObj['images']) =>
         podsStore.send({ type: 'update', pod: Object.assign(pod, { images }) });
 
-    const addImage = (pod: GalleryObj, data: ImageObj) =>
+    const addImage = (pod: GalleryObj, data: ImageObj) => {
         podsStore.send({
             type: 'update',
-            pod: Object.assign(pod, { images: pod.images.push(data) }),
+            pod: Object.assign(pod, { images: [...pod.images, data] }),
         });
+    };
 
     const removeImage = (pod: GalleryObj, id: number) =>
         podsStore.send({
