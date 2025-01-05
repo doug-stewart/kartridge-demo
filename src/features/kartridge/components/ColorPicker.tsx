@@ -17,8 +17,8 @@ const ColorPicker = ({ color, label, onChange }: ColorPickerProps) => {
     const picker = useRef<HTMLLIElement | null>(null);
 
     useEffect(() => {
-        const handleClick = (event: MouseEvent) => {
-            if (picker.current?.contains(event.target as any)) return;
+        const handleClick = (event: MouseEvent): void => {
+            if (picker.current?.contains(event.target as Node)) return;
             toggleShow(false);
         };
 

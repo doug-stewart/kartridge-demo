@@ -1,10 +1,10 @@
-import type { GalleryPod } from '../types';
+import type { GalleryObj } from '../types';
 
 type GalleryImageProps = {
-    pod: GalleryPod;
+    pod: GalleryObj;
     image: string;
     id: number;
-    removeImage: (pod: GalleryPod, id: number) => void;
+    removeImage: (pod: GalleryObj, id: number) => void;
 };
 
 const GalleryImage = ({ pod, image, id, removeImage }: GalleryImageProps) => {

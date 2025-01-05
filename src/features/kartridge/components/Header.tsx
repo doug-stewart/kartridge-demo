@@ -5,7 +5,7 @@ import tinycolor from 'tinycolor2';
 
 import { podsStore } from '../stores/pods.store';
 import { themeStore } from '../stores/theme.store';
-import type { Pod } from '../types';
+import type { PodObj } from '../types';
 
 import ColorPicker from './ColorPicker';
 
@@ -21,7 +21,7 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
     const gameIcon = '/game/game-icon.png';
 
     const allScreenshots = pods.reduce(
-        (screenshots: Array<{ id: number; image: string }>, pod: Pod) => {
+        (screenshots: Array<{ id: number; image: string }>, pod: PodObj) => {
             if (pod.type === 'gallery') {
                 return [...screenshots, ...pod.images];
             }

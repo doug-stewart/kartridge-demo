@@ -1,16 +1,16 @@
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
 
-import type { Pod } from '../types';
+import type { PodObj } from '../types';
 
 type GamePodProps = PropsWithChildren & {
-    pod: Pod;
+    pod: PodObj;
     isFirst: boolean;
     isLast: boolean;
     podClass: string;
-    movePodUp: (pod: Pod) => void;
-    movePodDown: (pod: Pod) => void;
-    removePod: (pod: Pod) => void;
+    movePodUp: (pod: PodObj) => void;
+    movePodDown: (pod: PodObj) => void;
+    removePod: (pod: PodObj) => void;
 };
 
 const GamePod = ({

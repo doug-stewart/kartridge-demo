@@ -1,25 +1,21 @@
 import { ReactSortable } from 'react-sortablejs';
 
-import type {
-    GalleryImage as GalleryImageType,
-    GalleryPod as GalleryPodType,
-    Media,
-} from '../types';
+import type { ImageObj, GalleryObj, MediaObj } from '../types';
 
 import Dropzone from './Dropzone';
 import GalleryImage from './GalleryImage';
 
-type GalleryPodProps = {
-    pod: GalleryPodType;
-    images: any[];
+type GalleryObjProps = {
+    pod: GalleryObj;
+    images: Array<ImageObj>;
     layout: number;
-    setLayout: (pod: GalleryPodType, layout: GalleryPodType['layout']) => void;
-    setImages: (pod: GalleryPodType, images: GalleryPodType['images']) => void;
-    addImage: (pod: GalleryPodType, image: GalleryImageType) => void;
-    removeImage: (pod: GalleryPodType, id: number) => void;
+    setLayout: (pod: GalleryObj, layout: GalleryObj['layout']) => void;
+    setImages: (pod: GalleryObj, images: GalleryObj['images']) => void;
+    addImage: (pod: GalleryObj, image: ImageObj) => void;
+    removeImage: (pod: GalleryObj, id: number) => void;
 };
 
-const GalleryPod = ({
+const GalleryObj = ({
     pod,
     images,
     layout,
@@ -27,20 +23,20 @@ const GalleryPod = ({
     setImages,
     addImage,
     removeImage,
-}: GalleryPodProps) => {
+}: GalleryObjProps) => {
     const columns = ['1', '2', '3'];
     const formats = ['jpeg', 'jpg', 'png', 'gif'];
 
-    const isValidImage = (media: Media) =>
+    const isValidImage = (media: MediaObj) =>
         formats.some((format) => media.type.toLowerCase().includes(format));
 
-    const processUpload = (media: Media) => {
+    const processUpload = (media: MediaObj) => {
         if (!isValidImage(media)) return;
-        const newImage: GalleryImageType = { id: pod.images.length + 1, image: media.data };
+        const newImage: ImageObj = { id: pod.images.length + 1, image: media.data };
         addImage(pod, newImage);
     };
 
-    const updateImages = (data: any) => {
+    const updateImages = (data: { items: Array<ImageObj> }): void => {
         setImages(pod, data.items);
     };
 
@@ -52,10 +48,10 @@ const GalleryPod = ({
                     className="c-media__col-ctrl__select"
                     value={layout}
                     onBlur={(event) =>
-                        setLayout(pod, event.target.value as unknown as GalleryPodType['layout'])
+                        setLayout(pod, event.target.value as unknown as GalleryObj['layout'])
                     }
                     onChange={(event) =>
-                        setLayout(pod, event.target.value as unknown as GalleryPodType['layout'])
+                        setLayout(pod, event.target.value as unknown as GalleryObj['layout'])
                     }
                 >
                     {columns.map((column) => {
@@ -103,4 +99,4 @@ const GalleryPod = ({
     );
 };
 
-export default GalleryPod;
+export default GalleryObj;

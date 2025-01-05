@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-import type { Pod } from '../types';
+import type { PodObj } from '../types';
 
 import MarkdownModal from './MarkdownModal';
 
 type TextPodProps = {
-    pod: Pod;
+    pod: PodObj;
     text: string;
-    setText: (pod: Pod, text: string) => void;
+    setText: (pod: PodObj, text: string) => void;
 };
 
 const TextPod = ({ pod, text, setText }: TextPodProps) => {
