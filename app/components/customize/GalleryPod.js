@@ -36,13 +36,13 @@ const GalleryPod = ({ podId }) => {
         </select>
       </p>
       <div className="c-media__artwork-cont">
-        {gallery.images.length !== 0 ? (
+        {gallery.images.length !== 0 && (
           <ReactSortable className={`c-media__artwork sortable-objects c-media__artwork--x${gallery.layout}`} list={gallery.images} setList={items => setImages({ items })} tag="ul">
             {gallery.images.map((image, id) => {
               return <GalleryImage key={image} image={image} removeImage={() => removeImage(podId, id)} />;
             })}
           </ReactSortable>
-        ) : null}
+        )}
         <Dropzone classes="c-media__item-add" returner={processUpload}>
           <span className="c-media__art-add">
             <span className="c-media__art-add__label">Drag and Drop / Select Image</span>
