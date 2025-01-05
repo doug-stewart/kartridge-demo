@@ -1,68 +1,68 @@
 .c-key {
-  display: block;
-  position: relative;
-
-  &__color {
-    border: 0.2rem solid var(--red-dark);
-    border-radius: 1.2rem;
     display: block;
-    font-size: 1.1rem;
-    font-weight: 700;
-    height: 2.4rem;
-    line-height: 2.2rem;
-    padding: 0 1rem;
-    text-transform: uppercase;
-  }
+    position: relative;
 
-  &__label {
-    background-color: var(--red-dark);
-    border-radius: 50%;
-    bottom: 0;
-    color: var(--white);
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    line-height: 1.2rem;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    transform: translate(20%, 10%);
-    width: 1.2rem;
-  }
-
-  &--a {
-    .c-key__color {
-      background-color: var(--swatch-a);
+    &__color {
+        border: 0.2rem solid var(--red-dark);
+        border-radius: 1.2rem;
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 700;
+        height: 2.4rem;
+        line-height: 2.2rem;
+        padding: 0 1rem;
+        text-transform: uppercase;
     }
-  }
 
-  &--b {
-    .c-key__color {
-      background-color: var(--swatch-b);
+    &__label {
+        background-color: var(--red-dark);
+        border-radius: 50%;
+        bottom: 0;
+        color: var(--white);
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1.2rem;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        transform: translate(20%, 10%);
+        width: 1.2rem;
     }
-  }
 
-  &--c {
-    .c-key__color {
-      color: var(--swatch-c);
+    &--a {
+        .c-key__color {
+            background-color: var(--swatch-a);
+        }
     }
-  }
 
-  &--d {
-    .c-key__color {
-      background-color: var(--swatch-d);
+    &--b {
+        .c-key__color {
+            background-color: var(--swatch-b);
+        }
     }
-  }
 
-  &--e {
-    .c-key__color {
-      color: var(--swatch-e);
+    &--c {
+        .c-key__color {
+            color: var(--swatch-c);
+        }
     }
-  }
 
-  &--f {
-    .c-key__color {
-      color: var(--swatch-f);
+    &--d {
+        .c-key__color {
+            background-color: var(--swatch-d);
+        }
     }
-  }
+
+    &--e {
+        .c-key__color {
+            color: var(--swatch-e);
+        }
+    }
+
+    &--f {
+        .c-key__color {
+            color: var(--swatch-f);
+        }
+    }
 }
