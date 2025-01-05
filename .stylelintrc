@@ -95,7 +95,6 @@
     "no-extra-semicolons": true,
     "no-invalid-double-slash-comments": true,
     "no-missing-end-of-source-newline": true,
-    "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
     "order/order": [
 			"custom-properties",

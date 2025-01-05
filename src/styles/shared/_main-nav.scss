@@ -1,0 +1,441 @@
+.ap-nav {
+  --nav-base-color: #{$purple-med};
+  --nav-text-color: #{$white};
+
+  background-color: $purple-med;
+  background-color: var(--nav-base-color);
+  border-top: 1px solid $black;
+  bottom: 0;
+  box-shadow: 0 -0.2rem 0 rgba($black, 0.2);
+  flex: 0 0 auto;
+  flex-direction: row;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+  &--desktop {
+    display: none;
+  }
+
+  &.is-light {
+    --nav-text-color: #{$black};
+  }
+
+  &__action {
+    align-items: center;
+    background-color: transparent;
+    color: $white;
+    color: var(--nav-text-color);
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    justify-content: center;
+    padding: 5.2em 0 0.8em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    z-index: 0;
+
+    &::after {
+      background-color: var(--nav-text-color);
+      bottom: -0.6em;
+      content: '';
+      height: 0.4em;
+      left: 0;
+      opacity: 0.3;
+      position: absolute;
+      transition: transform 0.2s ease;
+      width: 100%;
+    }
+
+    &::before {
+      background-color: var(--nav-base-color);
+      border-left: 1px solid $black;
+      border-top: 1px solid $black;
+      box-shadow: -0.24em -0.24em 0 rgba($black, 0.2);
+      content: '';
+      display: block;
+      height: 2.4em;
+      left: 50%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(-50%, -50%) scaleY(0) rotate(45deg);
+      transition: transform 0.2s ease;
+      width: 2.4em;
+    }
+
+    &.active {
+      background-position: 0 0;
+
+      &::after {
+        transform: translateY(-0.6em);
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) scale(0.75, 0.5) rotate(45deg);
+      }
+    }
+  }
+
+  &__highlight {
+    display: none;
+    opacity: 0;
+    overflow: visible;
+    pointer-events: none;
+    position: absolute;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    width: calc(#{$nav-width} + 1.8em);
+    z-index: -1;
+
+    .ap-nav__action:hover &,
+    .ap-nav__action.active & {
+      opacity: 1;
+      transform: translateX(0.8em);
+    }
+  }
+
+  &__ico {
+    &,
+    &--dark,
+    &--light {
+      background-color: transparent;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 4.5em auto;
+      font-size: 0.75em;
+      height: 4.5em;
+      left: 50%;
+      position: absolute;
+      top: 0.8em;
+      transform: translateZ(0) translateX(-50%);
+      width: 4.5em;
+      z-index: 1;
+    }
+
+    &--dark {
+      opacity: 0;
+
+      .is-light & {
+        opacity: 1;
+      }
+    }
+
+    &--light {
+      opacity: 1;
+
+      .is-light & {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__item {
+    border-right: 1px solid rgba($black, 0.33);
+    display: flex;
+    flex: 1;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  &__label {
+    display: block;
+    line-height: 2;
+    width: 100%;
+  }
+
+  &__list {
+    -webkit-app-region: drag;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    height: 100%;
+    text-align: center;
+  }
+
+  // Unique Buttons
+  &__home {
+    .ap-nav__ico--dark {
+      background-image: url('../../images/navigation/home-inv-sprite.png');
+    }
+
+    .ap-nav__ico--light {
+      background-image: url('../../images/navigation/home-sprite.png');
+    }
+  }
+
+  &__games {
+    .ap-nav__ico--dark {
+      background-image: url('../../images/navigation/games-inv-sprite.png');
+    }
+
+    .ap-nav__ico--light {
+      background-image: url('../../images/navigation/games-sprite.png');
+    }
+  }
+
+  &__library {
+    .ap-nav__ico--dark {
+      background-image: url('../../images/navigation/library-inv-sprite.png');
+    }
+
+    .ap-nav__ico--light {
+      background-image: url('../../images/navigation/library-sprite.png');
+    }
+  }
+
+  &__publish {
+    .ap-nav__ico--dark {
+      background-image: url('../../images/navigation/publish-inv-sprite.png');
+    }
+
+    .ap-nav__ico--light {
+      background-image: url('../../images/navigation/publish-sprite.png');
+    }
+  }
+
+  &__search {
+    fill: rgba($white, 0.73);
+    stroke: $white;
+
+    .ap-nav__ico {
+      fill: inherit;
+      height: 3.33em;
+      left: 50%;
+      overflow: visible;
+      pointer-events: none;
+      position: absolute;
+      stroke: inherit;
+      stroke-width: 1px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 3.33em;
+    }
+
+    .is-light & {
+      fill: rgba($black, 0.4);
+      stroke: $black;
+    }
+  }
+}
+
+@media (max-width: $mobile-flip-inv) {
+  .ap-nav {
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    margin-bottom: -4px;
+    position: static;
+    z-index: unset;
+
+    &__action {
+      flex: 1;
+      padding: 0;
+
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        border-width: 0;
+        box-shadow: none;
+        top: 100%;
+      }
+    }
+
+    &__ico {
+      &,
+      &--dark,
+      &--light {
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__label {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $mobile-flip) {
+  .ap-nav {
+    border-right: 1px solid $black;
+    border-top: 0;
+    box-shadow: 0.2em 0 0 rgba($black, 0.2);
+    display: flex;
+    grid-area: ap-nav;
+    padding-left: 0.2em;
+    position: relative;
+    width: $nav-width;
+
+    &--desktop {
+      display: flex;
+    }
+
+    &--mobile {
+      display: none;
+    }
+
+    &__action {
+      padding: 4.8em 0.2em 0 0;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+
+      &.active {
+        color: var(--nav-base-color);
+
+        .ap-nav__highlight--top {
+          fill-opacity: 1;
+        }
+      }
+    }
+
+    &__highlight {
+      display: block;
+      height: 100%;
+      right: -0.2em;
+      top: 0;
+      width: calc(#{$nav-width} + 1.8em);
+      z-index: -1;
+
+      .ap-nav__action:hover &,
+      .ap-nav__action.active & {
+        transform: translateX(0.8em);
+      }
+
+      &--bottom,
+      &--top {
+        transition: fill-opacity 0.2s ease, stroke 0.2s ease, stroke-opacity 0.2s ease, stroke-width 0.2s ease;
+      }
+
+      &--bottom {
+        fill: var(--nav-base-color);
+
+        .ap-nav__action.active &,
+        .ap-nav__action.active:hover & {
+          stroke: var(--nav-text-color);
+          stroke-opacity: 0.3;
+          stroke-width: 4px;
+        }
+      }
+
+      &--top {
+        fill: var(--nav-text-color);
+        fill-opacity: 0.3;
+        stroke: var(--nav-base-color);
+        stroke-width: 1px;
+      }
+    }
+
+    &__ico {
+      &,
+      &--dark,
+      &--light {
+        font-size: 1em;
+        left: calc(50% + -1px);
+        top: 0;
+      }
+    }
+
+    &__item {
+      border: 0;
+      flex: 0 0 auto;
+      margin-bottom: 1.8em;
+    }
+
+    &__label {
+      position: relative;
+      z-index: 0;
+    }
+
+    &__list {
+      flex-direction: column;
+      padding-top: 1.71em;
+    }
+
+    // Unique Buttons
+    &__home {
+      @keyframes nav-home {
+        from {
+          background-position: 0 0;
+        }
+
+        to {
+          background-position: 0 -283.5em;
+        }
+      }
+
+      &.is-playing {
+        .ap-nav__ico--dark,
+        .ap-nav__ico--light {
+          animation: 2.133s nav-home steps(63);
+        }
+      }
+    }
+
+    &__games {
+      @keyframes nav-games {
+        from {
+          background-position: 0 0;
+        }
+
+        to {
+          background-position: 0 -189em;
+        }
+      }
+
+      &.is-playing {
+        .ap-nav__ico--dark,
+        .ap-nav__ico--light {
+          animation: 1.433s nav-games steps(42);
+        }
+      }
+    }
+
+    &__library {
+      @keyframes nav-library {
+        from {
+          background-position: 0 0;
+        }
+
+        to {
+          background-position: 0 -121.5em;
+        }
+      }
+
+      &.is-playing {
+        .ap-nav__ico--dark,
+        .ap-nav__ico--light {
+          animation: 0.933s nav-library steps(27);
+        }
+      }
+    }
+
+    &__publish {
+      @keyframes nav-publish {
+        from {
+          background-position: 0 0;
+        }
+
+        to {
+          background-position: 0 -184.5em;
+        }
+      }
+
+      &.is-playing {
+        .ap-nav__ico--dark,
+        .ap-nav__ico--light {
+          animation: 1.4s nav-publish steps(41);
+        }
+      }
+    }
+  }
+}
