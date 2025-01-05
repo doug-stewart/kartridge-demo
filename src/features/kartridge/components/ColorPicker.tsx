@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { CustomPicker } from 'react-color';
 import { EditableInput, Hue, Saturation } from 'react-color/lib/components/common';
+import tinycolor from 'tinycolor2';
 
 type ColorPickerProps = {
     color: string;
@@ -8,13 +9,8 @@ type ColorPickerProps = {
     onChange: (color: { hex: string }) => void;
 };
 
-const HuePointer = () => {
-    return <div className="c-palette__hue-pointer" />;
-};
-
-const SaturationPointer = () => {
-    return <div className="c-palette__saturation-pointer" />;
-};
+const HuePointer = () => <div className="c-palette__hue-pointer" />;
+const SaturationPointer = () => <div className="c-palette__saturation-pointer" />;
 
 const ColorPicker = ({ color, label, onChange }: ColorPickerProps) => {
     const [shows, toggleShow] = useState(false);
@@ -30,6 +26,11 @@ const ColorPicker = ({ color, label, onChange }: ColorPickerProps) => {
         return () => document.removeEventListener('click', handleClick);
     }, []);
 
+    const colorProps = {
+        hsl: tinycolor(color).toHsl(),
+        hsv: tinycolor(color).toHsv(),
+    };
+
     return (
         <li className="u-custom__swatch" ref={picker}>
             <button className="c-palette" onClick={() => toggleShow(!shows)}>
@@ -41,12 +42,12 @@ const ColorPicker = ({ color, label, onChange }: ColorPickerProps) => {
                 data-testid="color-picker"
                 style={{ display: shows ? '' : 'none' }}
             >
-                {/* <div className="c-palette__saturation">
-                    <Saturation color={color} pointer={SaturationPointer} onChange={onChange} />
+                <div className="c-palette__saturation">
+                    <Saturation {...colorProps} pointer={SaturationPointer} onChange={onChange} />
                 </div>
                 <div className="c-palette__hue">
                     <Hue
-                        color={color}
+                        {...colorProps}
                         direction="vertical"
                         pointer={HuePointer}
                         onChange={onChange}
@@ -54,7 +55,7 @@ const ColorPicker = ({ color, label, onChange }: ColorPickerProps) => {
                 </div>
                 <div className="c-palette__input">
                     <EditableInput value={color} onChange={onChange} />
-                </div> */}
+                </div>
             </div>
         </li>
     );
