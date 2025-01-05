@@ -11,6 +11,7 @@ const GalleryPod = ({ podId }) => {
   const { podUpdater } = podsState;
   const gallery = podsState.state.items[podId];
 
+  const setLayout = (pod, layout) => podUpdater({ type: 'setLayout', pod: podId, layout: layout });
   const setImages = list => podUpdater({ type: 'setImages', pod: podId, images: list.items });
   const addImage = (pod, data) => podUpdater({ type: 'addImage', pod: pod, image: data });
   const removeImage = (pod, id) => podUpdater({ type: 'removeImage', pod: pod, image: id });
@@ -25,7 +26,12 @@ const GalleryPod = ({ podId }) => {
       <PodHeader id={podId} />
       <p className="c-media__col-ctrl">
         <strong className="c-media__col-ctrl__title">Images Per Row:</strong>
-        <select className="c-media__col-ctrl__select" value={gallery.layout} onBlur={() => console.log('unhandled change')} onChange={() => console.log('unhandled change')}>
+        <select
+          className="c-media__col-ctrl__select"
+          value={gallery.layout}
+          onBlur={event => setLayout(podId, event.target.value)}
+          onChange={event => setLayout(podId, event.target.value)}
+        >
           {columns.map(column => {
             return (
               <option key={column} value={column}>

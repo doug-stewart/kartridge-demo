@@ -35,6 +35,10 @@ const reducer = (state, action) => {
       state.items.push({ type: 'gallery', layout: 2, images: [] });
       return { ...state };
 
+    case action.type === 'setLayout':
+      state.items[action.pod].layout = action.layout;
+      return { ...state };
+
     case action.type === 'setImages':
       state.items[action.pod].images = action.images;
       return { ...state };
