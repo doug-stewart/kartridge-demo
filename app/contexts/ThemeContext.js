@@ -1,12 +1,12 @@
 import React, { createContext, useReducer } from 'react';
 
 const initialState = {
-  a: '#FF0000',
-  b: '#FFA500',
-  c: '#FFFF00',
-  d: '#00FF00',
-  e: '#0000FF',
-  f: '#800080'
+  a: '#52f8d4',
+  b: '#da00ff',
+  c: '#ffffff',
+  d: '#1a0a2a',
+  e: '#ffffff',
+  f: '#7bffbf'
 };
 
 const Theme = createContext(initialState);

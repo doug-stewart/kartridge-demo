@@ -6,7 +6,7 @@ import Preview from './Preview';
 import { PodsProvider } from './contexts/StorefrontContext';
 
 const GamePage = () => {
-  const [background, setBackground] = useState({ name: 'waves.mp4', data: 'waves.mp4', type: 'video/mp4' });
+  const [background, setBackground] = useState({ name: 'background.mp4', data: 'background.mp4', type: 'video/mp4' });
   const [preview, setPreview] = useState(false);
   const togglePreview = () => setPreview(!preview);
   const customClasses = classNames('u-custom', { 'is-preview': preview });

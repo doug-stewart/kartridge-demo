@@ -76,10 +76,7 @@ const Preview = ({ background }) => {
                 <span className="c-tabs__link disabled active">
                   <span className="c-feat-pg__tab-media">
                     <span className="gp-ico">
-                      <video autoPlay className="c-game-ico__video" disableremoteplayback="" loop muted playsInline poster="http://placekitten.com/125/100" preload="none">
-                        <source src="VIDEO_URL" type="video/webm" />
-                        <source src="VIDEO_URL" type="video/mp4" />
-                      </video>
+                      <video autoPlay className="c-game-ico__video" disableremoteplayback="" loop muted playsInline poster="game-icon.png" preload="none" />
                     </span>
                   </span>
                   <span className="c-feat-pg__tab-label truncate">About</span>
