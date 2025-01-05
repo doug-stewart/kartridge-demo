@@ -10,7 +10,7 @@ const Header = ({ preview, toggleAction }) => {
   const podsState = useContext(Pods);
   const { themeUpdater } = themeState;
 
-  const gameIcon = 'http://www.placekitten.com/500/400';
+  const gameIcon = 'game-icon.png';
   const allScreenshots = podsState.state.items
     .filter(item => item.images && item.images.length > 0)
     .map(item => item.images)
