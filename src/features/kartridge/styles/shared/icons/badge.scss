@@ -1,0 +1,73 @@
+.ico-badge {
+  &__back,
+  &__front {
+    &-fill,
+    &-line {
+      transition: fill 0.2s ease;
+    }
+  }
+
+  &__back {
+    &-fill {
+      fill: color-mix(in srgb, transparent, var(--grey-med) 60%);
+    }
+
+    &-line {
+      fill: var(--grey-darkest);
+    }
+
+    @at-root .is-active & {
+      &-fill {
+        fill: var(--blue-light);
+      }
+
+      &-line {
+        fill: var(--blue-darker);
+      }
+    }
+  }
+
+  &__front {
+    &-fill {
+      fill: var(--grey-lightest);
+    }
+
+    &-line {
+      fill: var(--grey-darkest);
+    }
+
+    @at-root .is-active & {
+      &-fill {
+        fill: var(--white);
+      }
+
+      &-line {
+        fill: var(--blue-darker);
+      }
+    }
+
+    @at-root .has-notifications & {
+      &-fill {
+        fill: var(--white);
+      }
+
+      &-line {
+        fill: var(--red-med);
+      }
+    }
+  }
+}
+
+.ico-badge-check {
+  &__base {
+    fill: var(--green-med);
+  }
+
+  &__border-in {
+    fill: var(--grey-darkest);
+  }
+
+  &__border-out {
+    fill: var(--yellow-med);
+  }
+}

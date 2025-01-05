@@ -1,0 +1,131 @@
+:root {
+  --swatch-a: #{split(#5116dc)};
+  --swatch-b: #{split(#5116dc)};
+  --swatch-c: #{split(#fff)};
+  --swatch-d: #{split(#fff)};
+  --swatch-e: #{split(#222)};
+  --swatch-f: #{split(#5116dc)};
+}
+
+.c-palette {
+  background-color: color-mix(in srgb, transparent, var(--grey-med) 33%);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 0 color-mix(in srgb, transparent, var(--grey-darker) 33%);
+  display: flex;
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  padding: 0.17em 0.6em 0.17em 0.17em;
+  position: relative;
+  z-index: 0;
+
+  &__color {
+    border-radius: 3px;
+    display: block;
+    height: 1.5em;
+    overflow: hidden;
+    width: 2em;
+
+    &::before {
+      content: '';
+      cursor: pointer;
+      inset: 0;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  &__hue,
+  &__saturation {
+    height: 110px;
+    position: relative;
+    z-index: 0;
+  }
+
+  &__hue-pointer {
+    background-color: #fff;
+    border: 1px solid #333;
+    height: 3px;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: 24px;
+  }
+
+  &__input {
+    grid-column: span 2;
+
+    input {
+      background-color: var(--grey-lighter);
+      border: 0;
+      font-size: 1.1rem;
+      height: 2rem;
+      line-height: 2rem;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &__popup {
+    background-color: var(--white);
+    border: 1px solid var(--grey-darker);
+    border-radius: 3px;
+    box-shadow: inset 0 -0.3rem 0 var(--grey-lighter), 0 0.3rem 0 color-mix(in srgb, transparent, var(--black) 20%);
+    display: grid;
+    grid-gap: 5px;
+    grid-template: auto / 1fr 22px;
+    min-width: 16rem;
+    padding: 1rem 1rem 1.3rem;
+    position: absolute;
+    transform: translate(-1.65rem, 2.7rem);
+    z-index: 1;
+
+    &::after,
+    &::before {
+      border-color: transparent;
+      border-style: solid;
+      border-width: 0 0.8rem 0.8rem;
+      content: '';
+      left: 2.1rem;
+      position: absolute;
+    }
+
+    &::after {
+      border-bottom-color: var(--grey-darker);
+      bottom: calc(100% + 1px);
+      z-index: 0;
+    }
+
+    &::before {
+      border-bottom-color: var(--white);
+      bottom: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__saturation-pointer {
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    width: 8px;
+  }
+
+  &__title {
+    flex: 1;
+    margin-left: 0.6em;
+    white-space: nowrap;
+
+    &::after {
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-style: solid;
+      border-width: 0.4em 0.4em 0;
+      content: '';
+      display: inline-block;
+      margin-left: 0.3em;
+      transform: translateY(-0.12em);
+      vertical-align: middle;
+    }
+  }
+  }

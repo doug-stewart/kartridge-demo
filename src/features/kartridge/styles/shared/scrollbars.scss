@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+  background-color: transparent;
+  height: 0.6rem;
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, transparent, var(--black) 20%);
+}
+
+:root {
+  scrollbar-color: color-mix(in srgb, transparent, var(--black) 20%) transparent;
+  scrollbar-width: thin;
+}
+
+.c-scrollbar {
+  scrollbar-color: color-mix(in srgb, transparent, var(--white) 60%) transparent;
+  scrollbar-width: thin;
+
+  &--light {
+    &::-webkit-scrollbar-thumb {
+      background-color: color-mix(in srgb, transparent, var(--white) 60%);
+    }
+  }
+}

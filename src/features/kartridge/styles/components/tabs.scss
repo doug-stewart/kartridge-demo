@@ -1,0 +1,103 @@
+:root {
+    --tabs-bg: var(--black);
+    --tabs-border: color-mix(in srgb, transparent, var(--tabs-bg) 20%);
+}
+
+.c-tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 0;
+
+    &__alert {
+        display: inline-block;
+        fill: var(--red-med);
+        height: 1em;
+        margin-left: 0.5rem;
+        transform: translateY(0.1em);
+        width: 1em;
+    }
+
+    &__item {
+        flex: 1;
+        text-align: center;
+    }
+
+    &__link {
+        align-items: center;
+        background-color: color-mix(in srgb, transparent, var(--tabs-bg) 20%);
+        border-bottom-color: color-mix(in srgb, transparent, var(--tabs-bg) 40%);
+        box-shadow: inset -1px 0 0 color-mix(in srgb, transparent, var(--tabs-bg) 20%);
+        color: inherit;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        font: 500 1.2em/3.54 var(--gordita-family);
+        justify-content: center;
+        padding: 1em 1em calc(1em - 3px);
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition:
+            background-color 0.16s var(--curve),
+            border-bottom-color 0.16s var(--curve),
+            color 0.16s var(--curve);
+        width: 100%;
+
+        &:hover {
+            background-color: color-mix(in srgb, transparent, var(--tabs-bg) 10%);
+            color: inherit;
+        }
+
+        &.active {
+            background-color: transparent;
+            border-bottom-color: transparent;
+        }
+    }
+
+    &--secondary &__link {
+        border-bottom-color: transparent;
+    }
+
+    &__item:last-child .c-tabs__link {
+        box-shadow: none;
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+        position: relative;
+    }
+
+    &__nav {
+        box-shadow: inset 0 -1px 0 color-mix(in srgb, transparent, var(--tabs-bg) 20%);
+        font-size: 0.7rem;
+        z-index: 1;
+    }
+
+    &__section {
+        display: none;
+        flex: 1;
+        overflow: hidden auto;
+        overflow-y: overlay;
+        padding: 4rem 2rem;
+        position: relative;
+        z-index: 0;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+    &--secondary {
+        height: auto;
+    }
+}
+
+@media (width >= 440px) {
+    .c-tabs__nav {
+        font-size: 1rem;
+    }
+}

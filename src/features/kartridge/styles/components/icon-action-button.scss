@@ -1,0 +1,48 @@
+.btn-ico-action {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition:
+    background-color 0.16s var(--curve),
+    box-shadow 0.16s var(--curve),
+    color 0.16s var(--curve),
+    opacity 0.16s var(--curve);
+
+  &:disabled,
+  &.disabled {
+    opacity: 1;
+  }
+
+  &__art {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.btn-wishlist-ico {
+  &--add,
+  &--remove {
+    display: block;
+    fill: inherit;
+    height: 100%;
+    pointer-events: none;
+    width: 100%;
+  }
+
+  &--add {
+    display: block;
+
+    .is-added:hover > & {
+      display: none;
+    }
+  }
+
+  &--remove {
+    display: none;
+
+    .is-added:hover > & {
+      display: block;
+    }
+  }
+}
