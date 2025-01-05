@@ -8,8 +8,8 @@
       "type": "gallery",
       "layout": 2,
       "images": [
-        "/public/screenshot-1.jpg",
-        "/public/screenshot-2.jpg"
+        "screenshot-1.jpg",
+        "screenshot-2.jpg"
       ]
     },
     {
@@ -20,10 +20,10 @@
       "type": "gallery",
       "layout": 3,
       "images": [
-        "/public/screenshot-3.jpg",
-        "/public/screenshot-4.jpg",
-        "/public/screenshot-5.jpg",
-        "/public/screenshot-6.jpg"
+        "screenshot-3.jpg",
+        "screenshot-4.jpg",
+        "screenshot-5.jpg",
+        "screenshot-6.jpg"
       ]
     }
   ]
