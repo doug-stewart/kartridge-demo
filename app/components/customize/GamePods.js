@@ -92,29 +92,29 @@ const GamePods = () => {
             })}
           </ReactSortable>
         ) : (
-            <div className="u-custom__gallery c-media">
-              <div className="u-custom__empty-gallery">
-                <div className="gp-media__trailer" />
-                <div className="gp-media__text c-local-reset">
-                  <p />
-                  <p />
-                  <p />
-                  <p />
-                  <p />
-                </div>
-                <div>
-                  <div className="c-media__artwork c-media__artwork--x2">
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                    <div className="c-media__art" />
-                  </div>
+          <div className="u-custom__gallery c-media">
+            <div className="u-custom__empty-gallery">
+              <div className="gp-media__trailer" />
+              <div className="gp-media__text c-local-reset">
+                <p />
+                <p />
+                <p />
+                <p />
+                <p />
+              </div>
+              <div>
+                <div className="c-media__artwork c-media__artwork--x2">
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
+                  <div className="c-media__art" />
                 </div>
               </div>
             </div>
-          )}
+          </div>
+        )}
       </div>
     </div>
   );
