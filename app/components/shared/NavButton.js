@@ -1,11 +1,11 @@
 import React from 'react';
 
 export default class NavButton extends React.Component {
-  state = { isPlaying: false }
+  state = { isPlaying: false };
 
   playIcon = () => {
     if (!this.state.isPlaying) this.setState({ isPlaying: true });
-  }
+  };
 
   resetIcon = () => this.setState({ isPlaying: false });
 
@@ -17,13 +17,13 @@ export default class NavButton extends React.Component {
       <a
         onFocus={this.playIcon}
         onMouseOver={this.playIcon}
-        title={this.props.label} className={`
+        title={this.props.label}
+        className={`
           ap-nav__action
           ap-nav__${this.props.label.toLowerCase()}
           ${isActive ? 'active' : ''}
           ${this.state.isPlaying ? 'is-playing' : ''}
-        `}
-      >
+        `}>
         <span className="ap-nav__ico--dark" onAnimationEnd={this.resetIcon}></span>
         <span className="ap-nav__ico--light"></span>
         <strong className="ap-nav__label">

@@ -32,11 +32,11 @@ const reducer = (state, action) => {
 
     // Gallery Pod
     case action.type === 'addPod' && action.kind === 'gallery':
-      state.items.push({ type: 'gallery', layout: 2, images: [] })
-      return { ...state }
+      state.items.push({ type: 'gallery', layout: 2, images: [] });
+      return { ...state };
 
     case action.type === 'setImages':
-      state.items[action.pod].images = action.images
+      state.items[action.pod].images = action.images;
       return { ...state };
 
     case action.type === 'addImage':
@@ -49,25 +49,25 @@ const reducer = (state, action) => {
 
     // Text Pod
     case action.type === 'addPod' && action.kind === 'text':
-      state.items.push({ type: 'text', value: '' })
-      return { ...state }
+      state.items.push({ type: 'text', value: '' });
+      return { ...state };
 
     case action.type === 'updateText':
       state.items[action.pod].text = action.text;
-      return { ...state }
+      return { ...state };
 
     // Trailer Pod
     case action.type === 'addPod' && action.kind === 'trailer':
-      state.items.push({ type: 'trailer', url: '' })
-      return { ...state }
+      state.items.push({ type: 'trailer', url: '' });
+      return { ...state };
 
     case action.type === 'updateTrailer':
       state.items[action.pod].url = action.url;
-      return { ...state }
+      return { ...state };
 
     // Bork
     default:
-      return { ...state }
+      return { ...state };
   }
 };
 

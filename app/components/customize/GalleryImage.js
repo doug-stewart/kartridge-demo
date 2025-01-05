@@ -10,7 +10,7 @@ const GalleryImage = ({ image, removeImage }) => {
         <img alt="" src={image} className="c-media__art-img" />
       </span>
     </li>
-  )
-}
+  );
+};
 
 export default GalleryImage;

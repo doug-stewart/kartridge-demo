@@ -1,4 +1,6 @@
-{/* eslint-disable jsx-a11y/anchor-is-valid*/ }
+{
+  /* eslint-disable jsx-a11y/anchor-is-valid*/
+}
 
 import React from 'react';
 import AvatarBack from '../../../public/assets/images/avatar-back.png';
@@ -6,16 +8,16 @@ import AvatarFront from '../../../public/assets/images/avatar-front.png';
 
 export default class AppHeader extends React.Component {
   render() {
-    const isWindows = navigator.platform.toLowerCase().indexOf('win') >= 0;;
+    const isWindows = navigator.platform.toLowerCase().indexOf('win') >= 0;
 
     return (
       <header className="ap-header">
-        {isWindows &&
+        {isWindows && (
           <nav className="ap-win-menu">
             <button className="ap-win-menu__btn" title="Menu" />
           </nav>
-        }
-        {!isWindows &&
+        )}
+        {!isWindows && (
           <ul className="ap-mac-window">
             <li className="ap-mac-window__close">
               <button className="ap-mac-window__close-link" title="Close"></button>
@@ -27,7 +29,7 @@ export default class AppHeader extends React.Component {
               <button className="ap-mac-window__max-link " title="Maximize"></button>
             </li>
           </ul>
-        }
+        )}
         <nav className="ap-history">
           <ul className="ap-history__items">
             <li className="ap-history__item">
@@ -53,9 +55,7 @@ export default class AppHeader extends React.Component {
             </svg>
             <div className="c-search__field-grp">
               <input placeholder="Search…" className="c-search__field" type="text" />
-              <button className="c-search__clear">
-                ×
-              </button>
+              <button className="c-search__clear">×</button>
             </div>
           </div>
           <ul className="c-search__results"></ul>
@@ -63,10 +63,8 @@ export default class AppHeader extends React.Component {
         <div className="ap-menu c-options--toggle ap-user">
           <a role="button" className="ap-user__group c-avatar-trigger">
             <span className="ap-user__avatar c-avatar c-avatar--sml ap-user__avatar">
-              <span className="c-avatar__media c-avatar__character"
-                style={{ backgroundImage: `url('${AvatarFront}')` }}></span>
-              <span className="c-avatar__media c-avatar__background"
-                style={{ backgroundImage: `url('${AvatarBack}')` }}></span>
+              <span className="c-avatar__media c-avatar__character" style={{ backgroundImage: `url('${AvatarFront}')` }}></span>
+              <span className="c-avatar__media c-avatar__background" style={{ backgroundImage: `url('${AvatarBack}')` }}></span>
             </span>
             <strong className="ap-user__name">
               doug
@@ -76,60 +74,40 @@ export default class AppHeader extends React.Component {
             </strong>
           </a>
           <a title="Options" className="ap-menu__toggle">
-            <span className="ap-menu__toggle-txt">
-              Options
-            </span>
+            <span className="ap-menu__toggle-txt">Options</span>
           </a>
           <nav className="c-options__menu">
             <ul className="c-options__menu-list">
               <li className="c-options__item">
-                <a className="c-options__link ">
-                  Account Progress
-                </a>
+                <a className="c-options__link ">Account Progress</a>
               </li>
               <li className="c-options__item">
-                <a className="c-options__link ">
-                  View profile
-                </a>
+                <a className="c-options__link ">View profile</a>
               </li>
               <li className="c-options__item">
-                <a className="c-options__link ">
-                  Account Settings
-                </a>
+                <a className="c-options__link ">Account Settings</a>
               </li>
               <li className="c-options__item">
-                <a className="c-options__link ">
-                  Edit Avatar
-                </a>
+                <a className="c-options__link ">Edit Avatar</a>
               </li>
               <li className="c-options__item">
-                <a className="c-options__link ">
-                  Redeem Key
-                </a>
+                <a className="c-options__link ">Redeem Key</a>
               </li>
               <li className="c-options__item">
-                <a className="c-options__link ">
-                  Purchase History
-                </a>
+                <a className="c-options__link ">Purchase History</a>
               </li>
               <li className="c-options__item">
-                <a className="c-options__link ">
-                  Revenue Summary
-                </a>
+                <a className="c-options__link ">Revenue Summary</a>
               </li>
               <li className="c-options__item">
-                <a className="c-options__link ">
-                  Admin Tools
-                </a>
+                <a className="c-options__link ">Admin Tools</a>
               </li>
               <li className="c-options__item c-options__item--divided">
-                <a className="c-options__link ">
-                  Sign out
-                </a>
+                <a className="c-options__link ">Sign out</a>
               </li>
             </ul>
           </nav>
-        </div >
+        </div>
         <nav className="ap-header__sidebar-nav ap-sidebar-nav">
           <ul className="ap-sidebar-nav__list">
             <li className="ap-sidebar-nav__item">
@@ -140,9 +118,7 @@ export default class AppHeader extends React.Component {
                   <path className="chat-bubbles__front-fill" d="M15.3 0H8.7C3.9 0 0 3.9 0 8.7c0 4.2 3 7.7 7 8.5V22c0 .1.1.2.2.2h1.2c2.4 0 4.9-3.4 5.8-4.9h1.1c4.8 0 8.7-3.9 8.7-8.7C24 3.9 20.1 0 15.3 0z" />
                   <path className="chat-bubbles__front-line" d="M15.3 0H8.7C3.9 0 0 3.9 0 8.7c0 4.2 3 7.7 7 8.5V22c0 .1.1.2.2.2h1.2c2.4 0 4.9-3.4 5.8-4.9h1.1c4.8 0 8.7-3.9 8.7-8.7C24 3.9 20.1 0 15.3 0zm-.8 15.8H13c-.1.1-.2.3-.4.5-1 1.4-2.8 4.4-4.5 4.4 0 0-.1 0-.1-.1v-4.9c-.2 0-.3 0-.5-.1-3.6-.7-6.5-3-6.5-6.9v-.1C1 4.1 4.2 1 8.7 1h5.7C18.8 1 22 4.1 22 8.6v.1c0 4.4-3.1 7-7.5 7.1z" />
                 </svg>
-                <span className="ap-sidebar-nav__status">
-                  •••
-                </span>
+                <span className="ap-sidebar-nav__status">•••</span>
               </a>
             </li>
             <li className="ap-sidebar-nav__item">
@@ -171,7 +147,7 @@ export default class AppHeader extends React.Component {
             </li>
           </ul>
         </nav>
-        {isWindows &&
+        {isWindows && (
           <ul className="ap-win-window">
             <li className="ap-win-window__min">
               <button className="ap-win-window__min-link" title="Minimize" />
@@ -183,8 +159,8 @@ export default class AppHeader extends React.Component {
               <button className="ap-win-window__close-link" title="Close" />
             </li>
           </ul>
-        }
-      </header >
+        )}
+      </header>
     );
   }
 }

@@ -13,14 +13,10 @@ const GamePage = () => {
     <PodsProvider>
       <div className={`u-custom ${preview ? 'is-preview' : null}`}>
         <Header preview={preview} toggleAction={togglePreview} />
-        {preview ?
-          <Preview background={background} />
-          :
-          <Customize background={background} setBackground={setBackground} />
-        }
+        {preview ? <Preview background={background} /> : <Customize background={background} setBackground={setBackground} />}
       </div>
     </PodsProvider>
   );
-}
+};
 
 export default GamePage;

@@ -5,26 +5,26 @@ import { Theme } from '../../contexts/ThemeContext';
 const AppTheme = () => {
   const themeState = useContext(Theme);
 
-  const split = (color) => {
+  const split = color => {
     const rgb = tinycolor(color).toRgb();
     return `${rgb.r},${rgb.g},${rgb.b}`;
-  }
+  };
 
   const swatches = () => {
-    return Object.keys(themeState.state).map(color => (
-      `--swatch-${color}: ${split(themeState.state[color])};`
-    )).join(' ');
-  }
+    return Object.keys(themeState.state)
+      .map(color => `--swatch-${color}: ${split(themeState.state[color])};`)
+      .join(' ');
+  };
 
   const offset = () => {
     const lum = tinycolor(themeState.state['d']).getLuminance();
-    return (lum > 0.1 ? '0,0,0' : '255,255,255');
-  }
+    return lum > 0.1 ? '0,0,0' : '255,255,255';
+  };
 
   const tabs = () => {
     const lum = tinycolor(themeState.state['d']).getLuminance();
-    return (lum > 0.1 ? '0,0,0' : '255,255,255');
-  }
+    return lum > 0.1 ? '0,0,0' : '255,255,255';
+  };
 
   const styles = `
     :root {
@@ -39,11 +39,7 @@ const AppTheme = () => {
     }
   `;
 
-  return (
-    <style>
-      {styles}
-    </style>
-  )
-}
+  return <style>{styles}</style>;
+};
 
 export default AppTheme;

@@ -24,7 +24,7 @@ class App extends Component {
           </ModalProvider>
         </div>
       </ThemeProvider>
-    )
+    );
   }
 }
 

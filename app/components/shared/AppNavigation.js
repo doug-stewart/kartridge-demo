@@ -25,6 +25,6 @@ const AppNavigation = () => {
       </ul>
     </nav>
   );
-}
+};
 
 export default AppNavigation;
