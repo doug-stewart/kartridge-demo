@@ -26,12 +26,7 @@ const GalleryPod = ({ podId }) => {
       <PodHeader id={podId} />
       <p className="c-media__col-ctrl">
         <strong className="c-media__col-ctrl__title">Images Per Row:</strong>
-        <select
-          className="c-media__col-ctrl__select"
-          value={gallery.layout}
-          onBlur={event => setLayout(podId, event.target.value)}
-          onChange={event => setLayout(podId, event.target.value)}
-        >
+        <select className="c-media__col-ctrl__select" value={gallery.layout} onBlur={event => setLayout(podId, event.target.value)} onChange={event => setLayout(podId, event.target.value)}>
           {columns.map(column => {
             return (
               <option key={column} value={column}>

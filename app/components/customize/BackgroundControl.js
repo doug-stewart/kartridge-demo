@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import Dropzone from './Dropzone';
 
 const BackgroundControl = ({ background, setBackground }) => {
@@ -14,11 +15,13 @@ const BackgroundControl = ({ background, setBackground }) => {
     setBackground({ name: '', data: '', type: '' });
   };
 
+  const bgCtrlClasses = classNames('c-bgctrl__labe', { checked: background.name !== '' });
+
   return (
     <fieldset className="u-custom__bg-ctrl c-bgctrl">
       <h2 className="c-bgctrl__title">Set your background artwork</h2>
       <div className="c-bgctrl__option-image">
-        <div className={`c-bgctrl__label ${background.name !== '' ? 'checked' : null}`}>
+        <div className={bgCtrlClasses}>
           <span className="c-bgctrl__txt">Upload a video or image</span>
           <em className="c-bgctrl__note">Minimum 720p. JPG, GIF, PNG, or MP4 recomended.</em>
           <Dropzone classes="c-upload has-preview" returner={updateBackground}>

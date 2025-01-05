@@ -12,7 +12,7 @@ const ColorPicker = ({ hsl, hsv, hex, label, onChange }) => {
     <OutsideClickHandler onOutsideClick={() => toggleShow(false)}>
       <li className="u-custom__swatch">
         <button className="c-palette" onClick={() => toggleShow(!shows)}>
-          <span className={`c-palette__color c-palette__color_${label}`} style={{ backgroundColor: hex }} />
+          <span className="c-palette__color" style={{ backgroundColor: hex }} />
           <span className="c-palette__title">{label.toLocaleUpperCase()}</span>
         </button>
 

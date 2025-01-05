@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import classNames from 'classnames';
 import { Pods } from './contexts/StorefrontContext';
 import BackgroundMedia from './components/shared/BackgroundMedia';
 import Gallery from './components/preview/Gallery';
@@ -9,9 +10,10 @@ const Preview = ({ background }) => {
   const podsState = useContext(Pods);
   const allPods = podsState.state.items;
   const [viewBg, setViewBg] = useState(false);
+  const mainClasses = classNames('c-feat-pg__main', 'gp-main', 'u-custom__preview', { 'is-viewing-bg': viewBg });
 
   return (
-    <section className={`c-feat-pg__main gp-main u-custom__preview ${viewBg ? 'is-viewing-bg' : null}`}>
+    <section className={mainClasses}>
       <span
         className="c-feat-pg__view-bg"
         onBlur={() => {
