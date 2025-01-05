@@ -45,6 +45,7 @@
     "stylelint-order": "^3.0.1"
   },
   "scripts": {
+    "build": "parcel build index.html --out-dir build/output",
     "dev": "parcel index.html",
     "format": "prettier \"app/**/*.{js,html}\" --write",
     "lint": "eslint \"app/**/*.{js,jsx}\" --quiet",
