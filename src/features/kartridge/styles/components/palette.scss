@@ -73,7 +73,7 @@
             inset 0 -0.3rem 0 var(--grey-lighter),
             0 0.3rem 0 color-mix(in srgb, transparent, var(--black) 20%);
         display: grid;
-        grid-gap: 5px;
+        gap: 5px;
         grid-template: auto / 1fr 22px;
         min-width: 16rem;
         padding: 1rem 1rem 1.3rem;

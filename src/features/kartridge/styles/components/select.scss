@@ -40,9 +40,10 @@
 
     &__link {
         display: flex;
+        hyphens: auto;
         justify-content: space-between;
+        overflow-wrap: break-word;
         transition: color 0.2s ease;
-        word-break: break-word;
         z-index: 0;
 
         &::after {
@@ -73,7 +74,7 @@
         list-style: none;
         max-height: calc(100vh - var(--header-height) + 4.4rem + 2rem + 8rem);
         overflow: hidden auto;
-        overflow-y: overlay;
+        overflow-y: auto;
         position: absolute;
         top: 100%;
         visibility: hidden;

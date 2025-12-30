@@ -45,7 +45,7 @@
     &__header {
         background-color: var(--white);
         display: grid;
-        grid-gap: 3rem;
+        gap: 3rem;
         grid-template:
             'text controls' auto
             / 1fr auto;
@@ -77,7 +77,7 @@
         flex: 1;
         grid-area: content;
         overflow: hidden auto;
-        overflow-y: overlay;
+        overflow-y: auto;
         position: relative;
         width: 100%;
         z-index: 0;
@@ -297,7 +297,7 @@
             max-width: 100%;
             min-height: inherit;
             overflow: hidden auto;
-            overflow-y: overlay;
+            overflow-y: auto;
             padding-left: calc(100% - var(--sections-width));
             width: 100%;
 

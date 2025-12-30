@@ -3,7 +3,7 @@
 
 .gp-actions {
     display: grid;
-    grid-gap: 2rem 1rem;
+    gap: 2rem 1rem;
     grid-template-columns: repeat(3, min-content);
     margin-top: 4rem;
 }
@@ -642,8 +642,8 @@
     hyphens: auto;
     line-height: 1.1em;
     min-width: 0;
+    overflow-wrap: break-word;
     padding-right: 4rem;
-    word-break: break-word;
 }
 
 .gp-name-subtxt {
@@ -660,8 +660,9 @@
 
 .gp-name-txt {
     display: block;
+    hyphens: auto;
+    overflow-wrap: break-word;
     width: 100%;
-    word-wrap: break-word;
 }
 
 .gp-no-reviews {
@@ -965,9 +966,10 @@
 
 .gp-section-title {
     color: var(--swatch-e);
+    hyphens: auto;
     margin-bottom: 2rem;
+    overflow-wrap: break-word;
     text-align: center;
-    word-break: break-word;
 }
 
 .gp-stats {
@@ -1358,7 +1360,7 @@
     .gp-comments {
         &__list {
             overflow: hidden auto;
-            overflow-y: overlay;
+            overflow-y: auto;
         }
     }
 

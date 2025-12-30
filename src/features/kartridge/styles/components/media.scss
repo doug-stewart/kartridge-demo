@@ -224,12 +224,12 @@
 
         @supports (display: grid) {
             display: grid;
+            gap: 1rem;
             grid-column: 1 / -1;
-            grid-gap: 1rem;
             justify-items: center;
 
             &--x1 {
-                grid-gap: 1.5rem;
+                gap: 1.5rem;
                 grid-template-columns: 1fr;
             }
 
@@ -238,7 +238,7 @@
             }
 
             &--x3 {
-                grid-gap: 0.5rem;
+                gap: 0.5rem;
                 grid-template-columns: repeat(3, 1fr);
             }
 
