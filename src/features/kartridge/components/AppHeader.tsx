@@ -17,26 +17,42 @@ export default class AppHeader extends Component {
             <header className="ap-header">
                 {isWindows && (
                     <nav className="ap-win-menu">
-                        <button className="ap-win-menu__btn" title="Menu" />
+                        <button type="button" className="ap-win-menu__btn" title="Menu" />
                     </nav>
                 )}
                 {!isWindows && (
                     <ul className="ap-mac-window">
                         <li className="ap-mac-window__close">
-                            <button className="ap-mac-window__close-link" title="Close"></button>
+                            <button
+                                type="button"
+                                className="ap-mac-window__close-link"
+                                title="Close"
+                            ></button>
                         </li>
                         <li className="ap-mac-window__min">
-                            <button className="ap-mac-window__min-link" title="Minimize"></button>
+                            <button
+                                type="button"
+                                className="ap-mac-window__min-link"
+                                title="Minimize"
+                            ></button>
                         </li>
                         <li className="ap-mac-window__max">
-                            <button className="ap-mac-window__max-link " title="Maximize"></button>
+                            <button
+                                type="button"
+                                className="ap-mac-window__max-link "
+                                title="Maximize"
+                            ></button>
                         </li>
                     </ul>
                 )}
                 <nav className="ap-history">
                     <ul className="ap-history__items">
                         <li className="ap-history__item">
-                            <button className="ap-history__prev-link" title="Previous">
+                            <button
+                                type="button"
+                                className="ap-history__prev-link"
+                                title="Previous"
+                            >
                                 <PrevIco className="ap-history__ico" />
                             </button>
                         </li>
@@ -52,7 +68,9 @@ export default class AppHeader extends Component {
                         <SearchIco className="c-search__ico" />
                         <div className="c-search__field-grp">
                             <input placeholder="Search…" className="c-search__field" type="text" />
-                            <button className="c-search__clear">×</button>
+                            <button type="button" className="c-search__clear">
+                                ×
+                            </button>
                         </div>
                     </div>
                     <ul className="c-search__results"></ul>
@@ -136,13 +154,25 @@ export default class AppHeader extends Component {
                 {isWindows && (
                     <ul className="ap-win-window">
                         <li className="ap-win-window__min">
-                            <button className="ap-win-window__min-link" title="Minimize" />
+                            <button
+                                type="button"
+                                className="ap-win-window__min-link"
+                                title="Minimize"
+                            />
                         </li>
                         <li className="ap-win-window__max">
-                            <button className="ap-win-window__max-link" title="Maximized" />
+                            <button
+                                type="button"
+                                className="ap-win-window__max-link"
+                                title="Maximized"
+                            />
                         </li>
                         <li className="ap-win-window__close">
-                            <button className="ap-win-window__close-link" title="Close" />
+                            <button
+                                type="button"
+                                className="ap-win-window__close-link"
+                                title="Close"
+                            />
                         </li>
                     </ul>
                 )}

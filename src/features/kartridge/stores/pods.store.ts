@@ -1,6 +1,6 @@
-import { createStore } from '@xstate/store';
+import { create } from 'zustand';
 
-import type { GalleryObj, PodObj, PodsArr } from '../types';
+import type { GalleryObj, PodObj, PodsArr, PodsState } from '../types';
 
 const changeIndex = (input: PodsArr, index: number, offset: number) => {
     const array = [...input];
@@ -22,31 +22,27 @@ export const removeImage = (images: GalleryObj['images'], id: number) => {
     return images;
 };
 
-export const podsStore = createStore({
-    context: {
-        pods: [] as PodsArr,
-    },
-    on: {
-        set: (_, event: { pods: PodsArr }) => ({ pods: event.pods }),
-        add: (context, event: { pod: PodObj }) => ({
-            pods: [...context.pods, Object.assign(event.pod, { id: context.pods.length + 1 })],
-        }),
-        remove: (context, event: { id: number }) => {
-            const index = context.pods.findIndex((pod) => pod.id === event.id);
-            const { pods } = context;
+export const usePodsStore = create<PodsState>((set) => ({
+    pods: [],
+    setPods: (pods) => set({ pods }),
+    addPod: (pod) =>
+        set((state) => ({
+            pods: [...state.pods, Object.assign(pod, { id: state.pods.length + 1 })],
+        })),
+    removePod: (id) =>
+        set((state) => {
+            const index = state.pods.findIndex((pod) => pod.id === id);
+            const pods = [...state.pods];
             pods.splice(index, 1);
             return { pods: [...pods] };
-        },
-        moveUp: (context, event: { id: number }) => ({
-            pods: [...changeIndex(context.pods, event.id, -1)],
         }),
-        moveDown: (context, event: { id: number }) => ({
-            pods: [...changeIndex(context.pods, event.id, +1)],
+    movePodUp: (id) => set((state) => ({ pods: [...changeIndex(state.pods, id, -1)] })),
+    movePodDown: (id) => set((state) => ({ pods: [...changeIndex(state.pods, id, +1)] })),
+    updatePod: (pod) =>
+        set((state) => {
+            const podIndex = state.pods.findIndex((p) => p.id === pod.id);
+            const pods = [...state.pods];
+            pods[podIndex] = pod;
+            return { pods: [...pods] };
         }),
-        update: (context, event: { pod: PodObj }) => {
-            const podIndex = context.pods.findIndex((p) => p.id === event.pod.id);
-            context.pods[podIndex] = event.pod;
-            return { pods: [...context.pods] };
-        },
-    },
-});
+}));

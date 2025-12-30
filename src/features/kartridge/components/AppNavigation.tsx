@@ -1,17 +1,14 @@
-import { useSelector } from '@xstate/store/react';
 import clsx from 'clsx';
 import tinycolor from 'tinycolor2';
 
-import { themeStore } from '../stores/theme.store';
+import { useThemeStore } from '../stores/theme.store';
 
 import NavButton from './NavButton';
 
 const AppNavigation = () => {
-    const theme = useSelector(themeStore, (state) => state.context);
+    const theme = useThemeStore();
     const isLight = tinycolor(theme.a).isLight();
-    const navClasses = clsx('ap-nav', 'ap-nav--desktop', {
-        'is-light': isLight,
-    });
+    const navClasses = clsx('ap-nav', 'ap-nav--desktop', { 'is-light': isLight });
 
     return (
         <nav className={navClasses}>

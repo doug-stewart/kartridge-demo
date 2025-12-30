@@ -1,14 +1,13 @@
-import { useSelector } from '@xstate/store/react';
 import tinycolor from 'tinycolor2';
 
-import { themeStore } from '../stores/theme.store';
+import { useThemeStore } from '../stores/theme.store';
 
 const AppTheme = () => {
-    const theme = useSelector(themeStore, (state) => state.context);
+    const theme = useThemeStore();
 
     const swatches = () => {
-        return Object.keys(theme)
-            .map((color) => `--swatch-${color}: ${theme[color as keyof typeof theme]};`)
+        return (['a', 'b', 'c', 'd', 'e', 'f'] as const)
+            .map((color) => `--swatch-${color}: ${theme[color]};`)
             .join(' ');
     };
 

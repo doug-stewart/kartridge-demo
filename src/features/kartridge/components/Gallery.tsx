@@ -2,10 +2,7 @@ import { useState } from 'react';
 
 import GalleryModal from './GalleryModal';
 
-type GalleryProps = {
-    layout: number;
-    images: { image: string }[];
-};
+type GalleryProps = { layout: number; images: { image: string }[] };
 
 const Gallery = ({ layout, images }: GalleryProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -22,6 +19,7 @@ const Gallery = ({ layout, images }: GalleryProps) => {
                 {images.map((item) => (
                     <li key={item.image} className="c-media__art">
                         <button
+                            type="button"
                             className="c-media__art-box"
                             title="View screenshot"
                             onClick={() => openModal(item.image)}

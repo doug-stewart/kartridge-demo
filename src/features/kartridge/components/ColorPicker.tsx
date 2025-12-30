@@ -26,14 +26,11 @@ const ColorPicker = ({ color, label, onChange }: ColorPickerProps) => {
         return () => document.removeEventListener('click', handleClick);
     }, []);
 
-    const colorProps = {
-        hsl: tinycolor(color).toHsl(),
-        hsv: tinycolor(color).toHsv(),
-    };
+    const colorProps = { hsl: tinycolor(color).toHsl(), hsv: tinycolor(color).toHsv() };
 
     return (
         <li className="u-custom__swatch" ref={picker}>
-            <button className="c-palette" onClick={() => toggleShow(!shows)}>
+            <button type="button" className="c-palette" onClick={() => toggleShow(!shows)}>
                 <span className="c-palette__color" style={{ backgroundColor: color }} />
                 <span className="c-palette__title">{label.toLocaleUpperCase()}</span>
             </button>

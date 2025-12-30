@@ -5,11 +5,7 @@ import type { PodObj } from '../types';
 
 import MarkdownModal from './MarkdownModal';
 
-type TextPodProps = {
-    pod: PodObj;
-    text: string;
-    setText: (pod: PodObj, text: string) => void;
-};
+type TextPodProps = { pod: PodObj; text: string; setText: (pod: PodObj, text: string) => void };
 
 const TextPod = ({ pod, text, setText }: TextPodProps) => {
     const [showModal, setShowModal] = useState(false);
@@ -28,7 +24,11 @@ const TextPod = ({ pod, text, setText }: TextPodProps) => {
                 <span className="c-media__text-italic">_italic_</span>
                 <span className="c-media__text-list">- list</span>
                 <span className="c-media__text-link">[text](https://www.kartridge.com/)</span>
-                <button className="c-media__text-guide" onClick={() => setShowModal(true)}>
+                <button
+                    type="button"
+                    className="c-media__text-guide"
+                    onClick={() => setShowModal(true)}
+                >
                     Markdown Help
                 </button>
             </span>

@@ -27,12 +27,14 @@ const GamePod = ({
         <li className={clsx('c-media__container', podClass)}>
             <header className="c-media__header">
                 <button
+                    type="button"
                     className="c-media__move-up"
                     disabled={isFirst}
                     onClick={() => movePodUp(pod)}
                     title="Move pod up one spot"
                 />
                 <button
+                    type="button"
                     className="c-media__move-down"
                     disabled={isLast}
                     onClick={() => movePodDown(pod)}
@@ -40,6 +42,7 @@ const GamePod = ({
                 />
                 <span className="c-media__drag-label">Drag to re-order</span>
                 <button
+                    type="button"
                     className="c-media__remove"
                     onClick={() => removePod(pod)}
                     title="Remove this pod"

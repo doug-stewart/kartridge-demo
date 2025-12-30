@@ -1,20 +1,19 @@
-import { useSelector } from '@xstate/store/react';
 import clsx from 'clsx';
 import { Vibrant } from 'node-vibrant/browser';
 
-import { podsStore } from '../stores/pods.store';
-import { themeStore } from '../stores/theme.store';
+import { usePodsStore } from '../stores/pods.store';
+import { useThemeStore } from '../stores/theme.store';
 import type { PodObj } from '../types';
 
 import ColorPicker from './ColorPicker';
 
 type HeaderProps = { preview: boolean; toggleAction: () => void };
-type ThemeEvent = Parameters<typeof themeStore.send>[0];
-type ThemeColorKey = ThemeEvent['type'];
+type ThemeColorKey = 'a' | 'b' | 'c' | 'd' | 'e' | 'f';
 
 const Header = ({ preview, toggleAction }: HeaderProps) => {
-    const pods = useSelector(podsStore, (state) => state.context.pods);
-    const theme = useSelector(themeStore, (state) => state.context);
+    const pods = usePodsStore((state) => state.pods);
+    const theme = useThemeStore();
+    const setTheme = useThemeStore((state) => state.setTheme);
 
     const gameIcon = '/game/game-icon.png';
 
@@ -29,7 +28,7 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
     );
 
     const updateColor = (label: ThemeColorKey, hex: string) => {
-        themeStore.send({ type: label, color: hex });
+        setTheme(label, hex);
     };
 
     const generatePalette = async (src: string) => {
@@ -39,12 +38,12 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
 
         const palette = await Vibrant.from(image).getPalette();
 
-        themeStore.send({ type: 'a', color: palette.Vibrant?.hex || '#000' });
-        themeStore.send({ type: 'b', color: palette.DarkMuted?.hex || '#fff' });
-        themeStore.send({ type: 'c', color: palette.Muted?.hex || '#fff' });
-        themeStore.send({ type: 'd', color: palette.DarkVibrant?.hex || '#000' });
-        themeStore.send({ type: 'e', color: palette.Muted?.hex || '#fff' });
-        themeStore.send({ type: 'f', color: palette.LightMuted?.hex || '#fff' });
+        setTheme('a', palette.Vibrant?.hex || '#000');
+        setTheme('b', palette.DarkMuted?.hex || '#fff');
+        setTheme('c', palette.Muted?.hex || '#fff');
+        setTheme('d', palette.DarkVibrant?.hex || '#000');
+        setTheme('e', palette.Muted?.hex || '#fff');
+        setTheme('f', palette.LightMuted?.hex || '#fff');
     };
 
     return (
@@ -52,6 +51,7 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
             <div className="u-custom__header-title">
                 <h1 className="u-custom__title">Customize storefront</h1>
                 <button
+                    type="button"
                     className={clsx('btn--light', 'btn--s', 'u-custom__save-btn')}
                     onClick={toggleAction}
                 >
@@ -61,11 +61,11 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
             <div className="u-custom__header-palette">
                 <h2 className="u-custom__header-subtitle">Set your color palette</h2>
                 <ul className="u-custom__palette">
-                    {(Object.keys(theme) as ThemeColorKey[]).map((color) => (
+                    {(['a', 'b', 'c', 'd', 'e', 'f'] as ThemeColorKey[]).map((color) => (
                         <ColorPicker
                             key={color}
                             label={color}
-                            color={theme[color as keyof typeof theme]}
+                            color={theme[color]}
                             onChange={({ hex }) => updateColor(color, hex)}
                         />
                     ))}
@@ -79,6 +79,7 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
                     <ul className="c-filmstrip__list">
                         <li className="c-filmstrip__item">
                             <button
+                                type="button"
                                 className="c-filmstrip__btn"
                                 onClick={() => generatePalette(gameIcon)}
                             >
@@ -88,6 +89,7 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
                         {allScreenshots.map((item) => (
                             <li key={item.image} className="c-filmstrip__item">
                                 <button
+                                    type="button"
                                     className="c-filmstrip__btn"
                                     onClick={() => generatePalette(item.image)}
                                 >

@@ -6,14 +6,15 @@ import AppHeader from '../components/AppHeader';
 import AppNavigation from '../components/AppNavigation';
 import AppTheme from '../components/AppTheme';
 import Header from '../components/Header';
-import { podsStore } from '../stores/pods.store';
+import { usePodsStore } from '../stores/pods.store';
 
+import '../styles/kartridge.scss';
 import Customize from './Customize';
 import Preview from './Preview';
-import '../styles/kartridge.scss';
 
 export const Kartridge = () => {
     const hasData = useRef(false);
+    const setPods = usePodsStore((state) => state.setPods);
 
     const [background, setBackground] = useState({
         name: 'background.mp4',
@@ -29,7 +30,7 @@ export const Kartridge = () => {
         const getGame = async () =>
             await fetch('/game/data.json')
                 .then((response) => response.json())
-                .then((data) => podsStore.send({ type: 'set', pods: data }));
+                .then((data) => setPods(data));
 
         if (hasData.current) return;
         hasData.current = true;

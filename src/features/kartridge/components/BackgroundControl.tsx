@@ -4,10 +4,7 @@ import type { MediaObj } from '../types';
 
 import Dropzone from './Dropzone';
 
-type BackgroundControlProps = {
-    background: MediaObj;
-    setBackground: (data: MediaObj) => void;
-};
+type BackgroundControlProps = { background: MediaObj; setBackground: (data: MediaObj) => void };
 
 const BackgroundControl = ({ background, setBackground }: BackgroundControlProps) => {
     const updateBackground = (data: MediaObj) => {
@@ -22,9 +19,7 @@ const BackgroundControl = ({ background, setBackground }: BackgroundControlProps
         setBackground({ name: '', data: '', type: '' });
     };
 
-    const bgCtrlClasses = clsx('c-bgctrl__labe', {
-        checked: background.name !== '',
-    });
+    const bgCtrlClasses = clsx('c-bgctrl__labe', { checked: background.name !== '' });
 
     return (
         <fieldset className={clsx('u-custom__bg-ctrl', 'c-bgctrl')}>
@@ -60,7 +55,7 @@ const BackgroundControl = ({ background, setBackground }: BackgroundControlProps
                 </div>
             </div>
             <div className="c-bgctrl__option-default">
-                <button className="c-bgctrl__label" onClick={resetBackground}>
+                <button type="button" className="c-bgctrl__label" onClick={resetBackground}>
                     <span className="c-bgctrl__txt">reset to default (game icon)</span>
                 </button>
             </div>

@@ -1,10 +1,9 @@
-import { useSelector } from '@xstate/store/react';
 import clsx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import { ReactSortable } from 'react-sortablejs';
 
-import { podsStore } from '../stores/pods.store';
-import type { ImageObj, GalleryObj, PodObj, PodsArr } from '../types';
+import { usePodsStore } from '../stores/pods.store';
+import type { GalleryObj, ImageObj, PodObj, PodsArr } from '../types';
 
 import GalleryPod from './GalleryPod';
 import GamePod from './GamePod';
@@ -12,7 +11,14 @@ import TextPod from './TextPod';
 import TrailerPod from './TrailerPod';
 
 const GamePods = () => {
-    const pods = useSelector(podsStore, (state) => state.context.pods);
+    const pods = usePodsStore((state) => state.pods);
+
+    const addPodToStore = usePodsStore((state) => state.addPod);
+    const setPods = usePodsStore((state) => state.setPods);
+    const movePodDownStore = usePodsStore((state) => state.movePodDown);
+    const movePodUpStore = usePodsStore((state) => state.movePodUp);
+    const removePodStore = usePodsStore((state) => state.removePod);
+    const updatePodStore = usePodsStore((state) => state.updatePod);
 
     const podArea = useRef<HTMLDivElement | null>(null);
 
@@ -24,7 +30,7 @@ const GamePods = () => {
         const pod = { type: kind };
 
         if (kind === 'gallery') {
-            Object.assign(pod, {});
+            Object.assign(pod, { images: [], layout: 3 });
         }
 
         if (kind === 'text') {
@@ -35,39 +41,33 @@ const GamePods = () => {
             Object.assign(pod, { url: '' });
         }
 
-        podsStore.send({ type: 'add', pod: pod as PodObj });
+        addPodToStore(pod as PodObj);
         setAdding(true);
     };
 
-    const reorderPods = (pods: PodsArr) => podsStore.send({ type: 'set', pods: pods });
-    const movePodDown = (pod: PodObj) => podsStore.send({ type: 'moveDown', id: pod.id });
-    const movePodUp = (pod: PodObj) => podsStore.send({ type: 'moveUp', id: pod.id });
-    const removePod = (pod: PodObj) => podsStore.send({ type: 'remove', id: pod.id });
+    const reorderPods = (pods: PodsArr) => setPods(pods);
+    const movePodDown = (pod: PodObj) => movePodDownStore(pod.id);
+    const movePodUp = (pod: PodObj) => movePodUpStore(pod.id);
+    const removePod = (pod: PodObj) => removePodStore(pod.id);
 
     const setLayout = (pod: PodObj, layout: GalleryObj['layout']) =>
-        podsStore.send({ type: 'update', pod: Object.assign(pod, { layout }) });
+        updatePodStore(Object.assign(pod, { layout }));
 
     const setImages = (pod: PodObj, images: GalleryObj['images']) =>
-        podsStore.send({ type: 'update', pod: Object.assign(pod, { images }) });
+        updatePodStore(Object.assign(pod, { images }));
 
     const addImage = (pod: GalleryObj, data: ImageObj) => {
-        podsStore.send({
-            type: 'update',
-            pod: Object.assign(pod, { images: [...pod.images, data] }),
-        });
+        updatePodStore(Object.assign(pod, { images: [...pod.images, data] }));
     };
 
     const removeImage = (pod: GalleryObj, id: number) =>
-        podsStore.send({
-            type: 'update',
-            pod: Object.assign(pod, { images: pod.images.filter((image) => image.id !== id) }),
-        });
+        updatePodStore(
+            Object.assign(pod, { images: pod.images.filter((image) => image.id !== id) }),
+        );
 
-    const setText = (pod: PodObj, text: string) =>
-        podsStore.send({ type: 'update', pod: Object.assign(pod, { text }) });
+    const setText = (pod: PodObj, text: string) => updatePodStore(Object.assign(pod, { text }));
 
-    const setTrailer = (pod: PodObj, url: string) =>
-        podsStore.send({ type: 'update', pod: Object.assign(pod, { url }) });
+    const setTrailer = (pod: PodObj, url: string) => updatePodStore(Object.assign(pod, { url }));
 
     useEffect(() => {
         if (adding && podArea.current) {
@@ -114,6 +114,7 @@ const GamePods = () => {
                     </select>
                     {kind !== '' && (
                         <button
+                            type="button"
                             className={clsx('c-media__add-btn', 'btn--red', 'btn--m')}
                             onClick={() => addPod(kind)}
                         >

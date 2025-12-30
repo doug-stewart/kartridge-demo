@@ -11,6 +11,7 @@ const GalleryImage = ({ pod, image, id, removeImage }: GalleryImageProps) => {
     return (
         <li className="c-media__art">
             <button
+                type="button"
                 className="c-media__art-remove"
                 onClick={() => removeImage(pod, id)}
                 title="Remove screenshot"

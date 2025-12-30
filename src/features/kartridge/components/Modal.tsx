@@ -28,7 +28,11 @@ const GalleryModal = ({
             className={clsx('c-modal__inner', innerClass)}
             overlayClassName={clsx('c-modal__outer', outerClass)}
         >
-            <button className={clsx('c-modal__btn', buttonClass)} onClick={toggleCallback}>
+            <button
+                type="button"
+                className={clsx('c-modal__btn', buttonClass)}
+                onClick={toggleCallback}
+            >
                 ×
             </button>
             {children}

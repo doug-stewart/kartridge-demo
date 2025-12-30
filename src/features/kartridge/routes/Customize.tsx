@@ -8,10 +8,7 @@ import BackgroundMedia from '../components/BackgroundMedia';
 import GamePods from '../components/GamePods';
 import type { MediaObj } from '../types';
 
-type CustomizeProps = {
-    background: MediaObj;
-    setBackground: (data: MediaObj) => void;
-};
+type CustomizeProps = { background: MediaObj; setBackground: (data: MediaObj) => void };
 
 const Customize = ({ background, setBackground }: CustomizeProps) => {
     return (
@@ -74,6 +71,7 @@ const Customize = ({ background, setBackground }: CustomizeProps) => {
                     <div className="gp-actions">
                         <span className="gp-buy">
                             <button
+                                type="button"
                                 className={clsx('gp-buy-btn', 'btn--red', 'btn--xl', 'has-subtag')}
                             >
                                 <strong>Install</strong>

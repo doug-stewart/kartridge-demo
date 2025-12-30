@@ -1,4 +1,3 @@
-import { useSelector } from '@xstate/store/react';
 import clsx from 'clsx';
 import { useState } from 'react';
 
@@ -13,15 +12,13 @@ import BackgroundMedia from '../components/BackgroundMedia';
 import Gallery from '../components/Gallery';
 import Text from '../components/Text';
 import Trailer from '../components/Trailer';
-import { podsStore } from '../stores/pods.store';
+import { usePodsStore } from '../stores/pods.store';
 import type { MediaObj } from '../types';
 
-type PreviewProps = {
-    background: MediaObj;
-};
+type PreviewProps = { background: MediaObj };
 
 const Preview = ({ background }: PreviewProps) => {
-    const pods = useSelector(podsStore, (state) => state.context.pods);
+    const pods = usePodsStore((state) => state.pods);
 
     const [viewBg, setViewBg] = useState(false);
 
@@ -111,7 +108,10 @@ const Preview = ({ background }: PreviewProps) => {
                 </div>
                 <div className="gp-actions">
                     <span className="gp-buy">
-                        <button className={clsx('gp-buy-btn', 'btn--red', 'btn--xl', 'has-subtag')}>
+                        <button
+                            type="button"
+                            className={clsx('gp-buy-btn', 'btn--red', 'btn--xl', 'has-subtag')}
+                        >
                             <strong>Buy</strong> for <strong>$24.99</strong>
                         </button>
                     </span>

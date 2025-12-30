@@ -32,7 +32,6 @@
     "dependencies": {
         "@eslint/compat": "^2.0.0",
         "@types/tinycolor2": "^1.4.6",
-        "@xstate/store": "^3.14.0",
         "clsx": "^2.1.1",
         "node-vibrant": "^4.0.3",
         "react": "^19.2.3",
@@ -43,7 +42,8 @@
         "react-modal": "^3.16.3",
         "react-player": "^3.4.0",
         "react-sortablejs": "^6.1.4",
-        "react-textarea-autosize": "^8.5.9"
+        "react-textarea-autosize": "^8.5.9",
+        "zustand": "^5.0.9"
     },
     "devDependencies": {
         "@eslint/js": "^9.39.2",
