@@ -1,4 +1,4 @@
-import ReactPlayer from 'react-player/youtube';
+import ReactPlayer from 'react-player';
 
 const Trailer = ({ url }: { url: string }) => {
     return (
@@ -6,7 +6,7 @@ const Trailer = ({ url }: { url: string }) => {
             <ReactPlayer
                 className="c-trailer__preview-media"
                 height="100%"
-                url={url}
+                src={url}
                 width="100%"
             />
         </div>

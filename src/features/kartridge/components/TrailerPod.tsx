@@ -1,14 +1,10 @@
 import clsx from 'clsx';
 import { useState } from 'react';
-import ReactPlayer from 'react-player/youtube';
+import ReactPlayer from 'react-player';
 
 import type { PodObj } from '../types';
 
-type TrailerPodProps = {
-    pod: PodObj;
-    url: string;
-    setTrailer: (pod: PodObj, url: string) => void;
-};
+type TrailerPodProps = { pod: PodObj; url: string; setTrailer: (pod: PodObj, url: string) => void };
 
 const TrailerPod = ({ pod, url, setTrailer }: TrailerPodProps) => {
     const [hasError, setHasError] = useState(false);
@@ -58,7 +54,7 @@ const TrailerPod = ({ pod, url, setTrailer }: TrailerPodProps) => {
                     <ReactPlayer
                         className="c-trailer__preview-media"
                         height="100%"
-                        url={url}
+                        src={url}
                         width="100%"
                     />
                 </div>
