@@ -8,10 +8,9 @@ import type { PodObj } from '../types';
 
 import ColorPicker from './ColorPicker';
 
-type HeaderProps = {
-    preview: boolean;
-    toggleAction: () => void;
-};
+type HeaderProps = { preview: boolean; toggleAction: () => void };
+type ThemeEvent = Parameters<typeof themeStore.send>[0];
+type ThemeColorKey = ThemeEvent['type'];
 
 const Header = ({ preview, toggleAction }: HeaderProps) => {
     const pods = useSelector(podsStore, (state) => state.context.pods);
@@ -29,7 +28,7 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
         [],
     );
 
-    const updateColor = (label: keyof typeof theme, hex: string) => {
+    const updateColor = (label: ThemeColorKey, hex: string) => {
         themeStore.send({ type: label, color: hex });
     };
 
@@ -62,12 +61,12 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
             <div className="u-custom__header-palette">
                 <h2 className="u-custom__header-subtitle">Set your color palette</h2>
                 <ul className="u-custom__palette">
-                    {Object.keys(theme).map((color) => (
+                    {(Object.keys(theme) as ThemeColorKey[]).map((color) => (
                         <ColorPicker
                             key={color}
                             label={color}
                             color={theme[color as keyof typeof theme]}
-                            onChange={({ hex }) => updateColor(color as keyof typeof theme, hex)}
+                            onChange={({ hex }) => updateColor(color, hex)}
                         />
                     ))}
                 </ul>
