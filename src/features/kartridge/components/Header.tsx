@@ -15,7 +15,7 @@ const Header = ({ preview, toggleAction }: HeaderProps) => {
     const theme = useThemeStore();
     const setTheme = useThemeStore((state) => state.setTheme);
 
-    const gameIcon = '/game/game-icon.png';
+    const gameIcon = `${import.meta.env.BASE_URL}game/game-icon.png`;
 
     const allScreenshots = pods.reduce(
         (screenshots: Array<{ id: number; image: string }>, pod: PodObj) => {

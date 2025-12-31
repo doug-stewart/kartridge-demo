@@ -53,7 +53,7 @@ const BackgroundMedia = ({ background }: BackgroundMedia) => {
                     alt=""
                     className="c-feat-pg__bg-vid"
                     data-testid="background-icon"
-                    src="/game/game-icon.png"
+                    src={`${import.meta.env.BASE_URL}game/game-icon.png`}
                 />
             )}
         </div>

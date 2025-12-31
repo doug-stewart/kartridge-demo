@@ -150,7 +150,7 @@ const Preview = ({ background }: PreviewProps) => {
                                                 loop
                                                 muted
                                                 playsInline
-                                                poster={'/game/game-icon.png'}
+                                                poster={`${import.meta.env.BASE_URL}game/game-icon.png`}
                                                 preload="none"
                                             />
                                         </span>
@@ -210,7 +210,7 @@ const Preview = ({ background }: PreviewProps) => {
                                                     'c-avatar__background',
                                                 )}
                                                 style={{
-                                                    backgroundImage: 'url(/game/dev-avatar.png)',
+                                                    backgroundImage: `url(${import.meta.env.BASE_URL}game/dev-avatar.png)`,
                                                 }}
                                             />
                                         </span>

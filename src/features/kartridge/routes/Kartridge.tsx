@@ -7,6 +7,7 @@ import AppNavigation from '../components/AppNavigation';
 import AppTheme from '../components/AppTheme';
 import Header from '../components/Header';
 import { usePodsStore } from '../stores/pods.store';
+import type { GalleryObj, PodObj } from '../types';
 
 import '../styles/kartridge.scss';
 import Customize from './Customize';
@@ -18,7 +19,7 @@ export const Kartridge = () => {
 
     const [background, setBackground] = useState({
         name: 'background.mp4',
-        data: '/game/background.mp4',
+        data: `${import.meta.env.BASE_URL}game/background.mp4`,
         type: 'video/mp4',
     });
 
@@ -28,9 +29,26 @@ export const Kartridge = () => {
 
     useEffect(() => {
         const getGame = async () =>
-            await fetch('/game/data.json')
+            await fetch(`${import.meta.env.BASE_URL}game/data.json`)
                 .then((response) => response.json())
-                .then((data) => setPods(data));
+                .then((data: PodObj[]) => {
+                    const fixedData = data.map((pod) => {
+                        if (pod.type === 'gallery') {
+                            const galleryPod = pod as GalleryObj;
+                            return {
+                                ...galleryPod,
+                                images: galleryPod.images.map((img) => ({
+                                    ...img,
+                                    image: img.image.startsWith('/')
+                                        ? `${import.meta.env.BASE_URL}${img.image.slice(1)}`
+                                        : img.image,
+                                })),
+                            };
+                        }
+                        return pod;
+                    });
+                    setPods(fixedData);
+                });
 
         if (hasData.current) return;
         hasData.current = true;
